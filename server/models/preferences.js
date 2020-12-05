@@ -18,7 +18,8 @@ const preferencesSchema = new Schema({
     time: {
         type: String,
         enum: ['0-6 months', '6 months-1 year', 'More than 1 year']
-    }
+    }, 
+
 }, {
     timestamps: true
 })
