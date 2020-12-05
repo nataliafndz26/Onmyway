@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Job = require('../models/jobs')
-const User = require ('../models/user')
+const User = require('../models/user')
 
 //SEED USER
 
@@ -105,18 +105,7 @@ let findUsers = Promise.all(createUsers)
 //     })
 
 
-const saveJobs = findUsers
-    .then (findUsers => {
-    return Promise.all(findUsers)
-        .then(jobs => {
-            return jobs.map(job => {
-                const newJob = new Job(job)
-                return newJob.save()   
-        })
-    })
-    .catch(error => {
-        throw new Error(error)
-    })
+
 
 const saveJobs = (findPreferences, findUsers)
     .then(findUsers => {
