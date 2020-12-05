@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const Job = require('../models/jobs')
-const Preferences = require('../models/preferences')
-const User = require('../models/user')
+const User = require ('../models/user')
 
 //SEED USER
 
@@ -20,9 +19,8 @@ const dbName = 'Onmyway'
 mongoose.connect(`mongodb://localhost/${dbName}`)
 
 
-//  Job.collection.drop()
-//  Preferences.collection.drop()
-//  User.collection.drop()
+// Jobs.collection.drop()
+// User.collection.drop()
 
 const jobs = [
     {
@@ -33,12 +31,10 @@ const jobs = [
         benefits: ['Breakfast', 'Lunch', 'Health insurance', 'Shared bedroom'],
         image: "https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/018/272/main/H6_BackGarden_Social_copy.jpg",
         description: "We're currently looking for new general staff at our RICHMOND and BRUNSWICK hostels. This role is mainly about cleaning. You will also perform office duties, take rent payments and check in guests. Also you will help create an inclusive culture of shared experiences in a easy going and open minded culture while maintaining a Clean, Safe and Fun place to live.",
-        preferences: {
-            'interests': ['Travel Alone', 'Backpacker'],
-            'continent': 'Oceania',
-            'skills': ['Working with guests', 'Cleaning'],
-            'time': '6 months-1 year'
-        },
+        interests: ['Travel Alone', 'Backpacker'],
+        continent: 'Oceania',
+        skills: ['Working with guests', 'Cleaning'],
+        time: '6 months-1 year',
         user: {
             "username": "Marga",
             'password': hashPass1,
@@ -55,23 +51,26 @@ const createUsers = jobs.map(job => {
     return newUser
         .save()
         .then(user => {
-            return user.username;
+            return user.username
         })
         .catch(error => {
             throw new Error(`Impossible to add the user. ${error}`)
         })
 })
-const createPreferences = jobs.map(job => {
-    const newPreference = new Preferences(job.preferences)
-    return newPreference
-        .save()
-        .then(preferences => {
-            return preferences.continent;
-        })
-        .catch(error => {
-            throw new Error(`Impossible to add the preference. ${error}`)
-        })
-})
+
+
+// const createPreferences = jobs.map(job => {
+//     const newPreference = new Preferences(job.preferences)
+//     return newPreference
+//         .save()
+//         .then(preferences => {
+//             return preferences.continent
+//         })
+//         .catch(error => {
+//         throw new Error(`Impossible to add the preference. ${error}`)
+//     })
+// })
+
 
 let findUsers = Promise.all(createUsers)
     .then(user => {
@@ -79,7 +78,7 @@ let findUsers = Promise.all(createUsers)
             return User.findOne({ username: job.user.username })
                 .then(user => {
                     if (!user) {
-                        throw new Error(`unknown user ${job.user.username}`);
+                        throw new Error(`unknown user ${job.user.username}`)
                     }
                     return Object.assign({}, job, { user: user._id })
                 })
@@ -89,17 +88,30 @@ let findUsers = Promise.all(createUsers)
         throw new Error(error)
     })
 
+// let findPreferences = Promise.all(createPreferences)
+//     .then(prerences => {
+//         return jobs.map(job => {
+//             return Preferences.findOne({ continent: job.preferences.continent })
+//                 .then(preferences => {
+//                     if (!preferences) {
+//                         throw new Error(`unknown preference ${job.preferences.continent}`)
+//                     }
+//                     return Object.assign ({}, job, {preferences: preferences._id})
+//             })
+//         })
+//     })
+//     .catch(error => {
+//         throw new Error(error)
+//     })
 
-let findPreferences = Promise.all(createPreferences)
-    .then(preferences => {
-        return jobs.map(job => {
-            return Preferences.findOne({ continent: job.preferences.continent })
-                .then(preferences => {
-                    if (!preferences) {
-                        throw new Error(`unknown preference ${job.preferences.continent}`);
-                    }
-                    return Object.assign({}, job, { preferences: preferences._id })
-                })
+
+const saveJobs = findUsers
+    .then (findUsers => {
+    return Promise.all(findUsers)
+        .then(jobs => {
+            return jobs.map(job => {
+                const newJob = new Job(job)
+                return newJob.save()   
         })
     })
     .catch(error => {
@@ -121,14 +133,4 @@ const saveJobs = (findPreferences, findUsers)
             .then(() => mongoose.connection.close())
             .catch(err => console.log("Error while saving the job: ", err))
     })
-
-
-
-
-
-
-
-
-
-
 
