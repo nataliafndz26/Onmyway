@@ -14,6 +14,9 @@ const jobsSchema = new Schema({
         type: String,
         required: true,
     }, 
+    timetable: {
+        type: String
+    },
     benefits: {
         type: [String],
         enum: ['Breakfast', 'Lunch', 'Dinner', 'Health insurance', 'Shared bedroom', 'Individual bedroom', 'Some extra money', 'Laundry']
@@ -38,5 +41,5 @@ const jobsSchema = new Schema({
     timestamps: true
 })
 
-const Jobs = mongoose.model('Jobs', jobsSchema)
-module.exports = Jobs
+const Job = mongoose.model('Jobs', jobsSchema)
+module.exports = Job
