@@ -2,3 +2,9 @@
     height: 250px; 
     object-fit: cover;
 }
+
+.job-info ul li {
+    display: inline;
+    margin-right: 50px;
+
+}

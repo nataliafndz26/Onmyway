@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import JobsService from './../../../service/jobs.service'
+import JobsService from '../../../service/jobs.service'
 import JobCard from './JobCard'
 
 import './AllJobs.css'

@@ -8,8 +8,9 @@ export default class PreferencesService {
             withCredentials: true
         })
     }
-}
 
-getPreferences = () => this.apiHandler.get('./allPreferences')
-getOnePreference = preferencesId => this.apiHandler.get(`/preference/${preferencesId}`)
-editPreferences = (preferencesId, preferencesInfo) => this.apiHandler.put (`/editPreferences/${preferencesId}`, preferencesInfo)
+
+    getPreferences = () => this.apiHandler.get('/allPreferences')
+    getOnePreference = preferencesId => this.apiHandler.get(`/preference/${preferencesId}`)
+    editPreferences = (preferencesId, preferencesInfo) => this.apiHandler.put(`/editPreferences/${preferencesId}`, preferencesInfo)
+}
