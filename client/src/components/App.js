@@ -6,8 +6,9 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import AuthServices from './../service/auth.service'
 
-import AllJobs from './pages/Jobs/AllJobs'
-import JobDetails from './pages/Jobs/JobDetails'
+import Home from './pages/home/Home'
+import AllJobs from './pages/jobs/AllJobs'
+import JobDetails from './pages/jobs/JobDetails'
 
 
 
@@ -33,7 +34,8 @@ class App extends Component {
       <>
         <main>
           <Switch>
-            <Route path="/jobs" exact render={() => <AllJobs />} />
+          <Route path="/" exact render={() => <Home />} />
+          <Route path="/jobs" exact render={() => <AllJobs />} />
             <Route path="/jobs/:job_id" render={props => <JobDetails {...props} />} />
           </Switch>
           </main>
