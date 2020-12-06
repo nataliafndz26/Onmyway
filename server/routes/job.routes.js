@@ -27,6 +27,7 @@ router.get('/getOneJob/:job_id', (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
+
 router.post('/newJob', (req, res) => {
 
     Job
