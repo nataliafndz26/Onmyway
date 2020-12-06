@@ -34,7 +34,12 @@ const userSchema = new Schema(
         favourites: [{
             type: Schema.Types.ObjectId,
             ref: 'Jobs'
+        }],
+        applied: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Jobs'
         }]
+        
     }, {
     timestamps: true
 }
