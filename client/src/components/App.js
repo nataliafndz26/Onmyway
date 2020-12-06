@@ -8,6 +8,7 @@ import AuthServices from './../service/auth.service'
 
 import Home from './pages/home/Home'
 import AllJobs from './pages/jobs/AllJobs'
+import JobDetails from './pages/jobs/JobDetails'
 
 
 
@@ -35,8 +36,7 @@ class App extends Component {
           <Switch>
           <Route path="/" exact render={() => <Home />} />
           <Route path="/jobs" exact render={() => <AllJobs />} />
-          
-            
+            <Route path="/jobs/:job_id" render={props => <JobDetails {...props} />} />
           </Switch>
           </main>
       </>

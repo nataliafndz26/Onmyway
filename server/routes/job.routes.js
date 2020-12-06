@@ -3,12 +3,14 @@ const router = express.Router()
 const mongoose = require('mongoose')
 
 const Job = require('../models/jobs')
+const Preferences = require('../models/preferences')
 
 
 router.get('/allJobs', (req, res) => {
 
     Job
         .find()
+        .populate('preferences')
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
@@ -23,6 +25,7 @@ router.get('/getOneJob/:job_id', (req, res) => {
 
     Job
         .findById(req.params.job_id)
+        .populate('preferences')
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
@@ -32,6 +35,7 @@ router.post('/newJob', (req, res) => {
 
     Job
         .create(req.body)
+        .populate('preferences')
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
@@ -40,6 +44,7 @@ router.put('/editJob/:job_id', (req, res) => {
 
     Job
         .findByIdAndUpdate(req.params.job_id, req.body)
+        .populate('preferences')
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })

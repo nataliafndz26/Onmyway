@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import JobsService from './../../../service/jobs.service'
 import JobCard from './JobCard'
 
-import { Container, Row, Button, Spinner } from 'react-bootstrap'
+import './AllJobs.css'
+
+import { Container, Row, Spinner } from 'react-bootstrap'
 
 class AllJobs extends Component {
     constructor() {

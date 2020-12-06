@@ -1,16 +1,18 @@
-import { Col, Card, Button, ButtonGroup } from 'react-bootstrap'
+import { Col, Card, } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
-const JobCard = ({ name, location, accommodation, time, _id, image, loggedUser }) => {
+const JobCard = ({ name, location, accommodation, timetable, _id, image}) => {
     return (
-        <Col lg={4}>
-            <Card>
-                <Card.Img variant="top" src="df" />
+        <Col lg={{ span: 3, offset: 0 }}>
+            <Card className="job-card">
+                <Card.Img variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>Holii</Card.Title>
+                    <Card.Title className='title' >{name}</Card.Title>
+                    <Card.Text><strong>{location}</strong> </Card.Text>
+                    <Card.Text>You will stay in a {accommodation}</Card.Text>
         
-                            <Link className="btn btn-dark btn-block btn-sm" to={`/jobs/${_id}`}>Ver detalles</Link>
+                            <Link className="btn btn-outline-success btn-block btn-sm" to={`/jobs/${_id}`}>Learn More</Link>
                     
                 </Card.Body>
             </Card>
