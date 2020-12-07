@@ -4,7 +4,7 @@ export default class UserService {
 
     constructor() {
         this.apiHandler = axios.create({
-            baseURL: 'http://localhost:5000/api/jobs',
+            baseURL: 'http://localhost:5000/api/users',
             withCredentials: true
         })
     }
