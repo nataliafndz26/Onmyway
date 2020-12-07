@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import JobsService from '../../../service/jobs.service'
 import PreferencesService from '../../../service/preferences.service'
+import UserService from '../../../service/user.service'
 
 import './JobDetails.css'
 
@@ -17,6 +18,7 @@ class JobDetails extends Component {
         }
         this.jobsService = new JobsService()
         this.preferencesService = new PreferencesService()
+        this.userService = new UserService()
     }
 
     componentDidMount = () => {
@@ -40,7 +42,7 @@ class JobDetails extends Component {
                                 <p>Location: {this.state.job.location}</p>
                                 <p>Accommodation: {this.state.job.accommodation}</p>
                                 <p>Timetable: {this.state.job.timetable}</p>
-                                <p>Host:</p>
+                                <p>Host:{this.state.job.user.name}</p>
                                 <p>Description: {this.state.job.description}</p>
                                 <p>Benefits:</p>
                                 <ul>
