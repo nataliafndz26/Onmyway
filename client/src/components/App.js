@@ -9,6 +9,7 @@ import AuthServices from './../service/auth.service'
 import Home from './pages/home/Home'
 import AllJobs from './pages/jobs/AllJobs'
 import JobDetails from './pages/jobs/JobDetails'
+import PreferencesForm from './pages/preferences/preferences'
 
 
 
@@ -35,6 +36,7 @@ class App extends Component {
         <main>
           <Switch>
             <Route path="/" exact render={() => <Home />} />
+            <Route path="/preferences" exact render={props => <PreferencesForm {...props} />} />
             <Route path="/jobs" exact render={() => <AllJobs />} />
             <Route path="/jobs/:job_id" render={props => <JobDetails {...props} />} />
           </Switch>
