@@ -25,15 +25,29 @@ class Profile extends Component {
     }
 
     render() {
-        
+
+        const userName = this.props.loggedInUser ? this.props.loggedInUser.userName : ""
+        const name = this.props.loggedInUser ? this.props.loggedInUser.name : ""
+        const role = this.props.loggedInUser ? this.props.loggedInUser.role : ""
+        const image = this.props.loggedInUser ? this.props.loggedInUser.image : ""
+        const description = this.props.loggedInUser ? this.props.loggedInUser.description : ""
+        const id = this.props.loggedInUser ? this.props.loggedInUser._id : ""
+
+
        
-        // return (
-        //     <>
-        //         {
-        //             this.props.loggedInUser.role === 'USER' ?
-        //         }
-        //         </>
+        return (
+            <>
+                {
+
+                    this.props.loggedInUser ?
+                        <Container>
+                            this.props.loggedInUser.role === 'USER' ?
+                            </Container>
+                 }
+                </>
             
-        // )
+        )
     }
 }
+
+export default Profile
