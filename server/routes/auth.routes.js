@@ -43,6 +43,8 @@ router.post('/signup', (req, res) => {
 
 router.post('/login', (req, res, next) => {
 
+    console.log ("me estan llamandoooooooooooooooo")
+
     passport.authenticate('local', (err, theUser, failureDetails) => {
 
         if (err) {

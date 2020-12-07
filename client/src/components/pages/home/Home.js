@@ -10,8 +10,8 @@ import { Container, Row, Button, Modal } from 'react-bootstrap'
 
 class Home extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             showModal1: false,
             showModal2: false
@@ -28,7 +28,7 @@ class Home extends Component {
     render() {
         return (
             <>
-                <video autoPlay playsInline loop style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover",  transform: "translate (-50%, -50%)", zIndex: "-1" }}>
+                <video autoPlay='autoplay' playsInline loop style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover",  transform: "translate (-50%, -50%)", zIndex: "-1" }}>
                     <source src={Video} type="video/mp4" />
                 </video>   
                 
@@ -46,12 +46,12 @@ class Home extends Component {
                 
                 <Modal show={this.state.showModal1} onHide={() => this.handleModalLogin(false)}>
                     <Modal.Body>
-                        <Login closeModal={() => this.handleModalLogin(false)}/>
+                        <Login {...this.props} storeUser={this.props.storeUser} closeModal={() => this.handleModalLogin(false)}/>
                     </Modal.Body>
                 </Modal>
                 <Modal show={this.state.showModal2} onHide={() => this.handleModalSignup(false)}>
                     <Modal.Body>
-                        <Signup closeModal={() => this.handleModalSignup(false)}/>
+                        <Signup {...this.props} closeModal={() => this.handleModalSignup(false)}/>
                     </Modal.Body>
                 </Modal>
                 </>

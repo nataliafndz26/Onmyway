@@ -5,8 +5,8 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
 class Login extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             username: '',
             password: ''
@@ -18,6 +18,8 @@ class Login extends Component {
     handleInputChange = e => this.setState({ [e.target.name]: e.target.value })
 
     handleSubmit = e => {
+
+        console.log (this.authService.baseUrl)
 
         e.preventDefault()
         

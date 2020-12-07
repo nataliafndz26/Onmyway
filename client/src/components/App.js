@@ -9,13 +9,13 @@ import AuthServices from './../service/auth.service'
 import Home from './pages/home/Home'
 import AllJobs from './pages/jobs/AllJobs'
 import JobDetails from './pages/jobs/JobDetails'
-
+import Profile from './pages/profile/Profile'
 
 
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = { loggedInUser: undefined }
     this.authServices = new AuthServices()
   }
@@ -34,9 +34,10 @@ class App extends Component {
       <>
         <main>
           <Switch>
-            <Route path="/" exact render={() => <Home />} />
-            <Route path="/jobs" exact render={() => <AllJobs />} />
+            <Route path="/" exact render={props => <Home storeUser={this.setTheUser}{...props}/>} />
+            <Route path="/jobs" exact render={props => <AllJobs {...props}/>} />
             <Route path="/jobs/:job_id" render={props => <JobDetails {...props} />} />
+            <Route path="/profile" render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
           </Switch>
           </main>
       </>
