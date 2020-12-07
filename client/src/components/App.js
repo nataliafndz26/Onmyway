@@ -10,6 +10,8 @@ import Home from './pages/home/Home'
 import AllJobs from './pages/jobs/AllJobs'
 import JobDetails from './pages/jobs/JobDetails'
 import Profile from './pages/profile/Profile'
+import PreferencesForm from './pages/preferences/preferences'
+
 
 
 
@@ -35,8 +37,9 @@ class App extends Component {
         <main>
           <Switch>
             <Route path="/" exact render={props => <Home storeUser={this.setTheUser}{...props}/>} />
-            <Route path="/jobs" exact render={props => <AllJobs {...props}/>} />
+            <Route path="/jobs" exact render={props => <AllJobs {...props} />} />
             <Route path="/jobs/:job_id" render={props => <JobDetails {...props} />} />
+            <Route path="/preferences" exact render={props => <PreferencesForm {...props} />} />
             <Route path="/profile" render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
           </Switch>
           </main>
