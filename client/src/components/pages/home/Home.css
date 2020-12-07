@@ -8,5 +8,8 @@
     position: absolute; 
     margin-top: 480px;
     margin-left: 680px;
+}
 
+.home {
+    background-color: rgba(255,255,255,.2)
 }

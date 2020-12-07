@@ -3,8 +3,10 @@ import React, { Component } from 'react'
 import Login from './../login/Login'
 import Signup from './../signup/Signup'
 import './Home.css'
+import Video from './../../video/video2.mov'
+// import Video from 'react-native-video';
 
-import { Container, Row, Col, Button, Modal } from 'react-bootstrap'
+import { Container, Row, Button, Modal } from 'react-bootstrap'
 
 class Home extends Component {
 
@@ -26,12 +28,17 @@ class Home extends Component {
     render() {
         return (
             <>
-                <Container>
+                <video autoPlay playsInline loop style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover",  transform: "translate (-50%, -50%)", zIndex: "-1" }}>
+                    <source src={Video} type="video/mp4" />
+                </video>   
+                
+                <Container className="home">
+                    
                     <Row>
                         
-                            <Button onClick={() => this.handleModalLogin(true)} className="login" variant="outline-success" size="sm">Login</Button>
+                            <Button onClick={() => this.handleModalLogin(true)} className="login" variant="outline-light" size="sm">Login</Button>
                     
-                            <Button onClick={() => this.handleModalSignup(true)} className= "signup" variant="outline-success" size="sm">Become a member</Button>
+                            <Button onClick={() => this.handleModalSignup(true)} className= "signup" variant="outline-light" size="sm">Become a member</Button>
                         
                         
                         </Row>
