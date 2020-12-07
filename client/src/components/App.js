@@ -34,8 +34,8 @@ class App extends Component {
       <>
         <main>
           <Switch>
-          <Route path="/" exact render={() => <Home />} />
-          <Route path="/jobs" exact render={() => <AllJobs />} />
+            <Route path="/" exact render={() => <Home />} />
+            <Route path="/jobs" exact render={() => <AllJobs />} />
             <Route path="/jobs/:job_id" render={props => <JobDetails {...props} />} />
           </Switch>
           </main>

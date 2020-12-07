@@ -11,7 +11,7 @@ router.get('/allJobs', (req, res) => {
     Job
         .find()
         .populate('preferences')
-        .then(response => res.json(response))
+        .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })
 
@@ -26,7 +26,7 @@ router.get('/getOneJob/:job_id', (req, res) => {
     Job
         .findById(req.params.job_id)
         .populate('preferences')
-        .then(response => res.json(response))
+        .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })
 
@@ -36,7 +36,7 @@ router.post('/newJob', (req, res) => {
     Job
         .create(req.body)
         .populate('preferences')
-        .then(response => res.json(response))
+        .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })
 
@@ -45,7 +45,7 @@ router.put('/editJob/:job_id', (req, res) => {
     Job
         .findByIdAndUpdate(req.params.job_id, req.body)
         .populate('preferences')
-        .then(response => res.json(response))
+        .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })
 
@@ -53,7 +53,7 @@ router.delete('/deleteJob/:job_id', (req, res) => {
    
     Job
         .findByIdAndDelete(req.params.job_id)
-        .then(response => res.json(response))
+        .then(response => res.status(204).json(response))
         .catch(err => res.status(500).json(err))
 })
 
