@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import JobsService from './../../../service/jobs.service'
+import JobsService from '../../../service/jobs.service'
+import PreferencesService from '../../../service/preferences.service'
 
 import './JobDetails.css'
 
@@ -15,6 +16,7 @@ class JobDetails extends Component {
             job: undefined
         }
         this.jobsService = new JobsService()
+        this.preferencesService = new PreferencesService()
     }
 
     componentDidMount = () => {
@@ -34,14 +36,27 @@ class JobDetails extends Component {
                         ?
                         <Row>
                             <img className="img" src={this.state.job.image} />
-                            <Col md={10}>
+                            <Col className='job-info' md={12}>
                                 <p>Location: {this.state.job.location}</p>
                                 <p>Accommodation: {this.state.job.accommodation}</p>
                                 <p>Timetable: {this.state.job.timetable}</p>
                                 <p>Host:</p>
                                 <p>Description: {this.state.job.description}</p>
+                                <p>Benefits:</p>
                                 <ul>
                                     {this.state.job.benefits.map(elm =>
+                                        <li key={elm}>{elm}</li>
+                                    )}
+                                </ul>
+                                <p>Interests:</p>
+                                <ul>
+                                    {this.state.job.preferences.interests.map(elm =>
+                                        <li key={elm}>{elm}</li>
+                                    )}
+                                </ul>
+                                <p>Skills Required</p>
+                                <ul>
+                                    {this.state.job.preferences.skills.map(elm =>
                                         <li key={elm}>{elm}</li>
                                     )}
                                 </ul>
