@@ -4,7 +4,7 @@ import JobsService from './../../../service/jobs.service'
 import './JobDetails.css'
 
 
-import { Container, Row, Col, Spinner, Image } from 'react-bootstrap'
+import { Container, Row, Col, Spinner } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
