@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import JobsService from '../../../service/jobs.service'
-import PreferencesService from '../../../service/preferences.service'
-import UserService from '../../../service/user.service'
+import JobsService from '../../../../service/jobs.service'
+import PreferencesService from '../../../../service/preferences.service'
+import UserService from '../../../../service/user.service'
 
 import './JobDetails.css'
 

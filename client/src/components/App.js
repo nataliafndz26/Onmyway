@@ -8,8 +8,8 @@ import AuthServices from './../service/auth.service'
 
 import NavBar from './layout/navBar/navBar'
 import Home from './pages/home/Home'
-import AllJobs from './pages/jobs/AllJobs'
-import JobDetails from './pages/jobs/JobDetails'
+import AllJobs from './pages/jobs/alljobs/AllJobs'
+import JobDetails from './pages/jobs/jobdetails/JobDetails'
 import Profile from './pages/profile/Profile'
 import PreferencesForm from './pages/preferences/preferences'
 

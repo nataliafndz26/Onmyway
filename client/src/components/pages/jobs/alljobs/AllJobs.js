@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import JobsService from '../../../service/jobs.service'
-import JobCard from './JobCard'
+import JobsService from '../../../../service/jobs.service'
+import JobCard from '../jobcard/JobCard'
 
 import './AllJobs.css'
 

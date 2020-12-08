@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import './Profile.css'
 import UserService from './../../../service/user.service'
 import JobService from './../../../service/jobs.service'
-import JobCard from './../jobs/JobCard'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import JobCard from './../jobs/jobcard/JobCard'
+import JobForm from './../jobs/jobform/JobForm'
+import { Container, Row, Col, Button, Modal } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 class Profile extends Component {
@@ -15,12 +16,35 @@ class Profile extends Component {
             edit: false,
             jobs: [],
             favourites: [],
-            applied: []
+            applied: [],
+            showModal: false,
         }
 
         this.userService = new UserService()
         this.jobService = new JobService()
     }
+
+    componentDidMount = () => {
+        if (this.props.loggedInUser) {
+            this.getAll()
+            this.getFavourites()
+            this.getApplied()
+            this.refreshJobs()
+        }
+    }
+
+    refreshJobs = () => {
+        this.jobService
+            .getJobs()
+            .then(response => {
+                const data = response.data
+                const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
+                this.setState({ jobs: ownJob })
+            })
+            .catch(err => console.log (err)) 
+    }
+
+    handleModal = visible => this.setState({showModal: visible })
 
     getAll = () => {
         this.jobService.getJobs()
@@ -44,14 +68,6 @@ class Profile extends Component {
             
             })
             .catch(err => console.log(err))
-    }
-
-    componentDidMount = () => {
-        if (this.props.loggedInUser) {
-            this.getAll()
-            this.getFavourites()
-            this.getApplied()
-        }
     }
 
     getFavourites = () => {
@@ -86,7 +102,7 @@ class Profile extends Component {
 
     render() {
 
-        const username = this.props.loggedInUser ? this.props.loggedInUser.userName : ""
+        const username = this.props.loggedInUser ? this.props.loggedInUser.username : ""
         const name = this.props.loggedInUser ? this.props.loggedInUser.name : ""
         const role = this.props.loggedInUser ? this.props.loggedInUser.role : ""
         const image = this.props.loggedInUser ? this.props.loggedInUser.image : ""
@@ -115,7 +131,7 @@ class Profile extends Component {
 
                                         {this.props.loggedInUser.role === 'HOST' ? 
                                             
-                                            <Link id="create" className="outline-success" to={`profile/newjob`}>Create a new job</Link>
+                                            <Button id="new" variant="outline-success" onClick={() => this.handleModal(true)}>Create a new job</Button>
                                             :
                                             <Link id="edit-profile" className="outline-success" to={`profile/editpreferences`}>Edit preferences</Link>
                                             }
@@ -137,26 +153,32 @@ class Profile extends Component {
                             
                                 :
                                 <Row>
-                                    <Col>
+                                    <Col lg={{ span:4, offset:1 }}>
                                         <h1 style={{ marginTop: '50px' }}>FAVOURITES</h1>
                                         {this.state.favourites.map (elm => <JobCard key= {elm.id} {...elm}/>)}
                                     </Col> 
-                                    <Col>
+                                    <Col lg={{ span:4, offset:1 }}>
                                         <h1 style={{ marginTop: '50px' }}>APPLIED</h1>
                                         {this.state.applied.map (elm => <JobCard key= {elm.id} {...elm}/>)}
                                    </Col> 
                                 </Row>
                                 
-                                            }
-                                    
-                            
+                            }
+                            <>
+                                </>
 
                         </Container>
                         :
                         <h1>YOU ARE NOT AUTHORIZED</h1>
-                 }
+                }
+                
+                <Modal show={this.state.showModal} onHide={() => this.handleModal(false)}>
+                    <Modal.Body>
+                        <JobForm {...this.props} closeModal={() => this.handleModal(false)} updateList={this.refreshJobs} loggedInUser={this.props.loggedInUser} />
+                    </Modal.Body>
+                </Modal>
+
                 </>
-            
         )
     }
 }
