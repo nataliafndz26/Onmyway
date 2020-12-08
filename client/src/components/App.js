@@ -6,6 +6,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import AuthServices from './../service/auth.service'
 
+import NavBar from './layout/navBar/navBar'
 import Home from './pages/home/Home'
 import AllJobs from './pages/jobs/AllJobs'
 import JobDetails from './pages/jobs/JobDetails'
@@ -34,11 +35,12 @@ class App extends Component {
   render() {
     return (
       <>
+        <NavBar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
         <main>
           <Switch>
             <Route path="/" exact render={props => <Home storeUser={this.setTheUser}{...props}/>} />
             <Route path="/jobs" exact render={props => <AllJobs {...props} />} />
-            <Route path="/jobs/:job_id" render={props => <JobDetails {...props} />} />
+            <Route path="/jobs/:job_id" render={props => <JobDetails {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/preferences" exact render={props => <PreferencesForm {...props} />} />
             <Route path="/profile" render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
           </Switch>
