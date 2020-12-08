@@ -44,8 +44,8 @@ class NavBar extends Component {
                         <Link to="/Jobs">
                             <Nav.Link as="div">Jobs</Nav.Link>
                         </Link>
-                        <Link to="/">
-                            <Nav.Link as="div" onClick={this.logout}>Log out</Nav.Link>
+                        <Link onClick={this.logout}>
+                            <Nav.Link as="div">Log out</Nav.Link>
                         </Link>
                         <Link to="/profile">
                             <Nav.Link as="div">Profile</Nav.Link>
