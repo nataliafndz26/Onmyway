@@ -1,0 +1,17 @@
+
+.option{
+    height: 100px;
+    width: 200px;
+    background-image: url("https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900");
+    object-fit: cover;
+    display: inline-block;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 10px;
+    
+}
+
+.myselect{
+    display: flex;
+    border: none;
+}

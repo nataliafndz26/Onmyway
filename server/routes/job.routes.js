@@ -37,8 +37,6 @@ router.post('/newJob', (req, res) => {
 
     Job
         .create(req.body)
-        .populate('preferences')
-        .populate('user')
         .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })

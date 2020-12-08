@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo from './logo.png'
+import './navBar.css'
 
 import AuthService from './../../../service/auth.service'
 
@@ -24,8 +25,8 @@ class NavBar extends Component {
     render() {
 
         return (
-            <Navbar bg="dark" variant="dark" expand="md" style={{ marginBottom: '50px' }}>
-                <Link to="/">
+            <Navbar className="nav" expand="md" style={{ marginBottom: '50px' }}>
+                <Link to="/travel">
                     <Navbar.Brand >
                         <img
                             alt="Logotipo"

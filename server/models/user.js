@@ -27,10 +27,10 @@ const userSchema = new Schema(
             default: 'USER',
             required: true,
         },
-        preferences: [{
+        preferences: {
             type: Schema.Types.ObjectId,
             ref: 'Preferences'
-        }],
+        },
         favourites: [{
             type: Schema.Types.ObjectId,
             ref: 'Jobs'
