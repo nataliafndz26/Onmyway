@@ -13,7 +13,9 @@ class Profile extends Component {
         
         this.state = {
             edit: false,
-            jobs: []
+            jobs: [],
+            favourites: [],
+            applied: []
         }
 
         this.userService = new UserService()
@@ -31,9 +33,23 @@ class Profile extends Component {
 
     }
 
+    getFavJobs = () => {
+        this.jobService.getJobs()
+            .then(response => {
+                const data = response.data
+                
+                const favJobs = data.filter(jobs => this.props.loggedInUser.favourites.includes(jobs._id))
+                this.setState({ favourites: favJobs })
+                console.log(favJobs)
+            
+            })
+            .catch(err => console.log(err))
+    }
+
     componentDidMount = () => {
         if (this.props.loggedInUser) {
             this.getAll()
+            this.getFavJobs()
         }
     }
 
@@ -54,9 +70,7 @@ class Profile extends Component {
         const image = this.props.loggedInUser ? this.props.loggedInUser.image : ""
         const description = this.props.loggedInUser ? this.props.loggedInUser.description : ""
         const id = this.props.loggedInUser ? this.props.loggedInUser._id : ""
-        const favourites = this.props.loggedInUser ? this.props.loggedInUser.favourites : []
-        const applied = this.props.loggedInUser ? this.props.loggedInUser.applied: []
-
+        
 
        
         return (
@@ -103,11 +117,11 @@ class Profile extends Component {
                                 <Row>
                                     <Col md={6}>
                                         <h1 style={{ marginTop: '50px' }}>FAVOURITES</h1>
-                                        {favourites.map (elm => <JobCard key= {elm.id} {...elm}/>)}
+                                        {this.state.favourites.map (elm => <JobCard key= {elm.id} {...elm}/>)}
                                     </Col> 
                                     <Col md={6}>
                                         <h1 style={{ marginTop: '50px' }}>APPLIED</h1>
-                                        {applied.map (elm => <JobCard key= {elm.id} {...elm}/>)}
+                                        {this.state.applied.map (elm => <JobCard key= {elm.id} {...elm}/>)}
                                    </Col> 
                                 </Row>
                                 
