@@ -42,7 +42,7 @@ class JobDetails extends Component {
                 this.props.setTheUser(response.data)
             })
             .catch(err => console.log(err))
-        this.setState({ favourites: updateUser })
+        //this.setState({ favourites: updatedFavourites })
     }
 
     applyJob = (jobId) => {
@@ -57,7 +57,6 @@ class JobDetails extends Component {
             })
             .catch(err => console.log(err))
         this.setState({ applied: updateUser })
-        console.log(this.props.loggedInUser)
     }
 
     render() {
