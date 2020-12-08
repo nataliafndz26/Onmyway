@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const JobCard = ({ name, location, accommodation, timetable, _id, image}) => {
     return (
-        <Col lg={{ span: 3, offset: 0 }}>
+        <>
             <Card className="job-card">
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
@@ -16,7 +16,8 @@ const JobCard = ({ name, location, accommodation, timetable, _id, image}) => {
                     
                 </Card.Body>
             </Card>
-        </Col>
+            </>
+       
     )
 }
 

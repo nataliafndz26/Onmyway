@@ -21,6 +21,8 @@ router.post('/signup', (req, res) => {
 
     User
         .findOne({ username })
+        .populate('favourites')
+        .populate('applied')
         .then(foundUser => {
             if (foundUser) {
                 res.status(400).json({ message: 'El usuario ya existe' })
@@ -43,7 +45,6 @@ router.post('/signup', (req, res) => {
 
 router.post('/login', (req, res, next) => {
 
-    console.log ("me estan llamandoooooooooooooooo")
 
     passport.authenticate('local', (err, theUser, failureDetails) => {
 

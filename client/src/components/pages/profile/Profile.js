@@ -13,7 +13,9 @@ class Profile extends Component {
         
         this.state = {
             edit: false,
-            jobs: []
+            jobs: [],
+            favourites: [],
+            applied: []
         }
 
         this.userService = new UserService()
@@ -34,8 +36,31 @@ class Profile extends Component {
     componentDidMount = () => {
         if (this.props.loggedInUser) {
             this.getAll()
+            this.getFavourites()
+            this.getApplied()
         }
     }
+
+    getFavourites = () => {
+        this.jobService.getJobs()
+            .then(response => {
+                const data = response.data
+                const favJobs = data.filter(elm => this.props.loggedInUser.favourites.includes(elm._id))
+                this.setState({ favourites: favJobs })
+            })
+            .catch(err => console.log(err))
+    }
+
+    getApplied= () => {
+        this.jobService.getJobs()
+            .then(response => {
+                const data = response.data
+                const appliedJobs = data.filter(elm => this.props.loggedInUser.applied.includes(elm._id))
+                this.setState({ applied: appliedJobs })
+            })
+            .catch(err => console.log(err))
+    }
+
 
     buildProfile = () => {
 
@@ -54,8 +79,8 @@ class Profile extends Component {
         const image = this.props.loggedInUser ? this.props.loggedInUser.image : ""
         const description = this.props.loggedInUser ? this.props.loggedInUser.description : ""
         const id = this.props.loggedInUser ? this.props.loggedInUser._id : ""
-        const favourites = this.props.loggedInUser ? this.props.loggedInUser.favourites : []
-        const applied = this.props.loggedInUser ? this.props.loggedInUser.applied: []
+        // const favourites = this.props.loggedInUser ? this.props.loggedInUser.favourites : []
+        // const applied = this.props.loggedInUser ? this.props.loggedInUser.applied: []
 
 
        
@@ -101,13 +126,13 @@ class Profile extends Component {
                             
                                 :
                                 <Row>
-                                    <Col md={6}>
+                                    <Col>
                                         <h1 style={{ marginTop: '50px' }}>FAVOURITES</h1>
-                                        {favourites.map (elm => <JobCard key= {elm.id} {...elm}/>)}
+                                        {this.state.favourites.map (elm => <JobCard key= {elm.id} {...elm}/>)}
                                     </Col> 
-                                    <Col md={6}>
+                                    <Col>
                                         <h1 style={{ marginTop: '50px' }}>APPLIED</h1>
-                                        {applied.map (elm => <JobCard key= {elm.id} {...elm}/>)}
+                                        {this.state.applied.map (elm => <JobCard key= {elm.id} {...elm}/>)}
                                    </Col> 
                                 </Row>
                                 
@@ -127,4 +152,3 @@ class Profile extends Component {
 
 export default Profile
 
-//  this.props.loggedInUser.role === 'USER' ?

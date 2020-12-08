@@ -4,7 +4,7 @@ import JobCard from './JobCard'
 
 import './AllJobs.css'
 
-import { Container, Row, Spinner } from 'react-bootstrap'
+import { Container, Row, Col, Spinner } from 'react-bootstrap'
 
 class AllJobs extends Component {
     constructor() {
@@ -30,13 +30,15 @@ class AllJobs extends Component {
                 <Container>
                     <h1>All jobs</h1>
                     <Row>
+                    <Col>
                         {
                             this.state.jobs
                                 ?
                                 this.state.jobs.map(elm => <JobCard key={elm._id} {...elm} />)
                                 :
                                 <Spinner animation="border" variant="primary" />
-                        }
+                            }
+                            </Col>
                     </Row>
                 </Container>
             </>
