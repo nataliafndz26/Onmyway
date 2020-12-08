@@ -38,12 +38,7 @@ router.post('/signup', (req, res) => {
 })
 
 
-
-
-
 router.post('/login', (req, res, next) => {
-
-    console.log ("me estan llamandoooooooooooooooo")
 
     passport.authenticate('local', (err, theUser, failureDetails) => {
 
@@ -61,7 +56,6 @@ router.post('/login', (req, res, next) => {
 
     })(req, res, next)
 })
-
 
 
 router.post('/logout', (req, res) => {

@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <NavBar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
+        <NavBar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser}/>
         <main>
           <Switch>
             <Route path="/" exact render={props => <Home storeUser={this.setTheUser}{...props}/>} />
