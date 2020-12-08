@@ -9,15 +9,15 @@ import AuthService from './../../../service/auth.service'
 class NavBar extends Component {
 
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.authService = new AuthService()
     }
 
     logout = () => {
         this.authService
             .logout()
-            .then(res => this.props.storeUser(undefined))
+            .then(res => this.props.setTheUser(undefined))
             .catch(err => console.log(err))
     }
 
@@ -44,8 +44,8 @@ class NavBar extends Component {
                         <Link to="/Jobs">
                             <Nav.Link as="div">Jobs</Nav.Link>
                         </Link>
-                        <Link to="/">
-                            <Nav.Link as="div" onClick={this.logout}>Log out</Nav.Link>
+                        <Link to="/" onClick={this.logout}>
+                            <Nav.Link as="div">Log out</Nav.Link>
                         </Link>
                         <Link to="/profile">
                             <Nav.Link as="div">Profile</Nav.Link>
