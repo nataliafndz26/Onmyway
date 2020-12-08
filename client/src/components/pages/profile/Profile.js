@@ -24,7 +24,7 @@ class Profile extends Component {
         this.jobService.getJobs()
             .then(response => {
                 const data = response.data
-                const ownJob = data.filter(elm => elm.user === this.props.loggedInUser._id)
+                const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
                 this.setState({ jobs: ownJob })
             })
         .catch (err => console.log (err))
@@ -54,6 +54,8 @@ class Profile extends Component {
         const image = this.props.loggedInUser ? this.props.loggedInUser.image : ""
         const description = this.props.loggedInUser ? this.props.loggedInUser.description : ""
         const id = this.props.loggedInUser ? this.props.loggedInUser._id : ""
+        const favourites = this.props.loggedInUser ? this.props.loggedInUser.favourites : []
+        const applied = this.props.loggedInUser ? this.props.loggedInUser.applied: []
 
 
        
@@ -98,8 +100,17 @@ class Profile extends Component {
                                 </>
                             
                                 :
+                                <Row>
+                                    <Col md={6}>
+                                        <h1 style={{ marginTop: '50px' }}>FAVOURITES</h1>
+                                        {favourites.map (elm => <JobCard key= {elm.id} {...elm}/>)}
+                                    </Col> 
+                                    <Col md={6}>
+                                        <h1 style={{ marginTop: '50px' }}>APPLIED</h1>
+                                        {applied.map (elm => <JobCard key= {elm.id} {...elm}/>)}
+                                   </Col> 
+                                </Row>
                                 
-                                 <Link id="edit-profile" className="outline-success" to={`profile/editpreferences`}>Edit preferences</Link>
                                             }
                                     
                             
