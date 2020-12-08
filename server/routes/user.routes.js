@@ -15,6 +15,8 @@ const User = require('../models/user')
 router.get('/getuser/:user_id', (req, res) => {
         User
                 .findById(req.params.user_id)
+                .populate('favourites')
+                .populate('applied')
                 .then(data => res.status(200).json(data))
                 .catch(err => res.status(500).json({ message: 'No se encontró información en la base de datos' }))
 })

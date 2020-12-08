@@ -36,12 +36,11 @@ class Home extends Component {
                     
                     <Row>
                         
-                            <Button onClick={() => this.handleModalLogin(true)} className="login" variant="outline-light" size="sm">Login</Button>
+                        <Button onClick={() => this.handleModalLogin(true)} className="login" variant="light" size="sm">Login</Button>
                     
-                            <Button onClick={() => this.handleModalSignup(true)} className= "signup" variant="outline-light" size="sm">Become a member</Button>
+                        <Button onClick={() => this.handleModalSignup(true)} className= "signup" variant="outline-light" size="sm">Become a member</Button>
                         
-                        
-                        </Row>
+                     </Row>
                 </Container>
                 
                 <Modal show={this.state.showModal1} onHide={() => this.handleModalLogin(false)}>

@@ -2,7 +2,14 @@
     position: absolute; 
     margin-top: 480px;
     margin-left: 850px;
+    color: #005950;
 }
+
+.login:hover{
+    text-decoration: none;
+    color:  #005950;
+}
+
 
 .signup{
     position: absolute; 
@@ -10,6 +17,10 @@
     margin-left: 680px;
 }
 
-.home {
-    background-color: rgba(255,255,255,.2)
+
+.signup:hover{
+    text-decoration: none;
+    color:  #005950;
 }
+
+

@@ -21,6 +21,8 @@ router.post('/signup', (req, res) => {
 
     User
         .findOne({ username })
+        .populate('favourites')
+        .populate('applied')
         .then(foundUser => {
             if (foundUser) {
                 res.status(400).json({ message: 'El usuario ya existe' })

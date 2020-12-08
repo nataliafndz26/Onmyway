@@ -49,9 +49,31 @@ class Profile extends Component {
     componentDidMount = () => {
         if (this.props.loggedInUser) {
             this.getAll()
-            this.getFavJobs()
+            this.getFavourites()
+            this.getApplied()
         }
     }
+
+    getFavourites = () => {
+        this.jobService.getJobs()
+            .then(response => {
+                const data = response.data
+                const favJobs = data.filter(elm => this.props.loggedInUser.favourites.includes(elm._id))
+                this.setState({ favourites: favJobs })
+            })
+            .catch(err => console.log(err))
+    }
+
+    getApplied= () => {
+        this.jobService.getJobs()
+            .then(response => {
+                const data = response.data
+                const appliedJobs = data.filter(elm => this.props.loggedInUser.applied.includes(elm._id))
+                this.setState({ applied: appliedJobs })
+            })
+            .catch(err => console.log(err))
+    }
+
 
     buildProfile = () => {
 
@@ -115,11 +137,11 @@ class Profile extends Component {
                             
                                 :
                                 <Row>
-                                    <Col md={6}>
+                                    <Col>
                                         <h1 style={{ marginTop: '50px' }}>FAVOURITES</h1>
                                         {this.state.favourites.map (elm => <JobCard key= {elm.id} {...elm}/>)}
                                     </Col> 
-                                    <Col md={6}>
+                                    <Col>
                                         <h1 style={{ marginTop: '50px' }}>APPLIED</h1>
                                         {this.state.applied.map (elm => <JobCard key= {elm.id} {...elm}/>)}
                                    </Col> 
@@ -141,4 +163,3 @@ class Profile extends Component {
 
 export default Profile
 
-//  this.props.loggedInUser.role === 'USER' ?
