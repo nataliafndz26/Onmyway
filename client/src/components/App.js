@@ -12,6 +12,7 @@ import AllJobs from './pages/jobs/alljobs/AllJobs'
 import JobDetails from './pages/jobs/jobdetails/JobDetails'
 import Profile from './pages/profile/Profile'
 import PreferencesForm from './pages/preferences/preferences'
+import JobForm from './pages/jobs/jobform/JobForm'
 
 
 
@@ -46,7 +47,9 @@ class App extends Component {
             <Route path="/jobs" exact render={props => <AllJobs {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser}/>} />
             <Route path="/jobs/:job_id" render={props => <JobDetails {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/preferences" exact render={props => <PreferencesForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
-            <Route path="/profile" render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/profile" exact render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/profile/newjob" render={props => <JobForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
+
           </Switch>
           </main>
       </>

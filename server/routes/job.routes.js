@@ -35,9 +35,11 @@ router.get('/getOneJob/:job_id', (req, res) => {
 
 router.post('/newJob', (req, res) => {
 
-    Job
-        .create(req.body)
-        .populate('preferences')
+    const { name, location, accommodation, timetable, benefits, image, description, preferences, user } = req.body
+    
+    Preferences
+        .create(preferences)
+        .then(response => Job.create({name, location, accommodation, timetable, benefits, image, description, preferences: response._id, user}))
         .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })
