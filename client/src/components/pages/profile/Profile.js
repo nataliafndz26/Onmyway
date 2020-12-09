@@ -90,6 +90,17 @@ class Profile extends Component {
             .catch(err => console.log(err))
     }
 
+    deleteJob = (jobId) => {
+        this.jobService
+            .deleteJob(jobId)
+            .then((response) => {
+                const updateJob = this.state.jobs.filter(job => job._id !== jobId)
+                this.setState({jobs: updateJob})
+            })
+        .catch(err => console.log(err))
+
+    }
+
 
     buildProfile = () => {
 
@@ -133,7 +144,7 @@ class Profile extends Component {
                                             
                                             <Button id="new" variant="outline-success" onClick={() => this.handleModal(true)}>Create a new job</Button>
                                             :
-                                            <Link id="edit-profile" className="outline-success" to={`profile/editpreferences`}>Edit preferences</Link>
+                                            <Link id="edit-profile" className="outline-success" to={`/preferences`}>Edit preferences</Link>
                                             }
                                     
                                         

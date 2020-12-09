@@ -1,8 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
+//const { default: UserService } = require('../../client/src/service/user.service')
 
 const Preferences = require('../models/preferences')
+const User = require ('../models/user')
 
 
 router.get('/preference/:preferences_id', (req, res) => {
@@ -19,10 +21,11 @@ router.get('/preference/:preferences_id', (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.post('/newPreferences', (req, res) => {
+router.post('/newPreferences/:user_id', (req, res) => {
 
     Preferences
         .create(req.body)
+        .then(response => User.findByIdAndUpdate(req.params.user_id, { preferences: response._id }))
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
@@ -30,7 +33,7 @@ router.post('/newPreferences', (req, res) => {
 router.put('/editPreferences/:preferences_id', (req, res) => {
 
     Preferences
-        .findByIdAndUpdate(req.params.preferences_id, req.body)
+        .findByIdAndUpdate(req.params.preferences_id, req.body, {new: true})
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })

@@ -6,7 +6,7 @@ import UserService from '../../../../service/user.service'
 import './JobDetails.css'
 
 
-import { Container, Row, Col, Spinner, Button } from 'react-bootstrap'
+import { Container, Row, Col, Card, Spinner, Button } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
@@ -66,32 +66,40 @@ class JobDetails extends Component {
                     this.state.job
                         ?
                         <Row>
-                            <img className="img" src={this.state.job.image} />
                             <Col className='job-info' md={12}>
-                                <p>Location: {this.state.job.location}</p>
-                                <p>Accommodation: {this.state.job.accommodation}</p>
-                                <p>Timetable: {this.state.job.timetable}</p>
-                                <p>Host:{this.state.job.user.name}</p>
-                                <p>Description: {this.state.job.description}</p>
-                                <p>Benefits:</p>
-                                <ul>
-                                    {this.state.job.benefits.map(elm =>
-                                        <li key={elm}>{elm}</li>
-                                    )}
-                                </ul>
-                                <p>Interests:</p>
-                                <ul>
-                                    {this.state.job.preferences.interests.map(elm =>
-                                        <li key={elm}>{elm}</li>
-                                    )}
-                                </ul>
-                                <p>Skills Required</p>
-                                <ul>
-                                    {this.state.job.preferences.skills.map(elm =>
-                                        <li key={elm}>{elm}</li>
-                                    )}
-                                </ul>
+                                <Card className="job-card">
+                                    <Card.Img variant="top" src={this.state.job.image} />
+                                    <Card.Body>
+                                        <Card.Title className='title' >{this.state.job.name}</Card.Title>
+                                        <Card.Text>
+                                            <p>Location: {this.state.job.location}</p>
+                                            <p>Accommodation: {this.state.job.accommodation}</p>
+                                            <p>Timetable: {this.state.job.timetable}</p>
+                                            <p>Host:{this.state.job.user.name}</p>
+                                            <p>Description: {this.state.job.description}</p>
+                                            <p>Benefits:</p>
+                                             <ul>
+                                                {this.state.job.benefits.map(elm =>
+                                                    <li key={elm}>{elm}</li>
+                                                )}
+                                            </ul>
+                                            <p>Interests:</p>
+                                            <ul>
+                                                {this.state.job.preferences.interests.map(elm =>
+                                                    <li key={elm}>{elm}</li>
+                                                )}
+                                            </ul>
+                                            <p>Skills Required</p>
+                                            <ul>
+                                                {this.state.job.preferences.skills.map(elm =>
+                                                    <li key={elm}>{elm}</li>
+                                                )}
+                                            </ul>
+                                        
+                                        </Card.Text>
 
+                                    </Card.Body>
+                                </Card>
 
                             </Col>
 

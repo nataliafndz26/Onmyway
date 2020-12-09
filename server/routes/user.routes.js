@@ -17,6 +17,7 @@ router.get('/getuser/:user_id', (req, res) => {
                 .findById(req.params.user_id)
                 .populate('favourites')
                 .populate('applied')
+                .populate('preferences')
                 .then(data => res.status(200).json(data))
                 .catch(err => res.status(500).json({ message: 'No se encontró información en la base de datos' }))
 })

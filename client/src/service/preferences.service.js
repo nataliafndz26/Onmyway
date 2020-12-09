@@ -11,7 +11,7 @@ export default class PreferencesService {
 
 
     getPreferences = () => this.apiHandler.get('/allPreferences')
-    savePreferences = preferenceInfo => this.apiHandler.post('/newPreferences', preferenceInfo)
+    savePreferences = (preferenceInfo, userId) => this.apiHandler.post(`/newPreferences/${userId}`, preferenceInfo)
     getOnePreference = preferencesId => this.apiHandler.get(`/preference/${preferencesId}`)
     editPreferences = (preferencesId, preferencesInfo) => this.apiHandler.put(`/editPreferences/${preferencesId}`, preferencesInfo)
 }

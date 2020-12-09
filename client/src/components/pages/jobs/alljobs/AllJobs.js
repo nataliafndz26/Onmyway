@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import JobsService from '../../../../service/jobs.service'
+import AuthService from '../../../../service/auth.service'
 import JobCard from '../jobcard/JobCard'
 
 import './AllJobs.css'
@@ -13,6 +14,7 @@ class AllJobs extends Component {
             jobs: undefined,
         }
         this.jobsService = new JobsService()
+        this.authService = new AuthService
     }
 
     componentDidMount = () => this.refreshJobs()
@@ -37,7 +39,7 @@ class AllJobs extends Component {
                                 this.state.jobs.map(elm => {
                                         return(
                                         <Col lg={3}>
-                                            <JobCard key={elm._id} {...elm} />
+                                                <JobCard key={elm._id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>
                                         </Col>
                                 )})
                                     :

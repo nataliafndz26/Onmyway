@@ -43,7 +43,7 @@ class App extends Component {
         <main>
           <Switch>
             <Route path="/" exact render={props => <Home storeUser={this.setTheUser}{...props}/>} />
-            <Route path="/jobs" exact render={props => <AllJobs {...props} />} />
+            <Route path="/jobs" exact render={props => <AllJobs {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser}/>} />
             <Route path="/jobs/:job_id" render={props => <JobDetails {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/preferences" exact render={props => <PreferencesForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/profile" render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
