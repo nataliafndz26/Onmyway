@@ -26,6 +26,17 @@ class AllJobs extends Component {
             .catch(err => console.log(err))
     }
 
+    deleteJob = (jobId) => {
+        this.jobsService
+            .deleteJob(jobId)
+            .then((response) => {
+                const updateJob = this.state.jobs.filter(job => job._id !== jobId)
+                this.setState({ jobs: updateJob })
+            })
+            .catch(err => console.log(err))
+
+    }
+
     render() {
         return (
             <>
@@ -39,7 +50,7 @@ class AllJobs extends Component {
                                 this.state.jobs.map(elm => {
                                         return(
                                         <Col lg={3}>
-                                                <JobCard key={elm._id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>
+                                                <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>
                                         </Col>
                                 )})
                                     :

@@ -2,11 +2,11 @@ import { ButtonGroup, Button, Card } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
-const JobCard = ({ name, location, accommodation, timetable, _id, image, user, loggedInUser }) => {
+const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser, deleteJob }) => {
     
     return (
         <>
-            <Card className="job-card">
+            <Card className="job-card" key={_id}>
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
                     <Card.Title className='title' >{name}</Card.Title>
@@ -18,7 +18,7 @@ const JobCard = ({ name, location, accommodation, timetable, _id, image, user, l
                             ?
                             <ButtonGroup aria-label="Basic example" style={{ width: '100%' }}>
                                 <Button className="btn btn-light btn-sm">Edit</Button>
-                                <Button className="btn btn-light btn-sm">Delete</Button>
+                                <Button onClick={deleteJob} className="btn btn-light btn-sm">Delete</Button>
                                 <Link className="btn btn-outline-success  btn-sm" to={`/jobs/${_id}`}>Learn More</Link>
                             </ButtonGroup>
                             :
