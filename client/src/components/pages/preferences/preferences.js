@@ -36,8 +36,21 @@ class PreferencesForm extends Component {
         
         this.preferencesService
             .savePreferences(this.state)
+            .handleSubmit2(preference._id)
             .then(res => this.props.history.push('/jobs'))
             .catch(err => console.log(err))
+    }
+
+    handleSubmit2 = (preferenceId) => {
+        const preferences = [...this.props.loggedInUser.preferences]
+        preferences.push(preferenceId)
+        const updatedPreference = [...preferences]
+        const updateUser = { ...this.props.loggedInUser, preferences: updatedPreference }
+        this.userService.editUserInfo(this.props.loggedInUser._id, updateUser)
+            .then((response) => {
+                this.props.setTheUser(response.data)
+            })
+            .catch(err => console.log(err))   
     }
 
 
