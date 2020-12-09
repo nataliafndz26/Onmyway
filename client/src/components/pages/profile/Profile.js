@@ -17,7 +17,6 @@ class Profile extends Component {
             jobs: [],
             favourites: [],
             applied: [],
-            showModal: false,
         }
 
         this.userService = new UserService()
@@ -27,8 +26,6 @@ class Profile extends Component {
     componentDidMount = () => {
         if (this.props.loggedInUser) {
             this.getAll()
-            this.getFavourites()
-            this.getApplied()
             this.refreshJobs()
         }
     }
@@ -44,52 +41,26 @@ class Profile extends Component {
             .catch(err => console.log (err)) 
     }
 
-    handleModal = visible => this.setState({showModal: visible })
-
     getAll = () => {
+       
         this.jobService.getJobs()
             .then(response => {
                 const data = response.data
-                const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
-                this.setState({ jobs: ownJob })
+                switch (this.props.loggedInUser.role) {
+                    case 'HOST':
+                        const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
+                        console.log(ownJob)
+                        this.setState({ jobs: ownJob })
+                        break;
+                    case 'USER':
+                        const favJobs = data.filter(elm => this.props.loggedInUser.favourites.includes(elm._id))
+                        const appliedJobs = data.filter(elm => this.props.loggedInUser.applied.includes(elm._id))
+                        this.setState({ favourites: favJobs, applied: appliedJobs })
+                        break;
+                }
             })
         .catch (err => console.log (err))
-
     }
-
-    getFavJobs = () => {
-        this.jobService.getJobs()
-            .then(response => {
-                const data = response.data
-                
-                const favJobs = data.filter(jobs => this.props.loggedInUser.favourites.includes(jobs._id))
-                this.setState({ favourites: favJobs })
-                console.log(favJobs)
-            
-            })
-            .catch(err => console.log(err))
-    }
-
-    getFavourites = () => {
-        this.jobService.getJobs()
-            .then(response => {
-                const data = response.data
-                const favJobs = data.filter(elm => this.props.loggedInUser.favourites.includes(elm._id))
-                this.setState({ favourites: favJobs })
-            })
-            .catch(err => console.log(err))
-    }
-
-    getApplied= () => {
-        this.jobService.getJobs()
-            .then(response => {
-                const data = response.data
-                const appliedJobs = data.filter(elm => this.props.loggedInUser.applied.includes(elm._id))
-                this.setState({ applied: appliedJobs })
-            })
-            .catch(err => console.log(err))
-    }
-
 
     buildProfile = () => {
 
@@ -131,7 +102,7 @@ class Profile extends Component {
 
                                         {this.props.loggedInUser.role === 'HOST' ? 
                                             
-                                            <Button id="new" variant="outline-success" onClick={() => this.handleModal(true)}>Create a new job</Button>
+                                            <Link id="new" to={`profile/newjob`} >Create a new job</Link>
                                             :
                                             <Link id="edit-profile" className="outline-success" to={`profile/editpreferences`}>Edit preferences</Link>
                                             }
@@ -172,11 +143,11 @@ class Profile extends Component {
                         <h1>YOU ARE NOT AUTHORIZED</h1>
                 }
                 
-                <Modal show={this.state.showModal} onHide={() => this.handleModal(false)}>
+                {/* <Modal show={this.state.showModal} onHide={() => this.handleModal(false)}>
                     <Modal.Body>
                         <JobForm {...this.props} closeModal={() => this.handleModal(false)} updateList={this.refreshJobs} loggedInUser={this.props.loggedInUser} />
                     </Modal.Body>
-                </Modal>
+                </Modal> */}
 
                 </>
         )

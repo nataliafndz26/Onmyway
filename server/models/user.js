@@ -38,7 +38,7 @@ const userSchema = new Schema(
         applied: [{
             type: Schema.Types.ObjectId,
             ref: 'Jobs'
-        }]
+        }],
         
     }, {
     timestamps: true

@@ -29,10 +29,10 @@ const jobsSchema = new Schema({
         type: String,
         required: true
     },
-    preferences: [{
+    preferences: {
         type: Schema.Types.ObjectId,
         ref: 'Preferences'
-    }],
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'

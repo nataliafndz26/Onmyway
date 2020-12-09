@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
 import { Form, Button } from 'react-bootstrap'
-import JobsService from '../../../../service/jobs.service'
+import JobsService from './../../../../service/jobs.service'
+import PreferencesService from './../../../../service/preferences.service'
 
 class JobForm extends Component {
 
@@ -16,8 +17,13 @@ class JobForm extends Component {
             benefits: [], 
             image: '',
             description: '',
-            preferences: [],
-            user: this.props.loggedInUser ? this.props.loggedInUser._id : ''
+            preferences: {
+                interests: [],
+                continent: '',
+                skills: [],
+                time: ''        
+            },
+             user: this.props.loggedInUser ? this.props.loggedInUser._id : ''
         }
 
         this.jobService = new JobsService()
@@ -25,22 +31,26 @@ class JobForm extends Component {
 
     handleInputChange = e => this.setState({ [e.target.name]: e.target.value })
 
-    // handleInputMultiple = e => {
-    //     console.log(e)
-    //     const selected = []
-    //     e.target.childNodes.forEach(e => e.selected === true ? selected.push(e.value) : null)
-    //     this.setState({ [e.target.name]: selected })
-    // }
+    handlePrefInputChange = e => this.setState({ preferences: { ...this.state.preferences, [e.target.name]: e.target.value } })
+
+    handleBenefitsInput = e => {
+        const selected = []
+        e.target.childNodes.forEach(e => e.selected === true ? selected.push(e.value) : null)
+            this.setState({[e.target.name]: selected })
+    }
+
+    handleInputMultiple = e => {
+        const selected = []
+        e.target.childNodes.forEach(e => e.selected === true ? selected.push(e.value) : null)
+            this.setState({ preferences: { ...this.state.preferences, [e.target.name]: selected } })
+    }
     
     handleSubmit = e => {
         e.preventDefault()
 
         this.jobService
             .saveNewJob(this.state)
-            .then(res => {
-                this.props.updateList()
-                this.props.closeModal()
-            })
+            .then(res => this.props.history.push('/profile'))
             .catch(err => console.log(err))
     }
 
@@ -68,9 +78,9 @@ class JobForm extends Component {
                             <Form.Label>Timetable</Form.Label>
                             <Form.Control type="text" name="timetable" value={this.state.timetable} onChange={this.handleInputChange} />
                         </Form.Group>
-                        {/* <Form.Group controlId="benefits">
+                        <Form.Group controlId="benefits">
                             <Form.Label>Benefits</Form.Label>
-                        <Form.Control name="benefits" custom multiple onChange={this.handleInputChange}>
+                        <Form.Control name="benefits" as="select" custom multiple onChange={this.handleBenefitsInput}>
                             <option>Breakfast</option>
                             <option>Lunch</option>
                             <option>Dinner</option>
@@ -80,7 +90,7 @@ class JobForm extends Component {
                             <option>Some extra money</option>
                             <option>Laundry</option>
                             </Form.Control>
-                        </Form.Group> */}
+                        </Form.Group>
                         <Form.Group controlId="image">
                             <Form.Label>Image</Form.Label>
                             <Form.Control type="text" name="image" value={this.state.image} onChange={this.handleInputChange} />
@@ -88,11 +98,57 @@ class JobForm extends Component {
                         <Form.Group controlId="description">
                             <Form.Label>Description</Form.Label>
                             <Form.Control type="text" name="description" value={this.state.description} onChange={this.handleInputChange} />
-                        </Form.Group>
-                        <Form.Group controlId="preferences">
-                            <Form.Label>Preferences</Form.Label>
-                            <Form.Control type="text" name="preferences" value={this.state.preferences} onChange={this.handleInputChange} />
-                        </Form.Group>
+                    </Form.Group>
+                    <Form.Group controlId="interests">
+                            <Form.Label>Interests</Form.Label>
+                        <Form.Control name="interests" as="select" custom multiple onChange={this.handleInputMultiple}>
+                            <option>Sabbatical Year</option>
+                            <option>Professional Development</option>
+                            <option>Self-knowledge</option>
+                            <option>Travel Alone</option>
+                            <option>Couple Travel</option>
+                            <option>Digital Nomadism</option>
+                            <option>Learn Languages</option>
+                            <option>Backpacker</option>
+                            <option>Try New Foods</option>
+                            <option>Spiritual Development</option>
+                            </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId="continent">
+                            <Form.Label>Continent</Form.Label> 
+                        <Form.Control type="text" name="continent" as="select" value={this.state.preferences.continent} onChange={this.handlePrefInputChange} >
+                            <option>Select one</option>
+                            <option>Europe</option>
+                            <option>South America</option>
+                            <option>Central America</option>
+                            <option>North America</option>
+                            <option>Asia</option>
+                            <option>Africa</option>
+                            <option>Oceania</option>
+                            </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId="skills">
+                            <Form.Label>Skills</Form.Label>
+                        <Form.Control name="skills" as="select" custom multiple onChange={this.handleInputMultiple}>
+                            <option>Working with guests</option>
+                            <option>Cleaning</option>
+                            <option>Teaching</option>
+                            <option>Cooking</option>
+                            <option>Community work</option>
+                            <option>Working with animals</option>
+                            <option>IT</option>
+                            <option>Ecological activities</option>
+                            </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId="time">
+                            <Form.Label>Time</Form.Label>
+                        <Form.Control type="text" name="time" as="select" value={this.state.preferences.time} onChange={this.handlePrefInputChange} >
+                            <option>Select one</option>
+                            <option>0-6 months</option>
+                            <option>6 months-1 year</option>
+                            <option>More than 1 year</option>
+                            </Form.Control>
+                    </Form.Group>
                         <Button variant="outline-success" type="submit">Create job</Button>
                     </Form>
                 </>
