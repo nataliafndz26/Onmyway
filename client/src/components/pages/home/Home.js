@@ -45,7 +45,7 @@ class Home extends Component {
                 
                 <Modal show={this.state.showModal1} onHide={() => this.handleModalLogin(false)}>
                     <Modal.Body>
-                        <Login {...this.props} storeUser={this.props.storeUser} closeModal={() => this.handleModalLogin(false)}/>
+                        <Login {...this.props} setTheUser={this.props.setTheUser} closeModal={() => this.handleModalLogin(false)}/>
                     </Modal.Body>
                 </Modal>
                 <Modal show={this.state.showModal2} onHide={() => this.handleModalSignup(false)}>

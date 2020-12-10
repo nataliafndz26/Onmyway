@@ -27,7 +27,7 @@ class Login extends Component {
             .login(this.state)
             .then(theLoggedInUser => {
                 console.log(this.props)
-                this.props.storeUser(theLoggedInUser.data)
+                this.props.setTheUser(theLoggedInUser.data)
                 this.props.history.push('/jobs')
             })
             .catch(err => console.log(err))

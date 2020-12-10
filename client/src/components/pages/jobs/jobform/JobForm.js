@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-
 import { Form, Button } from 'react-bootstrap'
 import JobsService from './../../../../service/jobs.service'
-import PreferencesService from './../../../../service/preferences.service'
+
 
 class JobForm extends Component {
 

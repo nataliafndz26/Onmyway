@@ -13,6 +13,7 @@ import JobDetails from './pages/jobs/jobdetails/JobDetails'
 import Profile from './pages/profile/Profile'
 import PreferencesForm from './pages/preferences/preferences'
 import JobForm from './pages/jobs/jobform/JobForm'
+import JobFormEdit from './pages/jobs/jobformedit/JobFormEdit'
 import EditUser from './pages/profile/editProfile'
 import Carousel from './pages/travel/travel'
 
@@ -45,19 +46,18 @@ class App extends Component {
           null}
         <main>
           <Switch>
-            <Route path="/" exact render={props => <Home storeUser={this.setTheUser}{...props} />} />
+            <Route path="/" exact render={props => <Home setTheUser={this.setTheUser}{...props} />} />
             <Route path="/travel"  render={() => <Carousel />} />
             
-            
-            <Route path="/jobs" exact render={props => <AllJobs {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
-            <Route path="/jobs/:job_id" render={props => <JobDetails {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
-            
+            <Route path="/jobs" exact render={props => <AllJobs {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser}/>} />
+            <Route path="/jobs/:job_id" exact render={props => <JobDetails {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/jobs/:job_id/editjob" render={props => <JobFormEdit {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/preferences" exact render={props => <PreferencesForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             
             <Route path="/profile" exact render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/profile/edit/:user_id" exact render={props => <EditUser {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/profile/newjob" render={props => <JobForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
-
+    
           </Switch>
           </main>
       </>

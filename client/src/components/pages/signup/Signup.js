@@ -24,7 +24,7 @@ class Signup extends Component {
         this.authService
             .signup(this.state)
             .then(theLoggedInUser => {
-                this.props.storeUser(theLoggedInUser.data)
+                this.props.setTheUser(theLoggedInUser.data)
                 this.props.history.push('/preferences')
             })
             .catch(err => console.log(err))
