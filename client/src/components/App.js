@@ -47,16 +47,16 @@ class App extends Component {
         <main>
           <Switch>
             <Route path="/" exact render={props => <Home setTheUser={this.setTheUser}{...props} />} />
-            <Route path="/travel"  render={() => <Carousel />} />
+            <Route path="/travel" render={() => this.state.loggedInUser ? <Carousel /> : <Redirect to='/' />} />
             
-            <Route path="/jobs" exact render={props => <AllJobs {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser}/>} />
-            <Route path="/jobs/:job_id" exact render={props => <JobDetails {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
-            <Route path="/jobs/:job_id/editjob" render={props => <JobFormEdit {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
-            <Route path="/preferences" exact render={props => <PreferencesForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/jobs" exact render={props => this.state.loggedInUser ? <AllJobs {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
+            <Route path="/jobs/:job_id" exact render={props => this.state.loggedInUser ? <JobDetails {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />: <Redirect to='/' />} />
+            <Route path="/jobs/:job_id/editjob" render={props => this.state.loggedInUser ? <JobFormEdit {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
+            <Route path="/preferences" exact render={props => this.state.loggedInUser ? <PreferencesForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
             
-            <Route path="/profile" exact render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
-            <Route path="/profile/edit/:user_id" exact render={props => <EditUser {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
-            <Route path="/profile/newjob" render={props => <JobForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/profile" exact render={props => this.state.loggedInUser ? <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
+            <Route path="/profile/edit/:user_id" exact render={props => this.state.loggedInUser ? <EditUser {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
+            <Route path="/profile/newjob" render={props => this.state.loggedInUser ? <JobForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
     
           </Switch>
           </main>
