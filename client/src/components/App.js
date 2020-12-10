@@ -14,6 +14,7 @@ import Profile from './pages/profile/Profile'
 import PreferencesForm from './pages/preferences/preferences'
 import JobForm from './pages/jobs/jobform/JobForm'
 import JobFormEdit from './pages/jobs/jobformedit/JobFormEdit'
+import EditUser from './pages/profile/editProfile'
 
 
 
@@ -50,6 +51,7 @@ class App extends Component {
             <Route path="/jobs/:job_id/editjob" render={props => <JobFormEdit {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/preferences" exact render={props => <PreferencesForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/profile" exact render={props => <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
+            <Route path="/profile/edit/:user_id" exact render={props => <EditUser {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
             <Route path="/profile/newjob" render={props => <JobForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
     
           </Switch>

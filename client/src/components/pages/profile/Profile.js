@@ -13,7 +13,6 @@ class Profile extends Component {
         super(props)
         
         this.state = {
-            edit: false,
             jobs: [],
             favourites: [],
             applied: [],
@@ -73,14 +72,6 @@ class Profile extends Component {
 
     }
 
-    buildProfile = () => {
-
-        this.setState({ edit: true })
-    }
-
-    closeEdit = () => {
-        this.setState({ edit: false })
-    }
 
     render() {
 
@@ -109,7 +100,7 @@ class Profile extends Component {
                                             <h3>You are a {role}</h3>
                                         <h5>{description}</h5>
                                         <div>
-                                            <Button id="edit" variant="outline-success" onClick={this.buildProfile}>Edit your profile</Button>
+                                        <Link id="edit" variant="outline-success" to={`/profile/edit/${id}`}>Edit your profile</Link>
 
                                         {this.props.loggedInUser.role === 'HOST' ? 
                                             
@@ -130,18 +121,18 @@ class Profile extends Component {
                                             
                                 <h1 style={{ marginTop: '50px' }}>POSTED</h1>
                                 
-                                {this.state.jobs.map(elm => <JobCard key={elm._id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
+                                    {this.state.jobs.map(elm => <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
                                 </>
                             
                                 :
                                 <Row>
                                     <Col lg={{ span:4, offset:1 }}>
                                         <h1 style={{ marginTop: '50px' }}>FAVOURITES</h1>
-                                        {this.state.favourites.map (elm => <JobCard key= {elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
+                                        {this.state.favourites.map(elm => <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
                                     </Col> 
                                     <Col lg={{ span:4, offset:1 }}>
                                         <h1 style={{ marginTop: '50px' }}>APPLIED</h1>
-                                        {this.state.applied.map (elm => <JobCard key= {elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
+                                        {this.state.applied.map(elm => <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
                                    </Col> 
                                 </Row>
                                 
@@ -153,8 +144,6 @@ class Profile extends Component {
                         :
                         <h1>YOU ARE NOT AUTHORIZED</h1>
                 }
-                
-
                 </>
         )
     }
