@@ -42,7 +42,6 @@ class JobDetails extends Component {
                 this.props.setTheUser(response.data)
             })
             .catch(err => console.log(err))
-        //this.setState({ favourites: updatedFavourites })
     }
 
     applyJob = (jobId) => {
@@ -75,7 +74,7 @@ class JobDetails extends Component {
                                             <p>Location: {this.state.job.location}</p>
                                             <p>Accommodation: {this.state.job.accommodation}</p>
                                             <p>Timetable: {this.state.job.timetable}</p>
-                                            <p>Host:{this.state.job.user.name}</p>
+                                            <p>Host: {this.state.job.user.name}</p>
                                             <p>Description: {this.state.job.description}</p>
                                             <p>Benefits:</p>
                                              <ul>
@@ -103,9 +102,24 @@ class JobDetails extends Component {
 
                             </Col>
 
-                             
-                            <Button onClick={() => this.saveFav(this.state.job._id)} > Add to Favs</Button>
-                            <Button onClick={() => this.applyJob(this.state.job._id)} > Apply</Button>
+                            <>
+                                
+                                {this.props.loggedInUser.role === 'USER' ? 
+                                    
+                                    <>
+
+                                        <Button onClick={() => this.saveFav(this.state.job._id)} > Add to Favs</Button>
+                                        <Button onClick={() => this.applyJob(this.state.job._id)} > Apply</Button>
+                                        
+                                        </>
+                                    
+                                    :
+
+                                 null
+                                    
+                                }
+                                
+                            </>
 
                             
                         </Row>
