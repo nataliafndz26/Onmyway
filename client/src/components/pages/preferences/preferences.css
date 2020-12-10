@@ -96,7 +96,6 @@
 .myselect{
     border: none;
 }
-<<<<<<< HEAD
 
 /* width */
 ::-webkit-scrollbar {
@@ -119,5 +118,3 @@
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(0, 189, 189);
 }
-=======
->>>>>>> 2b618eda7a63028e98dc86f43a20ec0a7a5d624c

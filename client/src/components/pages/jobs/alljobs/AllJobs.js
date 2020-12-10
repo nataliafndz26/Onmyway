@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import JobsService from '../../../../service/jobs.service'
 import AuthService from '../../../../service/auth.service'
+import PreferenceService from '../../../../service/preferences.service'
 import JobCard from '../jobcard/JobCard'
 
 import './AllJobs.css'
@@ -14,15 +15,33 @@ class AllJobs extends Component {
             jobs: undefined,
         }
         this.jobsService = new JobsService()
-        this.authService = new AuthService
+        this.authService = new AuthService()
+        this.preferenceService = new PreferenceService()
     }
 
     componentDidMount = () => this.refreshJobs()
 
+    // refreshJobs = () => {
+    //     this.jobsService
+    //         .getJobs()
+    //         .then(res => this.setState({ jobs: res.data }))
+    //         .catch(err => console.log(err))
+    // }
+
     refreshJobs = () => {
         this.jobsService
             .getJobs()
-            .then(res => this.setState({ jobs: res.data }))
+            .then(res => {
+                this.preferenceService.getOnePreference(this.props.loggedInUser.preferences)
+                    .then(response => {
+                        const filtered = res.data.filter(elm => elm.preferences.continent.includes(response.data.continent) && elm.preferences.time.includes(response.data.time))
+                        const total = filtered.filter(elm => elm.preferences.interests.some(e => response.data.interests.includes(e)) || elm.preferences.skills.some(e => response.data.skills.includes(e)))
+                        console.log('holi', filtered.preferences)
+                        console.log(this.props.loggedInUser.preferences)
+                        console.log('hola', total)
+                        this.setState({ jobs: total })
+                    })
+            })
             .catch(err => console.log(err))
     }
 
