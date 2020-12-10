@@ -17,7 +17,7 @@ const JobCard = ({ name, location, accommodation, timetable, _id, image, user, l
                         user._id === loggedInUser._id 
                             ?
                             <ButtonGroup aria-label="Basic example" style={{ width: '100%' }}>
-                                <Button className="btn btn-light btn-sm">Edit</Button>
+                                <Link to={`/jobs/${_id}/editjob`}>Edit</Link>
                                 <Button className="btn btn-light btn-sm">Delete</Button>
                                 <Link className="btn btn-outline-success  btn-sm" to={`/jobs/${_id}`}>Learn More</Link>
                             </ButtonGroup>

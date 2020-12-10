@@ -13,16 +13,20 @@ const password1 = "gon"
 const hashPass1 = bcrypt.hashSync(password1, salt)
 
 
+//DATA-BASE CONNECTION
 
-//SEED JOBS
+// const dbName = 'Onmyway'
+// mongoose.connect(`mongodb://localhost/${dbName}`)
 
-const dbName = 'Onmyway'
-mongoose.connect(`mongodb://localhost/${dbName}`)
+mongoose.connect(process.env.DB_REMOTE)
 
 
 // Job.collection.drop()
 // User.collection.drop()
 // Preferences.collection.drop()
+
+
+//SEED JOBS
 
 const jobs = [
     {

@@ -130,18 +130,18 @@ class Profile extends Component {
                                             
                                 <h1 style={{ marginTop: '50px' }}>POSTED</h1>
                                 
-                                {this.state.jobs.map(elm => <JobCard key={elm._id} {...elm} />)}
+                                {this.state.jobs.map(elm => <JobCard key={elm._id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
                                 </>
                             
                                 :
                                 <Row>
                                     <Col lg={{ span:4, offset:1 }}>
                                         <h1 style={{ marginTop: '50px' }}>FAVOURITES</h1>
-                                        {this.state.favourites.map (elm => <JobCard key= {elm.id} {...elm}/>)}
+                                        {this.state.favourites.map (elm => <JobCard key= {elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
                                     </Col> 
                                     <Col lg={{ span:4, offset:1 }}>
                                         <h1 style={{ marginTop: '50px' }}>APPLIED</h1>
-                                        {this.state.applied.map (elm => <JobCard key= {elm.id} {...elm}/>)}
+                                        {this.state.applied.map (elm => <JobCard key= {elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
                                    </Col> 
                                 </Row>
                                 
@@ -154,11 +154,6 @@ class Profile extends Component {
                         <h1>YOU ARE NOT AUTHORIZED</h1>
                 }
                 
-                {/* <Modal show={this.state.showModal} onHide={() => this.handleModal(false)}>
-                    <Modal.Body>
-                        <JobForm {...this.props} closeModal={() => this.handleModal(false)} updateList={this.refreshJobs} loggedInUser={this.props.loggedInUser} />
-                    </Modal.Body>
-                </Modal> */}
 
                 </>
         )

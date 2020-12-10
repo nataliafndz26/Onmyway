@@ -58,7 +58,7 @@ class PreferencesForm extends Component {
 
         return (
             <>
-                <h1>Select all the options that you're interested in</h1>
+                <h1>Select the options you're interested in</h1>
                 <hr />
 
                 <Container>
@@ -68,16 +68,16 @@ class PreferencesForm extends Component {
                                 <Form.Group controlId="interests">
                                     <Form.Label>Interests</Form.Label>
                                     <Form.Control className="form myselect" as="select" custom multiple name="interests" onChange={this.handleInputMultiple}>
-                                        <option className="option" >Sabbatical Year</option>
-                                        <option className="option">Professional Development</option>
-                                        <option className="option">Self-knowledge</option>
-                                        <option className="option">Travel Alone</option>
-                                        <option className="option">Couple Travel</option>
-                                        <option className="option">Digital Nomadism</option>
-                                        <option className="option">Learn Languages</option>
-                                        <option className="option">Backpacker</option>
-                                        <option className="option">Try New Foods</option>
-                                        <option className="option">Spiritual Development</option>
+                                        <option className="option sy" >Sabbatical Year</option>
+                                        <option className="option pd">Professional Development</option>
+                                        <option className="option sk">Self-knowledge</option>
+                                        <option className="option ta">Travel Alone</option>
+                                        <option className="option ct">Couple Travel</option>
+                                        <option className="option dn">Digital Nomadism</option>
+                                        <option className="option ll">Learn Languages</option>
+                                        <option className="option b">Backpacker</option>
+                                        <option className="option tnf">Try New Foods</option>
+                                        <option className="option sd">Spiritual Development</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Col>
@@ -85,14 +85,14 @@ class PreferencesForm extends Component {
                                 <Form.Group controlId="skills">
                                     <Form.Label>Skills</Form.Label>
                                     <Form.Control className="form myselect" as="select" custom multiple name="skills" onChange={this.handleInputMultiple}>
-                                        <option className="option">Working with guests</option>
-                                        <option className="option">Cleaning</option>
-                                        <option className="option">Teaching</option>
-                                        <option className="option">Cooking</option>
-                                        <option className="option">Community work</option>
-                                        <option className="option">Working with animals</option>
-                                        <option className="option">IT</option>
-                                        <option className="option">Ecological activities</option>
+                                        <option className="option wwg">Working with guests</option>
+                                        <option className="option cl">Cleaning</option>
+                                        <option className="option te">Teaching</option>
+                                        <option className="option co">Cooking</option>
+                                        <option className="option cw">Community work</option>
+                                        <option className="option wwa">Working with animals</option>
+                                        <option className="option it">IT</option>
+                                        <option className="option ea">Ecological activities</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Col>

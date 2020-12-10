@@ -46,10 +46,13 @@ router.post('/newJob', (req, res) => {
 
 router.put('/editJob/:job_id', (req, res) => {
 
+    console.log (req.body.preferences)
+
+    const {name, location, accommodation, timetable, benefits, image, description, preferences} = req.body
+
     Job
-        .findByIdAndUpdate(req.params.job_id, req.body)
-        .populate('preferences')
-        .populate('user')
+        .findByIdAndUpdate(req.params.job_id, {name, location, accommodation, timetable, benefits, image, description}, {new:true})
+        .then(response => Preferences.findByIdAndUpdate(response.preferences, preferences, {new:true}))
         .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })
