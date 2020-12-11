@@ -18,7 +18,7 @@ const hashPass1 = bcrypt.hashSync(password1, salt)
 // const dbName = 'Onmyway'
 // mongoose.connect(`mongodb://localhost/${dbName}`)
 
-mongoose.connect(process.env.DB_REMOTE)
+mongoose.connect(`mongodb+srv://nataliafndz26:nat@cluster0.02jwa.mongodb.net/Onmyway`)
 
 
 // Job.collection.drop()
@@ -65,6 +65,61 @@ const jobs = [
         image: 'https://mochilerosentailandia.com/wp-content/uploads/2019/11/yoga-India.jpg',
         description: 'We inviting Yoga practitioners who would like to take sessions in the serene beauty and share the healthy living with young travellers',
     },
+    {
+        name: 'Do you know how to cook delicious meals? We are looking for you!',
+        location: 'Banská Bystrica, Eslovaquia',
+        accommodation: 'Hostel',
+        timetable: 'Friday to Sunday, 12:00pm-3:00pm, 7:00pm-10:00pm',
+        benefits: ['Dinner', 'Health insurance', 'Individual bedroom'],
+        image: 'https://images.unsplash.com/photo-1564844536308-50b114a1d946?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=598&q=80',
+        description: 'We inviting Yoga practitioners who would like to take sessions in the serene beauty and share the healthy living with young travellers',
+    },
+    {
+        name: 'Teach English in a cafe in Seoul, Korea!',
+        location: 'Seoul, Corea del Sur',
+        accommodation: 'House',
+        timetable: 'Thursday to Sunday, 3:00pm-6:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Individual bedroom'],
+        image: 'https://i2.wp.com/metro.co.uk/wp-content/uploads/2019/07/GSS-cafe-2-eb5b.jpg?quality=90&strip=all&zoom=1&resize=644%2C430&ssl=1',
+        description: 'Hi!! Dear travelers, whether you are a drifter, traveler, backpacker, holidaymaker, gap year, or career break we are somewhere you could stop for a while and experience Korean stories from the Korean people! We are a language cafe based in the heart of Seoul. Our cafe is where you can meet Koreans from Seoul and all around South Korea. You can make Korean friends here from different walks of life and share you English language skills :)',
+    },
+    {
+        name: 'Professional photographer',
+        location: 'Zouk Mosbeh, Líbano',
+        accommodation: 'House',
+        timetable: 'Saturday and Sunday, evenings',
+        benefits: ['Breakfast', 'Shared bedroom'],
+        image: 'https://images.unsplash.com/flagged/photo-1574806434389-0633e107c39a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80',
+        description: 'Be a part of our family and help us please to ameliorate the quality of photos that can show better the beauty of the place. You are talented? Professional photographer with professional camera? an artist in photographing? We need you :)',
+    },
+    {
+        name: 'Take care of our hostel and enjoy Armenia!',
+        location: 'Yerevan, Armenia',
+        accommodation: 'Hostel',
+        timetable: 'Monday to Friday, 9:00am-4:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Shared bedroom', 'Some extra money', 'Laundry'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/134/331/main/10c1cc6e26a6bb8ebf412165bc99ccb3.jpg',
+        description: 'This is all about taking care. Keeping things clean, always eyes open to flecks of dust or renegade plastic bags. Cleaning rooms and common areas and all of this with happiness and punctuality.',
+    },
+    {
+        name: 'Videographer & Photographer',
+        location: 'Jaisalmer, India',
+        accommodation: 'Hostel',
+        timetable: 'Monday to Wednesday, 10:00am-1:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Shared bedroom', 'Some extra money', 'Laundry'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/057/031/main/699328dc11589ae7f6d39474811d21e8.jpg',
+        description: 'We are shift our property in new bulding so we want new photo for our all hotel all website but we need best camra man for click best photo of my propertry . so guys looking for what come and help us.'
+    },
+    {
+        name: 'Amazing hostel in central Lisbon looking for friendly staff!',
+        location: 'Lisboa, Portugal',
+        accommodation: 'Hostel',
+        timetable: 'Monday to Friday, 8:00am-3:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Individual bedroom', 'Some extra money'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/005/195/main/95760cde814d8ca011937138ba8cf0b2.jpg',
+        description: 'Hi everyone :) We are looking for a friendly, responsible and fun helper, preferably with previous hostel experience, to join our team. We need someone very sociable and extrovert, so if you think you are the right fit, contact us!'
+    }
+
 ]
 
 const users = [
@@ -146,6 +201,36 @@ const preferences = [
         time: 'More than 1 year'
     },
     {
+        interests: ['Sabbatical Year', 'Travel Alone', 'Backpacker', 'Try New Foods'],
+        continent: 'Europe',
+        skills: ['Cooking', 'Cleaning'],
+        time: 'More than 1 year'
+    },
+    {
+        interests: ['Professional Development', 'Learn Languages', 'Travel Alone'],
+        continent: 'Asia',
+        skills: ['Teaching'],
+        time: '0-6 months'
+    },
+    {
+        interests: ['Professional Development', 'Self-knowledge', 'Digital Nomadism'],
+        continent: 'Asia',
+        skills: ['IT'],
+        time: '6 months-1 year'
+    },
+    {
+        interests: ['Backpacker', 'Try New Foods'],
+        continent: 'Asia',
+        skills: ['Working with guests', 'Cleaning'],
+        time: 'More than 1 year'
+    },
+    {
+        interests: ['Professional Development', 'Self-knowledge', 'Digital Nomadism'],
+        continent: 'Asia',
+        skills: ['IT'],
+        time: '0-6 months'
+    },
+    {
         interests: ['Professional Development', 'Self-knowledge', 'Try New Foods'],
         continent: 'Africa',
         skills: ['Teaching', 'Community work', 'Cleaning'],
@@ -157,6 +242,12 @@ const preferences = [
         skills: ['Teaching', 'Ecological activities', 'IT'],
         time: '6 months-1 year'
     },
+    {
+        interests: ['Self-knowledge', 'Travel Alone',  'Learn Languages'],
+        continent: 'Europe',
+        skills: ['Working with guests', 'Cleaning'],
+        time: '6 months-1 year'
+    }
 ]
 
 
@@ -170,17 +261,23 @@ let createPreferences = Preferences.create(preferences)
 
 Promise.all([createUsers, createJobs, createPreferences])
     .then((results) => {
+        console.log (results[2].length)
         results[0].forEach((user) => theUsers.push(user._id))
         results[1].forEach((job) => theJobs.push(job._id))
         results[2].forEach((preferences) => thePreferences.push(preferences._id))
     })
-    .then(() => User.findByIdAndUpdate(theUsers[4], { preferences: thePreferences[4] }, { new: true }))
-    .then(() => User.findByIdAndUpdate(theUsers[5], { preferences: thePreferences[5] }, { new: true }))
+    .then(() => User.findByIdAndUpdate(theUsers[4], { preferences: thePreferences[9] }, { new: true }))
+    .then(() => User.findByIdAndUpdate(theUsers[5], { preferences: thePreferences[10] }, { new: true }))
 
     .then(() => Job.findByIdAndUpdate(theJobs[0], { preferences: thePreferences[0], user: theUsers[0] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[1], { preferences: thePreferences[1], user: theUsers[1] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[2], { preferences: thePreferences[2], user: theUsers[2] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[3], { preferences: thePreferences[3], user: theUsers[3] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[4], { preferences: thePreferences[4], user: theUsers[0] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[5], { preferences: thePreferences[5], user: theUsers[1] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[6], { preferences: thePreferences[6], user: theUsers[2] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[7], { preferences: thePreferences[7], user: theUsers[3] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[8], { preferences: thePreferences[8], user: theUsers[0] }, { new: true }))
     .catch((err) => console.log(err))
     .finally(() => mongoose.connection.close())
 

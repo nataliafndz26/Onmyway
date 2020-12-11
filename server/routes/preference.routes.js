@@ -25,7 +25,7 @@ router.post('/newPreferences/:user_id', (req, res) => {
 
     Preferences
         .create(req.body)
-        .then(response => User.findByIdAndUpdate(req.params.user_id, { preferences: response._id }))
+        .then(response => User.findByIdAndUpdate(req.params.user_id, { preferences: response._id }, {new: true}))
         .then(response => res.json(response))
         .catch(err => res.status(500).json(err))
 })
