@@ -42,7 +42,7 @@ class NavBar extends Component {
                         <Link to="/preferences">
                             <Nav.Link as="div">Preferences</Nav.Link>
                         </Link>
-                        <Link to="/Jobs">
+                        <Link to="/jobs">
                             <Nav.Link as="div">Jobs</Nav.Link>
                         </Link>
                         <Link to="/" onClick={this.logout}>
