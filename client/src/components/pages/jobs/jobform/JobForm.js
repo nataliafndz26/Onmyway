@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Spinner } from 'react-bootstrap'
 import JobsService from './../../../../service/jobs.service'
+import FilesService from './../../../../service/upload.service'
 
 
 class JobForm extends Component {
@@ -26,6 +27,7 @@ class JobForm extends Component {
         }
 
         this.jobService = new JobsService()
+        this.filesService = new FilesService()
     }
 
     handleInputChange = e => this.setState({ [e.target.name]: e.target.value })
@@ -43,6 +45,20 @@ class JobForm extends Component {
         e.target.childNodes.forEach(e => e.selected === true ? selected.push(e.value) : null)
             this.setState({ preferences: { ...this.state.preferences, [e.target.name]: selected } })
     }
+
+    handleImageUpload = e => {
+
+        const uploadData = new FormData()
+        uploadData.append('image', e.target.files[0])
+     
+
+        this.filesService
+            .uploadImage(uploadData)
+            .then(response => {
+                this.setState({ image: response.data.secure_url })
+            })
+            .catch(err => console.log(err))
+    }
     
     handleSubmit = e => {
         e.preventDefault()
@@ -52,6 +68,7 @@ class JobForm extends Component {
             .then(res => this.props.history.push('/profile'))
             .catch(err => console.log(err))
     }
+
 
     render() {
 
@@ -90,9 +107,9 @@ class JobForm extends Component {
                             <option>Laundry</option>
                             </Form.Control>
                         </Form.Group>
-                        <Form.Group controlId="image">
+                        <Form.Group>
                             <Form.Label>Image</Form.Label>
-                            <Form.Control type="text" name="image" value={this.state.image} onChange={this.handleInputChange} />
+                            <Form.Control type="file" onChange={this.handleImageUpload} />
                         </Form.Group>
                         <Form.Group controlId="description">
                             <Form.Label>Description</Form.Label>

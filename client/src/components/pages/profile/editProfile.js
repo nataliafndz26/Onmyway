@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
 import UserService from './../../../service/user.service'
+import FilesService from './../../../service/upload.service'
 
 class EditUser extends Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class EditUser extends Component {
             role: '',
         }
         this.userService = new UserService()
+        this.filesService = new FilesService()
     }
 
     componentDidMount = () => {
@@ -26,6 +28,20 @@ class EditUser extends Component {
     }
 
     handleInputChange = e => this.setState({ [e.target.name]: e.target.value })
+
+    handleImageUpload = e => {
+
+        const uploadData = new FormData()
+        uploadData.append('image', e.target.files[0])
+     
+
+        this.filesService
+            .uploadImage(uploadData)
+            .then(response => {
+                this.setState({ image: response.data.secure_url })
+            })
+            .catch(err => console.log(err))
+    }
 
     handleSubmit = e => {
         e.preventDefault()
@@ -64,9 +80,9 @@ class EditUser extends Component {
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control type="text" name="name" value={this.state.name} onChange={this.handleInputChange} />
                             </Form.Group>
-                            <Form.Group controlId="image">
-                                <Form.Label>Image (URL)</Form.Label>
-                                <Form.Control type="text" name="image" value={this.state.image} onChange={this.handleInputChange} />
+                            <Form.Group>
+                                <Form.Label>Image</Form.Label>
+                                <Form.Control type="file" onChange={this.handleImageUpload} />
                             </Form.Group>
                             <Form.Group controlId="description">
                                 <Form.Label>Describe yourself</Form.Label>
