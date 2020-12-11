@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import JobsService from '../../../../service/jobs.service'
 import { Form, Button } from 'react-bootstrap'
+import FilesService from './../../../../service/upload.service'
 
 class JobFormEdit extends Component {
 
@@ -28,6 +29,7 @@ class JobFormEdit extends Component {
         }
 
         this.jobService = new JobsService()
+        this.filesService = new FilesService()
     }
 
     componentDidMount = () => {
@@ -63,8 +65,26 @@ class JobFormEdit extends Component {
         e.target.childNodes.forEach(e => e.selected === true ? selected.push(e.value) : null)
         const jobCopy = { ...this.state.job }
         jobCopy.preferences[e.target.name] = selected
-            this.setState({ job: jobCopy })
+        this.setState({ job: jobCopy })
+    
     }
+
+    handleImageUpload = e => {
+
+        const uploadData = new FormData()
+        uploadData.append('image', e.target.files[0])
+     
+
+        this.filesService
+            .uploadImage(uploadData)
+            .then(response => {
+                this.setState({
+                    job: { ...this.state.job, image: response.data.secure_url }
+                })
+            })
+            .catch(err => console.log(err))
+    }
+    
     
     handleSubmit = e => {
         
@@ -79,6 +99,7 @@ class JobFormEdit extends Component {
             })
             .catch(err => console.log(err))
     }
+
 
     render() {
         console.log (this.state.job.preferences)
@@ -116,9 +137,9 @@ class JobFormEdit extends Component {
                         <option selected = {this.state.job.benefits.includes("Laundry") ? true : false}>Laundry</option>
                         </Form.Control>
                     </Form.Group>
-                    <Form.Group controlId="image">
+                    <Form.Group>
                         <Form.Label>Image</Form.Label>
-                        <Form.Control type="text" name="image" value={this.state.job.image} onChange={this.handleInputChange} />
+                        <Form.Control type="file" onChange={this.handleImageUpload} />
                     </Form.Group>
                     <Form.Group controlId="description">
                         <Form.Label>Description</Form.Label>
