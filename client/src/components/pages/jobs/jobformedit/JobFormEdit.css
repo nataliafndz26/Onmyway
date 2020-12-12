@@ -1,6 +1,13 @@
-.job-card{
+.ed-form{
     background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
     backdrop-filter: blur(5px);
     border-radius: 5px;
     margin-bottom: 30px;
+}
+
+.bg-img{
+    position:fixed;
+    width: 100%;
+    z-index: -1000;
+    object-fit: cover;
 }
