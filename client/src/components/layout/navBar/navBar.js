@@ -53,7 +53,7 @@ class NavBar extends Component {
                         </Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar >
+            </Navbar>
         )
     }
 }

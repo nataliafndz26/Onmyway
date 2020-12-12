@@ -100,13 +100,13 @@ class Profile extends Component {
                                             <h3>You are a {role}</h3>
                                         <h5>{description}</h5>
                                         <div>
-                                        <Link id="edit" variant="outline-success" to={`/profile/edit/${id}`}>Edit your profile</Link>
+                                        <Link id="edit" className="editprofile" to={`/profile/edit/${id}`}>Edit your profile</Link>
 
                                         {this.props.loggedInUser.role === 'HOST' ? 
                                             
                                             <Link id="new" to={`profile/newjob`} >Create a new job</Link>
                                             :
-                                            <Link id="edit-profile" className="outline-success" to={`/preferences`}>Edit preferences</Link>
+                                            <Link id="edit-preferences" className="editpreferences" to={`/preferences`}>Edit preferences</Link>
                                             }
                                     
                                         

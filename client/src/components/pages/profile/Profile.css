@@ -1,0 +1,21 @@
+.editprofile{
+    background-color: rgb(118, 223, 255);
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 40px;
+}
+
+
+.editprofile:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.editpreferences{
+    background-color: rgb(255, 169, 222);
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 40px;
+}

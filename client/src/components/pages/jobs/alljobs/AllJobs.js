@@ -21,34 +21,34 @@ class AllJobs extends Component {
 
     componentDidMount = () => this.refreshJobs()
 
-    // refreshJobs = () => {
-    //     this.jobsService
-    //         .getJobs()
-    //         .then(res => this.setState({ jobs: res.data }))
-    //         .catch(err => console.log(err))
-    // }
-
     refreshJobs = () => {
-        let allJobs
         this.jobsService
             .getJobs()
-            .then(res => {
-                allJobs = res.data
-                return this.preferenceService.getOnePreference(this.props.loggedInUser.preferences)
-            })
-            .then(response => {
-                const filtered = allJobs.filter(elm => elm.preferences.continent.includes(response.data.continent) && elm.preferences.time.includes(response.data.time))
-                const total = filtered.filter(elm => elm.preferences.interests.some(e => response.data.interests.includes(e)) || elm.preferences.skills.some(e => response.data.skills.includes(e)))
-
-                console.log('holi', filtered)
-                console.log(this.props.loggedInUser.preferences)
-                console.log('hola', total)
-
-                this.setState({ jobs: total })
-            })
-
+            .then(res => this.setState({ jobs: res.data }))
             .catch(err => console.log(err))
     }
+
+    // refreshJobs = () => {
+    //     let allJobs
+    //     this.jobsService
+    //         .getJobs()
+    //         .then(res => {
+    //             allJobs = res.data
+    //             return this.preferenceService.getOnePreference(this.props.loggedInUser.preferences)
+    //         })
+    //         .then(response => {
+    //             const filtered = allJobs.filter(elm => elm.preferences.continent.includes(response.data.continent) && elm.preferences.time.includes(response.data.time))
+    //             const total = filtered.filter(elm => elm.preferences.interests.some(e => response.data.interests.includes(e)) || elm.preferences.skills.some(e => response.data.skills.includes(e)))
+
+    //             console.log('holi', filtered)
+    //             console.log(this.props.loggedInUser.preferences)
+    //             console.log('hola', total)
+
+    //             this.setState({ jobs: total })
+    //         })
+
+    //         .catch(err => console.log(err))
+    // }
 
     deleteJob = (jobId) => {
         this.jobsService
