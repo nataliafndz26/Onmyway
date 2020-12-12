@@ -115,11 +115,28 @@ const jobs = [
         location: 'Lisboa, Portugal',
         accommodation: 'Hostel',
         timetable: 'Monday to Friday, 8:00am-3:00pm',
-        benefits: ['Breakfast', 'Lunch', 'Individual bedroom', 'Some extra money'],
+        benefits: ['Breakfast', 'Lunch', 'Individual bedroom', 'Health insurance', 'Some extra money'],
         image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/005/195/main/95760cde814d8ca011937138ba8cf0b2.jpg',
         description: 'Hi everyone :) We are looking for a friendly, responsible and fun helper, preferably with previous hostel experience, to join our team. We need someone very sociable and extrovert, so if you think you are the right fit, contact us!'
+    },
+    {
+        name: 'Come help in our garden!!',
+        location: 'Skopje, Macedonia',
+        accommodation: 'House',
+        timetable: 'Monday to Friday, 7:00am-10:00pm',
+        benefits: ['Breakfast', 'Individual bedroom'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/115/330/main/0ca88d4df778bcbeed889b87be9c4a70.jpg',
+        description: 'The spring is approaching and we need hands to leave our garden beautiful and bright, you do not need to be an expert but if you have some experience it would be perfect.'
+    },
+    {
+        name: 'Help at our eco campsite and learn to make beer and other stuff',
+        location: 'Melnik, Bulgaria',
+        accommodation: 'Camping',
+        timetable: 'Monday to Friday, 6:00am-12:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Shared bedroom', 'Health insurance'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/164/807/main/59e0ae4a972615a26cd3272cbe8e07bb.jpg',
+        description: 'We have set up an Eco campsite and guest house using permaculture principles and also the 3 R ie reduce, reuse and recycle on site. We encourage our guests to think about the environment, separate their waste, reuse the grey water and use environmentally friendly washing / cleaning products. We are in the foothills of the Pirin mountain range in the far south west of Bulgaria.'
     }
-
 ]
 
 const users = [
@@ -231,6 +248,24 @@ const preferences = [
         time: '0-6 months'
     },
     {
+        interests: ['Self-knowledge', 'Travel Alone',  'Learn Languages'],
+        continent: 'Europe',
+        skills: ['Working with guests', 'Cleaning'],
+        time: '6 months-1 year'
+    },
+    {
+        interests: ['Sabbatical Year', 'Couple Travel', 'Backpacker'],
+        continent: 'Europe',
+        skills: ['Cleaning', 'Ecological activities', 'Working with animals'],
+        time: '0-6 months'
+    },
+    {
+        interests: ['Sabbatical Year', 'Self-knowledge', 'Travel Alone', 'Backpacker'],
+        continent: 'Europe',
+        skills: ['Ecological activities', 'Working with animals'],
+        time: 'More than 1 year'
+    },
+    {
         interests: ['Professional Development', 'Self-knowledge', 'Try New Foods'],
         continent: 'Africa',
         skills: ['Teaching', 'Community work', 'Cleaning'],
@@ -242,12 +277,6 @@ const preferences = [
         skills: ['Teaching', 'Ecological activities', 'IT'],
         time: '6 months-1 year'
     },
-    {
-        interests: ['Self-knowledge', 'Travel Alone',  'Learn Languages'],
-        continent: 'Europe',
-        skills: ['Working with guests', 'Cleaning'],
-        time: '6 months-1 year'
-    }
 ]
 
 
@@ -266,8 +295,8 @@ Promise.all([createUsers, createJobs, createPreferences])
         results[1].forEach((job) => theJobs.push(job._id))
         results[2].forEach((preferences) => thePreferences.push(preferences._id))
     })
-    .then(() => User.findByIdAndUpdate(theUsers[4], { preferences: thePreferences[9] }, { new: true }))
-    .then(() => User.findByIdAndUpdate(theUsers[5], { preferences: thePreferences[10] }, { new: true }))
+    .then(() => User.findByIdAndUpdate(theUsers[4], { preferences: thePreferences[12] }, { new: true }))
+    .then(() => User.findByIdAndUpdate(theUsers[5], { preferences: thePreferences[13] }, { new: true }))
 
     .then(() => Job.findByIdAndUpdate(theJobs[0], { preferences: thePreferences[0], user: theUsers[0] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[1], { preferences: thePreferences[1], user: theUsers[1] }, { new: true }))
@@ -278,89 +307,10 @@ Promise.all([createUsers, createJobs, createPreferences])
     .then(() => Job.findByIdAndUpdate(theJobs[6], { preferences: thePreferences[6], user: theUsers[2] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[7], { preferences: thePreferences[7], user: theUsers[3] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[8], { preferences: thePreferences[8], user: theUsers[0] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[9], { preferences: thePreferences[9], user: theUsers[1] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[10], { preferences: thePreferences[10], user: theUsers[2] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[11], { preferences: thePreferences[11], user: theUsers[2] }, { new: true }))
     .catch((err) => console.log(err))
     .finally(() => mongoose.connection.close())
 
-
-
-
-
-
-//// SEED PREVIO
-// const createUsers = jobs.map(job => {
-//     const newUser = new User(job.user)
-//     return newUser
-//         .save()
-//         .then(user => {
-//             return user.username
-//         })
-//         .catch(error => {
-//             throw new Error(`Impossible to add the user. ${error}`)
-//         })
-// })
-
-
-// const createPreferences = jobs.map(job => {
-//     const newPreference = new Preferences(job.preferences)
-//     return newPreference
-//         .save()
-//         .then(preferences => {
-//             return preferences.continent
-//         })
-//         .catch(error => {
-//         throw new Error(`Impossible to add the preference. ${error}`)
-//     })
-// })
-
-
-// let findUsers = Promise.all(createUsers)
-//     .then(user => {
-//         return jobs.map(job => {
-//             return User.findOne({ username: job.user.username })
-//                 .then(user => {
-//                     if (!user) {
-//                         throw new Error(`unknown user ${job.user.username}`)
-//                     }
-//                     return Object.assign({}, job, { user: user._id })
-//                 })
-//         })
-//     })
-//     .catch(error => {
-//         throw new Error(error)
-//     })
-
-// let findPreferences = Promise.all(createPreferences)
-//     .then(prerences => {
-//         return jobs.map(job => {
-//             return Preferences.findOne({ continent: job.preferences.continent })
-//                 .then(preferences => {
-//                     if (!preferences) {
-//                         throw new Error(`unknown preference ${job.preferences.continent}`)
-//                     }
-//                     return Object.assign ({}, job, {preferences: preferences._id})
-//             })
-//         })
-//     })
-//     .catch(error => {
-//         throw new Error(error)
-//     })
-
-
-
-
-// const saveJobs =  findUsers
-//     .then(findUsers => {
-//         return Promise.all(findUsers)
-//             .then(jobs => {
-//                 return jobs.map(job => {
-//                     const newJob = new Job(job)
-//                     return newJob.save()
-//                 })
-//             })
-//     }).then(savedJobs => {
-//         Promise.all(savedJobs)
-//             .then(jobs => jobs.forEach(job => console.log(`created ${job.name}`)))
-//             .then(() => mongoose.connection.close())
-//             .catch(err => console.log("Error while saving the job: ", err))
-//     })
 
