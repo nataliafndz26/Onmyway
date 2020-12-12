@@ -40,16 +40,16 @@ class NavBar extends Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Link to="/preferences">
-                            <Nav.Link as="div">Preferences</Nav.Link>
+                            <Nav.Link className="preferences" as="div">Preferences</Nav.Link>
                         </Link>
                         <Link to="/jobs">
-                            <Nav.Link as="div">Jobs</Nav.Link>
+                            <Nav.Link className="jobs" as="div">Jobs</Nav.Link>
                         </Link>
                         <Link to="/" onClick={this.logout}>
-                            <Nav.Link as="div">Log out</Nav.Link>
+                            <Nav.Link className="logout" as="div">Log out</Nav.Link>
                         </Link>
                         <Link to="/profile">
-                            <Nav.Link as="div">Profile</Nav.Link>
+                            <Nav.Link className="profile" as="div">Profile</Nav.Link>
                         </Link>
                     </Nav>
                 </Navbar.Collapse>
