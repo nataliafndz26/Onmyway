@@ -85,17 +85,17 @@ class Profile extends Component {
 
 
         return (
-            <>
+            <div className="profile">
                 {
 
                     this.props.loggedInUser ?
                         <Container>
                             
-                                    <Row style={{ display: "flex" }}>
+                                    <Row  style={{ display: "flex" }}>
                                         <Col lg={{ span: 3, offset: 0 }} style={{marginTop: '20px'}}>
                                         <img  className="rounded-circle z-depth-2" src={image} style={{width:'200px'}}/>
                                         </Col>
-                                        <Col style={{marginTop: '50px'}}>
+                                <Col lg={{ span: 7, offset: 0 }}className="init" style={{marginTop: '50px'}}>
                                             <h2>Welcome back {name}! </h2>
                                             <h3>You are a {role}</h3>
                                         <h5>{description}</h5>
@@ -163,7 +163,7 @@ class Profile extends Component {
                         :
                         <h1>YOU ARE NOT AUTHORIZED</h1>
                 }
-            </>
+            </div>
         )
     }
 }

@@ -21,7 +21,7 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                             <ButtonGroup aria-label="Basic example" style={{ width: '100%' }}>
                                 <Link className="btn btn-light btn-sm" to={`/jobs/${_id}/editjob`}>Edit</Link>
                                 <Button onClick={deleteJob} className="btn btn-light btn-sm">Delete</Button>
-                                <Link className="btn btn-outline-success  btn-sm" to={`/jobs/${_id}`}>Learn More</Link>
+                                <Link className="btn btn-outline-success  btn-sm" to={`/jobs/${_id}`}>Details</Link>
                             </ButtonGroup>
                             :
                             <Link className="btn btn-outline-success btn-block btn-sm" to={`/jobs/${_id}`}>Details</Link>
