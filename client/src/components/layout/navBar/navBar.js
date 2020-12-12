@@ -25,7 +25,7 @@ class NavBar extends Component {
     render() {
 
         return (
-            <Navbar className="nav" expand="md" style={{ marginBottom: '50px' }}>
+            <Navbar className="nav" expand="md" sticky="top">
                 <Link to="/travel">
                     <Navbar.Brand >
                         <img

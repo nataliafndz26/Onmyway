@@ -1,14 +1,16 @@
 import { ButtonGroup, Button, Card } from 'react-bootstrap'
 
+import './JobCard.css'
+
 import { Link } from 'react-router-dom'
 
 const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser, deleteJob }) => {
     
     return (
         <>
-            <Card className="job-card" key={_id}>
+            <Card bsPrefix="job-card" key={_id}>
                 <Card.Img variant="top" src={image} />
-                <Card.Body>
+                <Card.Body >
                     <Card.Title className='title' >{name}</Card.Title>
                     <Card.Text><strong>{location}</strong> </Card.Text>
                     <Card.Text>You will stay in a {accommodation}</Card.Text>

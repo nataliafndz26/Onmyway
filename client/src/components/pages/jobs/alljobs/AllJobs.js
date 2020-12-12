@@ -61,9 +61,9 @@ class AllJobs extends Component {
 
     render() {
         return (
-            <>
-
-                    <Container className="all">
+            <div className="all">
+                
+                    <Container >
                     <h1>All jobs</h1>
                         
                             {
@@ -106,7 +106,7 @@ class AllJobs extends Component {
 
                 </Container>
                     
-                    </>
+            </div>
         )
     }
 }
