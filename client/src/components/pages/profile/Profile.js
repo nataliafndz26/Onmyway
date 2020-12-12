@@ -4,14 +4,14 @@ import UserService from './../../../service/user.service'
 import JobService from './../../../service/jobs.service'
 import JobCard from './../jobs/jobcard/JobCard'
 import JobForm from './../jobs/jobform/JobForm'
-import { Container, Row, Col, Button, Modal } from 'react-bootstrap'
+import { Container, Row, Col, Button, Tabs, Tab, } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 class Profile extends Component {
 
     constructor(props) {
         super(props)
-        
+
         this.state = {
             jobs: [],
             favourites: [],
@@ -37,11 +37,11 @@ class Profile extends Component {
                 const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
                 this.setState({ jobs: ownJob })
             })
-            .catch(err => console.log (err)) 
+            .catch(err => console.log(err))
     }
 
     getAll = () => {
-       
+
         this.jobService.getJobs()
             .then(response => {
                 const data = response.data
@@ -58,7 +58,7 @@ class Profile extends Component {
                         break;
                 }
             })
-        .catch (err => console.log (err))
+            .catch(err => console.log(err))
     }
 
     deleteJob = (jobId) => {
@@ -81,9 +81,9 @@ class Profile extends Component {
         const image = this.props.loggedInUser ? this.props.loggedInUser.image : ""
         const description = this.props.loggedInUser ? this.props.loggedInUser.description : ""
         const id = this.props.loggedInUser ? this.props.loggedInUser._id : ""
-        
 
-       
+
+
         return (
             <>
                 {
@@ -102,8 +102,8 @@ class Profile extends Component {
                                         <div>
                                         <Link id="edit" className="editprofile" to={`/profile/edit/${id}`}>Edit your profile</Link>
 
-                                        {this.props.loggedInUser.role === 'HOST' ? 
-                                            
+                                        {this.props.loggedInUser.role === 'HOST' ?
+
                                             <Link id="new" to={`profile/newjob`} >Create a new job</Link>
                                             :
                                             <Link id="edit-preferences" className="editpreferences" to={`/preferences`}>Edit preferences</Link>
@@ -113,38 +113,57 @@ class Profile extends Component {
                                             </div>
                                         </Col>
                             </Row>
-                            
 
-                            {this.props.loggedInUser.role === 'HOST' ? 
-                                
-                            <>
-                                            
-                                <h1 style={{ marginTop: '50px' }}>POSTED</h1>
-                                
-                                    {this.state.jobs.map(elm => <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
-                                </>
-                            
-                                :
-                                <Row>
-                                    <Col lg={{ span:4, offset:1 }}>
-                                        <h1 style={{ marginTop: '50px' }}>FAVOURITES</h1>
-                                        {this.state.favourites.map(elm => <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
-                                    </Col> 
-                                    <Col lg={{ span:4, offset:1 }}>
-                                        <h1 style={{ marginTop: '50px' }}>APPLIED</h1>
-                                        {this.state.applied.map(elm => <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>)}
-                                   </Col> 
-                                </Row>
-                                
-                            }
-                            <>
-                                </>
+
+                            <Tabs defaultActiveKey="posted" id="noanim-tab-example" style={{ marginTop: '50px' }}>
+                                {this.props.loggedInUser.role === 'HOST'
+                                    ?
+                                    <Tab eventKey="posted" title="Posted">
+                                        <Row>
+                                            {this.state.jobs.map(elm => {
+                                                return (
+                                                    <Col lg={4}>
+                                                        <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                    </Col>
+                                                )
+                                            })
+                                            }
+                                        </Row>
+                                    </Tab>
+                                    :
+                                    null}
+                                <Tab eventKey="favourites" title="Favourites">
+                                    <Row>
+                                        {this.state.favourites.map(elm => {
+                                            return (
+                                                <Col lg={4} >
+                                                    <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                </Col>
+                                            )
+                                        })
+                                        }
+                                    </Row>
+                                </Tab>
+                                <Tab eventKey="applied" title="Applied" >
+                                    <Row>
+                                        {this.state.applied.map(elm => {
+                                            return (
+                                                <Col lg={4} >
+                                                    <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                </Col>
+                                            )
+                                        })
+                                        }
+                                    </Row>
+                                </Tab>
+                            </Tabs>
+
 
                         </Container>
                         :
                         <h1>YOU ARE NOT AUTHORIZED</h1>
                 }
-                </>
+            </>
         )
     }
 }

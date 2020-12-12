@@ -6,20 +6,24 @@ import JobCard from '../jobcard/JobCard'
 
 import './AllJobs.css'
 
-import { Container, Row, Col, Spinner } from 'react-bootstrap'
+import { Container, Row, Col, Spinner, Tab, Tabs } from 'react-bootstrap'
 
 class AllJobs extends Component {
     constructor() {
         super()
         this.state = {
             jobs: undefined,
+            filteredjobs: [],
         }
         this.jobsService = new JobsService()
         this.authService = new AuthService()
         this.preferenceService = new PreferenceService()
     }
 
-    componentDidMount = () => this.refreshJobs()
+    componentDidMount = () => {
+        this.refreshJobs()
+        this.refreshfilteredJobs()
+    }
 
     refreshJobs = () => {
         this.jobsService
@@ -28,27 +32,21 @@ class AllJobs extends Component {
             .catch(err => console.log(err))
     }
 
-    // refreshJobs = () => {
-    //     let allJobs
-    //     this.jobsService
-    //         .getJobs()
-    //         .then(res => {
-    //             allJobs = res.data
-    //             return this.preferenceService.getOnePreference(this.props.loggedInUser.preferences)
-    //         })
-    //         .then(response => {
-    //             const filtered = allJobs.filter(elm => elm.preferences.continent.includes(response.data.continent) && elm.preferences.time.includes(response.data.time))
-    //             const total = filtered.filter(elm => elm.preferences.interests.some(e => response.data.interests.includes(e)) || elm.preferences.skills.some(e => response.data.skills.includes(e)))
-
-    //             console.log('holi', filtered)
-    //             console.log(this.props.loggedInUser.preferences)
-    //             console.log('hola', total)
-
-    //             this.setState({ jobs: total })
-    //         })
-
-    //         .catch(err => console.log(err))
-    // }
+    refreshfilteredJobs = () => {
+        let allJobs
+        this.jobsService
+            .getJobs()
+            .then(res => {
+                allJobs = res.data
+                return this.preferenceService.getOnePreference(this.props.loggedInUser.preferences)
+            })
+            .then(response => {
+                const filtered = allJobs.filter(elm => elm.preferences.continent.includes(response.data.continent) && elm.preferences.time.includes(response.data.time))
+                const total = filtered.filter(elm => elm.preferences.interests.some(e => response.data.interests.includes(e)) || elm.preferences.skills.some(e => response.data.skills.includes(e)))
+                this.setState({ filteredjobs: total })
+            })
+            .catch(err => console.log(err))
+    }
 
     deleteJob = (jobId) => {
         this.jobsService
@@ -64,26 +62,51 @@ class AllJobs extends Component {
     render() {
         return (
             <>
-                <Container>
+
+                    <Container className="all">
                     <h1>All jobs</h1>
-                    <Row>
                         
                             {
                                 this.state.jobs
                                     ?
-                                this.state.jobs.map(elm => {
-                                        return(
-                                        <Col lg={3}>
-                                                <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>
-                                        </Col>
-                                )})
+                                <Tabs defaultActiveKey="alljobs" id="noanim-tab-example" style={{ marginTop: '50px' }}>
+                                    
+                                        
+                                        <Tab eventKey="alljobs" title="All jobs">
+                                            <Row>
+                                                {this.state.jobs.map(elm => {
+                                                    return (
+                                                        <Col lg={4}>
+                                                            <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                        </Col>
+                                                    )
+                                                })
+                                                }
+                                            </Row>
+                                        </Tab>
+                                        
+                                    
+                                    <Tab eventKey="filteredjobs" title="Jobs for you">
+                                        <Row>
+                                            {this.state.filteredjobs.map(elm => {
+                                                return (
+                                                    <Col lg={4} >
+                                                        <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                    </Col>
+                                                )
+                                            })
+                                            }
+                                        </Row>
+                                    </Tab>
+                                </Tabs>
                                     :
                                     <Spinner animation="border" variant="primary" />
                             }
                         
-                    </Row>
+
                 </Container>
-            </>
+                    
+                    </>
         )
     }
 }
