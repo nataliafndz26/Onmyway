@@ -90,28 +90,28 @@ class Profile extends Component {
 
                     this.props.loggedInUser ?
                         <Container>
-
-                            <Row style={{ display: "flex" }}>
-                                <Col lg={{ span: 3, offset: 0 }} style={{ marginTop: '20px' }}>
-                                    <img className="rounded-circle z-depth-2" src={image} style={{ width: '200px' }} />
-                                </Col>
-                                <Col style={{ marginTop: '50px' }}>
-                                    <h2>Welcome back {name}! </h2>
-                                    <h3>You are a {role}</h3>
-                                    <h5>{description}</h5>
-                                    <div>
-                                        <Link id="edit" variant="outline-success" to={`/profile/edit/${id}`}>Edit your profile</Link>
+                            
+                                    <Row style={{ display: "flex" }}>
+                                        <Col lg={{ span: 3, offset: 0 }} style={{marginTop: '20px'}}>
+                                        <img  className="rounded-circle z-depth-2" src={image} style={{width:'200px'}}/>
+                                        </Col>
+                                        <Col style={{marginTop: '50px'}}>
+                                            <h2>Welcome back {name}! </h2>
+                                            <h3>You are a {role}</h3>
+                                        <h5>{description}</h5>
+                                        <div>
+                                        <Link id="edit" className="editprofile" to={`/profile/edit/${id}`}>Edit your profile</Link>
 
                                         {this.props.loggedInUser.role === 'HOST' ?
 
                                             <Link id="new" to={`profile/newjob`} >Create a new job</Link>
                                             :
-                                            <Link id="edit-profile" className="outline-success" to={`/preferences`}>Edit preferences</Link>
-                                        }
-
-
-                                    </div>
-                                </Col>
+                                            <Link id="edit-preferences" className="editpreferences" to={`/preferences`}>Edit preferences</Link>
+                                            }
+                                    
+                                        
+                                            </div>
+                                        </Col>
                             </Row>
 
 

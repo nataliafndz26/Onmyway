@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+body {
+  font-family: 'Montserrat';
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

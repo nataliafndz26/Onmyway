@@ -8,3 +8,109 @@
     margin-right: 50px;
 
 }
+
+.fav{
+    background-color: rgb(255, 214, 79);
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 150px;
+}
+
+.remove-fav{
+    background-color: rgb(253, 85, 85);
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 150px;
+}
+
+.remove-fav:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.apply{
+    background-color: rgb(0, 195, 255);
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 50px;
+}
+
+.applied{
+    background-color: rgb(0, 195, 255);
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 40px;
+}
+
+.applied:hover{
+    text-decoration: none;
+    background-color: rgb(0, 195, 255);
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 40px;
+}
+
+.fav:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.apply:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.job-card{
+    margin-top:30px;
+    text-align:center;
+}
+
+.description{
+    text-align:center;
+}
+
+.buttons{
+    margin-top: 50px;
+    position: absolute
+}
+
+.title{
+    text-align:center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.job-title{
+    margin-top:35px;
+}
+
+.benefits{
+    border: 1px salmon solid;
+    border-radius: 2px;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.interests{
+    border: 1px rgb(0, 197, 197) solid;
+    border-radius: 2px;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.skills{
+    border: 1px rgb(86, 216, 0) solid;
+    border-radius: 2px;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.pref-title{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

@@ -76,72 +76,86 @@ class JobDetails extends Component {
                     this.state.job
                         ?
                         <Row>
-                            <Col className='job-info' md={12}>
-                                <Card className="job-card">
-                                    <Card.Img variant="top" src={this.state.job.image} />
-                                    <Card.Body>
-                                        <Card.Title className='title' >{this.state.job.name}</Card.Title>
-                                        <Card.Text>
-                                            <p>Location: {this.state.job.location}</p>
-                                            <p>Accommodation: {this.state.job.accommodation}</p>
-                                            <p>Timetable: {this.state.job.timetable}</p>
-                                            <p>Host: {this.state.job.user.name}</p>
-                                            <p>Description: {this.state.job.description}</p>
-                                            <p>Benefits:</p>
+                        
+                            <Col className='job-image' lg={6}>
+                            <img variant="top" style={{width:'100%'}} src={this.state.job.image} />
+                            </Col>
+                            <Col className='job-title' lg={6}>
+                                <h3 className='title'>{this.state.job.name}</h3> 
+                                <p className='description'>{this.state.job.description}</p>
+                                
+                                <div className="buttons">
+
+                            {this.props.loggedInUser.role === 'USER' ?
+
+                          <>
+                                            {this.props.loggedInUser.favourites.includes(this.state.job._id)
+                                                
+                                                ?
+                                                
+                                                <Link className="remove-fav" onClick={() => this.removeFav(this.state.job._id)}>Remove Fav</Link>
+                                            
+                                                :
+                                                
+                                                <Link className="fav" onClick={() => this.saveFav(this.state.job._id)}> Add to Fav</Link>
+                                            }
+                                            
+                      
+                                            {this.props.loggedInUser.applied.includes(this.state.job._id)
+                      
+                                                ?
+                       
+                                                <Link className="applied" disabled>Applied</Link>
+                      
+                                                :
+                      
+                                                <Link className="apply" onClick={() => this.applyJob(this.state.job._id)}>Apply now!</Link>
+
+                                            }
+                                        </>
+  
+                                        :
+  
+                                        null
+
+                                    }
+
+                                </div>
+
+                            </Col>
+                        
+                                <Col lg={12}>
+                                        <Card className="job-card">
+                                        <Card.Body>
+                                        <Card.Text className='job-info'>
+                                            <p>You will stay in a {this.state.job.accommodation} in {this.state.job.location}</p>
+                                            <p>Your timetable will be: {this.state.job.timetable}</p>
+                                            <p>{this.state.job.user.name} will be your host!</p>
+                                            <h5 className="pref-title">What do we offer you?</h5>
                                             <ul>
                                                 {this.state.job.benefits.map(elm =>
-                                                    <li key={elm}>{elm}</li>
+                                                    <li className="benefits" key={elm}>{elm}</li>
                                                 )}
                                             </ul>
-                                            <p>Interests:</p>
+                                            <h5 className="pref-title">This job fits you if you are interested in...</h5>
                                             <ul>
                                                 {this.state.job.preferences.interests.map(elm =>
-                                                    <li key={elm}>{elm}</li>
+                                                    <li className="interests" key={elm}>{elm}</li>
                                                 )}
                                             </ul>
-                                            <p>Skills Required</p>
+                                            <h5 className="pref-title">What do you need to work with us?</h5>
                                             <ul>
                                                 {this.state.job.preferences.skills.map(elm =>
-                                                    <li key={elm}>{elm}</li>
+                                                    <li className="skills" key={elm}>{elm}</li>
                                                 )}
                                             </ul>
 
                                         </Card.Text>
 
                                     </Card.Body>
-                                </Card>
-
-                            </Col>
-
-                            <>
-
-                                {this.props.loggedInUser.role === 'USER' ?
-
-                                    <>
-                                        {this.props.loggedInUser.favourites.includes(this.state.job._id)
-                                            ?
-                                            <Button onClick={() => this.removeFav(this.state.job._id)} variant="btn btn-danger"> Remove from Favs</Button>
-                                            :
-                                            <Button onClick={() => this.saveFav(this.state.job._id)} variant="btn btn-outline-warning"> Add to Favs</Button>
-                                        }
-                                        {this.props.loggedInUser.applied.includes(this.state.job._id)
-                                            ?
-                                            <Button disabled variant="btn btn-success" > Applied</Button>
-                                            :
-                                            <Button onClick={() => this.applyJob(this.state.job._id)} variant="btn btn-outline-success"> Apply</Button>
-
-                                        }
-
-                                    </>
-
-                                    :
-
-                                    null
-
-                                }
-
-                            </>
-
+                                 
+                                    </Card>
+                                    </Col>
 
                         </Row>
                         :

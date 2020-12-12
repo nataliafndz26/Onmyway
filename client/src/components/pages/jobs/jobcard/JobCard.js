@@ -24,7 +24,7 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                                 <Link className="btn btn-outline-success  btn-sm" to={`/jobs/${_id}`}>Learn More</Link>
                             </ButtonGroup>
                             :
-                            <Link className="btn btn-outline-success btn-block btn-sm" to={`/jobs/${_id}`}>Learn More</Link>
+                            <Link className="btn btn-outline-success btn-block btn-sm" to={`/jobs/${_id}`}>Details</Link>
                     }
         
                     
