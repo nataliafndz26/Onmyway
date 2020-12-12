@@ -44,6 +44,17 @@ class JobDetails extends Component {
             .catch(err => console.log(err))
     }
 
+    removeFav = (jobId) => {
+        const favourites = [...this.props.loggedInUser.favourites]
+        let updatedFavourites = favourites.filter(job => job !== jobId)
+        const updateUser = { ...this.props.loggedInUser, favourites: updatedFavourites }
+        this.userService.editUserInfo(this.props.loggedInUser._id, updateUser)
+            .then((response) => {
+                this.props.setTheUser(response.data)
+            })
+            .catch(err => console.log(err))
+    }
+
     applyJob = (jobId) => {
         const applied = [...this.props.loggedInUser.applied]
         applied.push(jobId)
@@ -52,7 +63,7 @@ class JobDetails extends Component {
         this.userService.editUserInfo(this.props.loggedInUser._id, updateUser)
             .then((response) => {
                 this.props.setTheUser(response.data)
-             
+
             })
             .catch(err => console.log(err))
         this.setState({ applied: updateUser })
@@ -77,7 +88,7 @@ class JobDetails extends Component {
                                             <p>Host: {this.state.job.user.name}</p>
                                             <p>Description: {this.state.job.description}</p>
                                             <p>Benefits:</p>
-                                             <ul>
+                                            <ul>
                                                 {this.state.job.benefits.map(elm =>
                                                     <li key={elm}>{elm}</li>
                                                 )}
@@ -94,7 +105,7 @@ class JobDetails extends Component {
                                                     <li key={elm}>{elm}</li>
                                                 )}
                                             </ul>
-                                        
+
                                         </Card.Text>
 
                                     </Card.Body>
@@ -103,25 +114,35 @@ class JobDetails extends Component {
                             </Col>
 
                             <>
-                                
-                                {this.props.loggedInUser.role === 'USER' ? 
-                                    
-                                    <>
 
-                                        <Button onClick={() => this.saveFav(this.state.job._id)} > Add to Favs</Button>
-                                        <Button onClick={() => this.applyJob(this.state.job._id)} > Apply</Button>
-                                        
-                                        </>
-                                    
+                                {this.props.loggedInUser.role === 'USER' ?
+
+                                    <>
+                                        {this.props.loggedInUser.favourites.includes(this.state.job._id)
+                                            ?
+                                            <Button onClick={() => this.removeFav(this.state.job._id)} variant="btn btn-danger"> Remove from Favs</Button>
+                                            :
+                                            <Button onClick={() => this.saveFav(this.state.job._id)} variant="btn btn-outline-warning"> Add to Favs</Button>
+                                        }
+                                        {this.props.loggedInUser.applied.includes(this.state.job._id)
+                                            ?
+                                            <Button disabled variant="btn btn-success" > Applied</Button>
+                                            :
+                                            <Button onClick={() => this.applyJob(this.state.job._id)} variant="btn btn-outline-success"> Apply</Button>
+
+                                        }
+
+                                    </>
+
                                     :
 
-                                 null
-                                    
+                                    null
+
                                 }
-                                
+
                             </>
 
-                            
+
                         </Row>
                         :
                         <Spinner animation="border" variant="primary" />
