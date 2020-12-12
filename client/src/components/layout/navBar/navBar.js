@@ -31,8 +31,8 @@ class NavBar extends Component {
                         <img
                             alt="Logotipo"
                             src={logo}
-                            width="30"
-                            height="30"
+                            width="35"
+                            height="45"
                             className="d-inline-block align-top"
                         />{' '}OnmyWay</Navbar.Brand>
                 </Link>
