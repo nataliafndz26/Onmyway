@@ -63,16 +63,28 @@ class AllJobs extends Component {
         return (
             <div>
                 <img className="all" src="https://images.unsplash.com/photo-1442570468985-f63ed5de9086?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1393&q=80"
-                // src="https://images.unsplash.com/photo-1500301111609-42f1aa6df72a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" 
+                 
                 />
                     <Container >
-                    <h1>All jobs</h1>
+                    <h1 style={{textAlign:'center'}}>Exchanges and volunteering with free accommodation</h1>
                         
                             {
                                 this.state.jobs
                                     ?
-                                <Tabs defaultActiveKey="alljobs" id="noanim-tab-example" style={{ marginTop: '50px' }}>
+                            <Tabs defaultActiveKey="filteredjobs" id="noanim-tab-example" style={{ marginTop: '50px' }}>
                                     
+                                    <Tab eventKey="filteredjobs" title="Jobs for you">
+                                        <Row>
+                                            {this.state.filteredjobs.map(elm => {
+                                                return (
+                                                    <Col lg={4} >
+                                                        <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                    </Col>
+                                                )
+                                            })
+                                            }
+                                        </Row>
+                                    </Tab>
                                         
                                         <Tab eventKey="alljobs" title="All jobs">
                                             <Row>
@@ -88,18 +100,6 @@ class AllJobs extends Component {
                                         </Tab>
                                         
                                     
-                                    <Tab eventKey="filteredjobs" title="Jobs for you">
-                                        <Row>
-                                            {this.state.filteredjobs.map(elm => {
-                                                return (
-                                                    <Col lg={4} >
-                                                        <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
-                                                    </Col>
-                                                )
-                                            })
-                                            }
-                                        </Row>
-                                    </Tab>
                                 </Tabs>
                                     :
                                     <Spinner animation="border" variant="primary" />
