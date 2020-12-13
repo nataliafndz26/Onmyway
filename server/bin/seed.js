@@ -136,7 +136,115 @@ const jobs = [
         benefits: ['Breakfast', 'Lunch', 'Shared bedroom', 'Health insurance'],
         image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/164/807/main/59e0ae4a972615a26cd3272cbe8e07bb.jpg',
         description: 'We have set up an Eco campsite and guest house using permaculture principles and also the 3 R ie reduce, reuse and recycle on site. We encourage our guests to think about the environment, separate their waste, reuse the grey water and use environmentally friendly washing / cleaning products. We are in the foothills of the Pirin mountain range in the far south west of Bulgaria.'
-    }
+    },
+    {
+        name: 'Come to see how a "country life refuge" is like (:',
+        location: ' Gualeguaychú Department, Argentina',
+        accommodation: 'Farm',
+        timetable: '36 h/week, Monday to Sunday, 8:00am-1:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Shared bedroom', 'Dinner', 'Laundry'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/122/728/main/ce3cfc5e46792e767fdeed2743f49a38.jpg',
+        description: 'We are now looking for longer stay experienced volunteers to help us with our self-sufficiency energy projects, green roof repairing, general house maintenance, andgarden&orchard expansion. Please specify your working experience in your application. We are particularly interested in volunteers with skills in the following: farming, garden, orchard, forestry, milking, fencing, carpentry, masonry, electricity, plumbing, echo wise heating, etc.'
+    },
+    {
+        name: 'Help us creating fun experiences for our guest in Guadalajara, México the land of Mariachi and Tequila',
+        location: 'Guadalajara, México',
+        accommodation: 'Hostel',
+        timetable: '24 h/week, Friday, Saturday and Sunday',
+        benefits: ['Breakfast', 'Lunch', 'Shared bedroom', 'Health insurance'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/012/842/main/HN12.jpg',
+        description: 'Our Volunteers are the leaders for all the fun activities at the hostel, we have a daily activity that you will need to organize, your main goal will be to get friend and involve everybody in the different activities, every guest should have a great experience staying with us and tell the world about it through websites reviews.'
+    },
+    {
+        name: 'Receptionnist / Come live in the forest',
+        location: 'Montcalm, Canadá',
+        accommodation: 'Eco accommodation',
+        timetable: '25 h/week, flexible timetable',
+        benefits: ['Breakfast', 'Lunch', 'Dinner', 'Health insurance', 'Shared bedroom', 'Individual bedroom'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/037/103/main/dbee2863d479600a4eb53baaf04c5ea9.jpg',
+        description: 'We are established on a 34 acres plot of woodland, one hour north of Montreal. We have small cabins on the land where guests can come sleep under the stars and see through bubbles, sleep in a tipi or a tree house. We need volunteers to help us with the reception and answering calls and emails and assisting with bookings.'
+    },
+    {
+        name: 'Live Like A Local In An 1848 Historic Mississippi River Town',
+        location: 'Alma, USA',
+        accommodation: 'Hotel',
+        timetable: 'Monday to friday 8:00am-3:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Individual bedroom','Laundry'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/169/790/main/5bf22fbc811b1c4895d29fb26237cee2.jpg',
+        description: 'Looking for help with housekeeping, breakfast service & gardening at our bed & breakfast in historic Alma, Wisconsin. Private room & bath. Located on the MIssissippi River. Cleaning 5 bedrooms/baths during the day ready for check in by 4pm Assist with breakfast preparation & service in the morning Assist with keeping our gardens attractive'
+    },
+    {
+        name: 'Be a volunteer in an animal rescue center and make a difference!',
+        location: 'San Lorenzo, Costa Rica',
+        accommodation: 'House',
+        timetable: 'Monday to Sunday 9:00am-12:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Dinner', 'Shared bedroom'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/023/199/main/89f1211cbc1a260bfc2f80c5978415f5.jpg',
+        description: 'Our organization is an environmental and animal-friendly zone in Costa Rica located in a hidden valley in the middle of a cloud forest. We are 15 friends of many years, vegan and animal lovers. We´re an animal rescue center that has more than 700 dogs, cats, horses, ducks, goats, geese, hen and all the wildlife around.Come help us in the center by keeping it awesome'
+    },
+    {
+        name: 'Come help us in the coolest hostel in San Diego!',
+        location: 'San Diego County, California, Estados Unidos',
+        accommodation: 'Hostel',
+        timetable: '25h/week',
+        benefits: ['Breakfast', 'Dinner','Shared bedroom'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/033/832/main/bc638700f43a187858e7395c5edfe943.jpg',
+        description: 'Welcome to our hostel, in the San Diego LGBT neighborhood with many bars, restaurants, clubs walkable to the house as well as the famous Balboa Park! We´re looking for general help, and mostly with gardening, farming and handyman tasks:) Join us and enjoy the best of California!'
+    },
+    {
+        name: 'Photography and Videography volunteer',
+        location: 'Bomet, Kenia',
+        accommodation: 'Community',
+        timetable: 'Flexible schedule, 3 days a week',
+        benefits: ['Breakfast', 'Lunch', 'Dinner'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/168/351/main/d02afbe3dcd983730543dff12b352145.jpg',
+        description: 'We need help in creating the organization´s documentaries both in picture and video forms.We also need help in managing social media accounts and updating our website.The volunteer can also help in online fundraising to support any project within the organization.'
+    },
+    {
+        name: 'Teaching various lessons and taking care of children in Tanzania! :)',
+        location: 'Bugiri, Uganda',
+        accommodation: 'House',
+        timetable: 'Monday to Saturday, 9:00am-3:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Dinner', 'Shared bedroom'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/026/872/main/33e99e40d61b595e6225b0fd2c7f3999.jpg',
+        description: 'Our project is providing free quality education, care, nutrition and health services to less fortunate rural children in Bugiri region in Uganda. We need volunteers for the following activities: • Teaching English, reading, and writing skills; • Teaching Creative Arts, Sports and games, • Science, Hygiene and Environmental protection skills • Arithmetic and counting; • Cooking food. Please, check program description for more info.'
+    },
+    {
+        name: 'Come and practice language with local people in our community',
+        location: 'Bata, Guinea Ecuatorial',
+        accommodation: 'House',
+        timetable: 'Monday to Saturday, 9:00am-3:00pm',
+        benefits: ['Breakfast', 'Lunch', 'Dinner', 'Health insurance', 'Shared bedroom', 'Individual bedroom', 'Some extra money', 'Laundry'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/015/809/main/70f119b93c6246718543edbc9099daa5.jpg',
+        description: 'Since we started hosting volunteers, local people and youth in our community are very eager to practice and try to talk to our volunteers when they walk in the street. We took it as advantage for them to practice and learn new languages (Basic language is Spanish), even if they are eager to learn any other foreign language. We opened evening class for them to learn and practice languages. All volunteers interested in joining them are welcome!'
+    },
+    {
+        name: 'Casual staff wanted for stunning remote wilderness lodge!',
+        location: 'Glenorchy, New Zeland',
+        accommodation: 'Host House',
+        timetable: 'One free day a week, Monday to Saturday, 8:00am-4:00pm',
+        benefits: ['Breakfast', 'Lunch','Shared bedroom'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/029/272/main/fa226ded94127acdf49b2c72a919de5c.jpg',
+        description: 'The main tasks would consist of cleaning (rooms, kitchen, bathrooms, toilets etc.) and housekeeping. Sometimes we need help in our cute but very busy cafe/gift shop in Glenorchy with a B&B in the garden. Help includes serving food & drinks, taking orders and cleaning the B&B. Other work may include general maintenance/odd jobs, such as chopping wood, cutting branches, mowing lawns, weeding etc. We try to use your skills as best we can.'
+    },
+    {
+        name: 'Filming & editing - short hostel promo videos',
+        location: 'Melbourne, Australia',
+        accommodation: 'Hostel',
+        timetable: 'Flexible Schedule, 10h/week',
+        benefits: ['Breakfast', 'Lunch', 'Dinner', 'Health insurance', 'Shared bedroom', 'Individual bedroom', 'Some extra money', 'Laundry'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/023/732/main/675b411d9952b0d4d15ae35e02bb7577.jpg',
+        description: 'We´re looking to create a handful of 30 second promo videos to highlight the events we host at Landing Pads Accommodation, Melbourne´s best little hostels. The videos will need to highlight some events we host in-house, including our weekly Family Dinner, job seekers tutorial and others.We will be using this as promotional material online and so they will need to be of professional standard.Please contact us if you have experience.'
+    },
+    {
+        name: 'Graffiti / graphic Art',
+        location: 'Melbourne, Australia',
+        accommodation: 'Hostel',
+        timetable: '20h/week',
+        benefits: ['Breakfast', 'Lunch', 'Shared bedroom', 'Laundry'],
+        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/003/570/main/H11_Beers_in_the__garden___copy.jpg',
+        description: 'Hi There, We have some plain boring white walls in our hostle including our hallways, dining, and lounge area. We are looking for an experienced Graffiti, Stencil or Graphic artist to add some color and life to our walls, with some inspirational text and Images We are open to ideas on what goes up so feel free to pitch your ideas, the theme would be and adventure and shared culture. Cheers Matt'
+    },
 ]
 
 const users = [
@@ -144,40 +252,45 @@ const users = [
         username: "dayan",
         password: hashPass1,
         name: 'Dayan Rojas',
+        email: 'garguelles2701@gmail.com',
         image: 'https://media-exp1.licdn.com/dms/image/C4E03AQFVComRAmBrUg/profile-displayphoto-shrink_800_800/0/1571211855973?e=1613001600&v=beta&t=cBSB3VgdnugD2BI9pc7KH7UXKjNu1PNDeYZzXEmCbdE',
-        description: 'Lovely woman that enjoys meeting young people',
+        description: 'Lovely woman that enjoys meeting new people',
         role: 'HOST',
     },
     {
         username: "jon",
         password: hashPass1,
         name: 'Jon Arechalde',
+        email: 'garguelles2701@gmail.com',
         image: 'https://media-exp1.licdn.com/dms/image/C5603AQF9fnDDBfA6cQ/profile-displayphoto-shrink_800_800/0?e=1613001600&v=beta&t=uAw4DkIVjzeBkyPfdFXeLV9XbyoMn6h-HJjHiJEUa54',
-        description: 'Lovely woman that enjoys meeting young people',
+        description: 'Tech lover, and ',
         role: 'HOST',
     },
     {
         username: "hector",
         password: hashPass1,
         name: 'Hector Antón',
+        email: 'garguelles2701@gmail.com',
         image: 'https://media-exp1.licdn.com/dms/image/C4D03AQHLId1sh1tzmA/profile-displayphoto-shrink_800_800/0?e=1613001600&v=beta&t=J9EWfnzmELZ4_rpDVEoLoV6_HT5R4v5_PtvfByf9SPo',
-        description: 'Lovely woman that enjoys meeting young people',
+        description: 'I consider myself responsible, empathetic and a good work partner, with contagious joy. I love bad jokes, good food and making people laugh. ',
         role: 'HOST',
     },
     {
         username: "belen",
         password: hashPass1,
         name: 'Belen Olias',
+        email: 'garguelles2701@gmail.com',
         image: 'https://media-exp1.licdn.com/dms/image/C4E03AQHs9qEBy-BHog/profile-displayphoto-shrink_800_800/0/1516605864182?e=1613001600&v=beta&t=VsqoXTgeQ30hbcx745tSLYDXhXVVEn_jUCebYjLPU3s',
-        description: 'Lovely woman that enjoys meeting young people',
+        description: 'Always trying to think outside the box. Connecting the dots. Enthusiastic reader. Keep learning everyday! ',
         role: 'HOST',
     },
     {
         username: "natalia",
         password: hashPass1,
         name: 'Natalia Fernandez',
+        email: 'gonar2795@gmail.com',
         image: 'https://media-exp1.licdn.com/dms/image/C4E03AQHs9qEBy-BHog/profile-displayphoto-shrink_800_800/0/1516605864182?e=1613001600&v=beta&t=VsqoXTgeQ30hbcx745tSLYDXhXVVEn_jUCebYjLPU3s',
-        description: 'Lovely woman that enjoys meeting young people',
+        description: 'I love to travel around the world, helping people, caring and giving a hand always that´s needed. My pasions are music, learning knew languages, animals, and children :)',
         favourites: [],
         role: 'USER',
     },
@@ -185,8 +298,9 @@ const users = [
         username: "gonza",
         password: hashPass1,
         name: 'Gonzalo Argüelles',
+        email: 'gonar2795@gmail.com',
         image: 'https://media-exp1.licdn.com/dms/image/C4E03AQHs9qEBy-BHog/profile-displayphoto-shrink_800_800/0/1516605864182?e=1613001600&v=beta&t=VsqoXTgeQ30hbcx745tSLYDXhXVVEn_jUCebYjLPU3s',
-        description: 'Lovely woman that enjoys meeting young people',
+        description: 'Pasionate traveller, food lover and nature enthusiast',
         favourites: [],
         role: 'USER',
     },
@@ -266,6 +380,78 @@ const preferences = [
         time: 'More than 1 year'
     },
     {
+        interests: ['Sabbatical Year', 'Self-knowledge', 'Travel Alone', 'Backpacker', 'Try New Foods'],
+        continent: 'South America',
+        skills: ['Ecological activities', 'Working with animals', 'Cleaning'],
+        time: '0-6 months'
+    },
+    {
+        interests: ['Professional Development', 'Travel Alone', 'Couple Travel', 'Learn Languages'],
+        continent: 'Central America',
+        skills: ['Working with guests', 'Cleaning','Community work'],
+        time: '0-6 months',
+    },
+    {
+        interests: ['Professional Development', 'Self-knowledge', 'Travel Alone', 'Learn Languages', 'Spiritual Development'],
+        continent: 'North America',
+        skills: ['Working with guests', 'Cleaning', 'Working with animals', 'Ecological activities'],
+        time: '6 months-1 year'
+    },
+    {
+        interests: ['Professional Development', 'Couple Travel','Try New Foods'],
+        continent: 'North America',
+        skills: ['Working with guests', 'Cleaning', 'Cooking'],
+        time: '0-6 months'
+    },
+    {
+        interests: ['Sabbatical Year', 'Self-knowledge', 'Spiritual Development'],
+        continent: 'Central America',
+        skills: ['Cleaning', 'Community work', 'Working with animals', 'Ecological activities'],
+        time: '6 months-1 year'
+    },
+    {
+        interests: ['Professional Development', 'Travel Alone', 'Digital Nomadism', 'Learn Languages'],
+        continent: 'North America',
+        skills: ['Working with guests', 'Cleaning', 'IT'],
+        time: 'More than 1 year'
+    },
+    {
+        interests: ['Professional Development', 'Digital Nomadism', 'Try New Foods', 'Spiritual Development'],
+        continent: 'Africa', 
+        skills: ['Community work', 'IT'],
+        time: '6 months-1 year'
+    },
+    {
+        interests: ['Sabbatical Year', 'Professional Development', 'Self-knowledge', 'Try New Foods'],
+        continent: 'Africa',
+        skills: ['Teaching', 'Cooking', 'Community work'],
+        time: 'More than 1 year'
+    },
+    {
+        interests: ['Sabbatical Year', 'Self-knowledge', 'Learn Languages', 'Try New Foods'],
+        continent: 'Africa',
+        skills: ['Teaching', 'Community work'],
+        time: '6 months-1 year'
+    },
+    {
+        interests: ['Professional Development', 'Self-knowledge', 'Learn Languages', 'Backpacker'],
+        continent: 'Oceania',
+        skills: ['Working with guests', 'Cleaning', 'Cooking'],
+        time: 'More than 1 year'
+    },
+    {
+        interests: ['Professional Development', 'Travel Alone', 'Digital Nomadism'],
+        continent: 'Oceania',
+        skills: ['IT'],
+        time: '0-6 months'
+    },
+    {
+        interests: ['Professional Development', 'Travel Alone', 'Backpacker', 'Spiritual Development'],
+        continent: 'Oceania',
+        skills: [ 'Community work'],
+        time: '0-6 months'
+    },
+    {//nuestras
         interests: ['Professional Development', 'Self-knowledge', 'Try New Foods'],
         continent: 'Africa',
         skills: ['Teaching', 'Community work', 'Cleaning'],
@@ -295,8 +481,8 @@ Promise.all([createUsers, createJobs, createPreferences])
         results[1].forEach((job) => theJobs.push(job._id))
         results[2].forEach((preferences) => thePreferences.push(preferences._id))
     })
-    .then(() => User.findByIdAndUpdate(theUsers[4], { preferences: thePreferences[12] }, { new: true }))
-    .then(() => User.findByIdAndUpdate(theUsers[5], { preferences: thePreferences[13] }, { new: true }))
+    .then(() => User.findByIdAndUpdate(theUsers[4], { preferences: thePreferences[24] }, { new: true }))
+    .then(() => User.findByIdAndUpdate(theUsers[5], { preferences: thePreferences[25] }, { new: true }))
 
     .then(() => Job.findByIdAndUpdate(theJobs[0], { preferences: thePreferences[0], user: theUsers[0] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[1], { preferences: thePreferences[1], user: theUsers[1] }, { new: true }))
@@ -309,7 +495,20 @@ Promise.all([createUsers, createJobs, createPreferences])
     .then(() => Job.findByIdAndUpdate(theJobs[8], { preferences: thePreferences[8], user: theUsers[0] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[9], { preferences: thePreferences[9], user: theUsers[1] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[10], { preferences: thePreferences[10], user: theUsers[2] }, { new: true }))
-    .then(() => Job.findByIdAndUpdate(theJobs[11], { preferences: thePreferences[11], user: theUsers[2] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[11], { preferences: thePreferences[11], user: theUsers[3] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[12], { preferences: thePreferences[12], user: theUsers[0] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[13], { preferences: thePreferences[13], user: theUsers[1] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[14], { preferences: thePreferences[14], user: theUsers[2] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[15], { preferences: thePreferences[15], user: theUsers[3] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[16], { preferences: thePreferences[16], user: theUsers[0] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[17], { preferences: thePreferences[17], user: theUsers[1] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[18], { preferences: thePreferences[18], user: theUsers[2] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[19], { preferences: thePreferences[19], user: theUsers[3] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[20], { preferences: thePreferences[20], user: theUsers[0] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[21], { preferences: thePreferences[21], user: theUsers[1] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[22], { preferences: thePreferences[22], user: theUsers[2] }, { new: true }))
+    .then(() => Job.findByIdAndUpdate(theJobs[23], { preferences: thePreferences[23], user: theUsers[3] }, { new: true }))
+
     .catch((err) => console.log(err))
     .finally(() => mongoose.connection.close())
 

@@ -5,13 +5,6 @@ const mongoose = require('mongoose')
 
 const User = require('../models/user')
 
-// router.post('/favourites/:favourites_id', (req, res) => {
-//         User
-//                 .findByIdAndUpdate(user._id, { $push: { favourites: req.params.favourites_id } }, { new: true })
-//                 .then(response => res.status(200).json(response))
-//                 .catch(err => res.status(500).json(err))
-// })
-
 router.get('/getuser/:user_id', (req, res) => {
         User
                 .findById(req.params.user_id)
