@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AuthService from './../../../service/auth.service'
+import './Login.css'
 
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
@@ -52,7 +53,7 @@ class Login extends Component {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                         </Form.Group>
-                        <Button variant="outline-success" size="sm" type="submit">Login</Button>
+                        <Button className="login-bt" size="sm" type="submit">Login</Button>
                     </Form>
                 </Col>
             </Row>

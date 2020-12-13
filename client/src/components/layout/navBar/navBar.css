@@ -2,3 +2,22 @@
     background: rgba(255,255,255,0.8);
 }
 
+.preferences:hover{
+    text-decoration:none;
+    color:black;
+}
+
+.jobs:hover{
+    text-decoration:none;
+    color:black;
+}
+
+.logout:hover{
+    text-decoration:none;
+    color:black;
+}
+
+.profile-nav:hover{
+    text-decoration:none;
+    color:black
+}

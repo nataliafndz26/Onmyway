@@ -86,6 +86,7 @@ class Profile extends Component {
 
         return (
             <div className="profile">
+                   <img className="bg-img" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1533&q=80" />
                 {
 
                     this.props.loggedInUser ?
@@ -93,18 +94,17 @@ class Profile extends Component {
                             
                                     <Row  style={{ display: "flex" }}>
                                         <Col lg={{ span: 3, offset: 0 }} style={{marginTop: '20px'}}>
-                                        <img  className="rounded-circle z-depth-2" src={image} style={{width:'200px'}}/>
+                                        <img  className="rounded-circle z-depth-2" src={image} style={{width:'200px', marginTop:'30px'}}/>
                                         </Col>
-                                <Col lg={{ span: 7, offset: 0 }}className="init" style={{marginTop: '50px'}}>
-                                            <h2>Welcome back {name}! </h2>
-                                            <h3>You are a {role}</h3>
-                                        <h5>{description}</h5>
+                                <Col lg={{ span: 7, offset: 0 }} className="init" style={{marginTop: '50px'}}>
+                                            <h2 className="name">Welcome back, {name}! </h2>
+                                        <h5 className="description">{description}</h5>
                                         <div>
                                         <Link id="edit" className="editprofile" to={`/profile/edit/${id}`}>Edit your profile</Link>
 
                                         {this.props.loggedInUser.role === 'HOST' ?
 
-                                            <Link id="new" to={`profile/newjob`} >Create a new job</Link>
+                                            <Link className="newjob" id="new" to={`profile/newjob`} >Create a new job</Link>
                                             :
                                             <Link id="edit-preferences" className="editpreferences" to={`/preferences`}>Edit preferences</Link>
                                             }

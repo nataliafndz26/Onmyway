@@ -69,11 +69,11 @@ class EditUser extends Component {
 
         return (
             <div>
-                <img className="bg-img" src="https://images.unsplash.com/photo-1491131346874-e9854a44e6ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" />
+                <img className="bg-img" src="https://images.unsplash.com/photo-1499591934245-40b55745b905?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80" />
 
                 <Container className="ed-pro-form">
                     <Row style={{ justifyContent: 'center' }}>
-                        <Col md={6}>
+                        <Col className= "col-edit" lg={5}>
                             <h1>Edit profile</h1>
                             <br />
                             <Form onSubmit={this.handleSubmit}>
@@ -96,11 +96,11 @@ class EditUser extends Component {
                                 <Form.Group controlId="time">
                                     <Form.Label>Time</Form.Label>
                                     <Form.Control className="form" as="select" custom value={this.state.role} name="role" onChange={this.handleInputChange}>
-                                        <option >USER</option>
-                                        <option >HOST</option>
+                                        <option>USER</option>
+                                        <option>HOST</option>
                                     </Form.Control>
                                 </Form.Group>
-                                <Button variant="dark" type="submit">Submit</Button>
+                                <Button className="bt-edit" type="submit">Submit</Button>
                             </Form>
                         </Col>
                     </Row>

@@ -39,17 +39,17 @@ class NavBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Link to="/preferences">
-                            <Nav.Link className="preferences" as="div">Preferences</Nav.Link>
+                        <Link className="preferences" to="/preferences">
+                            <Nav.Link  as="div">Preferences</Nav.Link>
                         </Link>
-                        <Link to="/jobs">
-                            <Nav.Link className="jobs" as="div">Jobs</Nav.Link>
+                        <Link className="jobs" to="/jobs">
+                            <Nav.Link as="div">Jobs</Nav.Link>
                         </Link>
-                        <Link to="/" onClick={this.logout}>
-                            <Nav.Link className="logout" as="div">Log out</Nav.Link>
+                        <Link className="logout" to="/" onClick={this.logout}>
+                            <Nav.Link as="div">Log out</Nav.Link>
                         </Link>
-                        <Link to="/profile">
-                            <Nav.Link className="profile" as="div">Profile</Nav.Link>
+                        <Link className="profile-nav" to="/profile">
+                            <Nav.Link as="div">Profile</Nav.Link>
                         </Link>
                     </Nav>
                 </Navbar.Collapse>

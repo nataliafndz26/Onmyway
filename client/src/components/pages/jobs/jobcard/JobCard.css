@@ -4,3 +4,48 @@
     border-radius: 5px;
     margin-bottom: 30px;
 }
+
+.editjob-bt{
+    background-color: rgb(252, 175, 74);
+    padding: 6px;
+    border-radius: 4px;
+    color: white;
+}
+
+.editjob-bt:hover{
+    text-decoration:none;
+    background-color: rgb(252, 175, 74);
+    color:black
+}
+
+.deletejob-bt{
+    background-color: #d65050;
+    padding: 6px;
+    border-radius: 4px;
+    color: white;
+}
+
+.deletejob-bt:hover{
+    text-decoration:none;
+    background-color: #d65050;
+    color:black
+}
+
+.detailsjob-bt{
+    background-color: #019e8e;
+    padding: 6px;
+    border-radius: 4px;
+    color: white;
+    display:block
+}
+
+.detailsjob-bt:hover{
+    text-decoration:none;
+    background-color:#019e8e;
+    color:black
+}
+
+.btn-group{
+    display:flex;
+    justify-content: space-around;
+}

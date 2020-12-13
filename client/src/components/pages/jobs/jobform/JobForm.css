@@ -11,3 +11,33 @@
     z-index: -1000;
     object-fit: cover;
 }
+
+.cr-form{
+font-weight: bold;
+}
+
+.col-form{
+background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
+border-radius: 5px;
+margin:20px;
+}
+
+.form-bt{
+    background-color:rgb(252, 144, 243);
+    border: rgb(255, 166, 248);
+    color: rgb(255, 255, 255);
+    margin-top:10px;
+    margin-bottom: 25px;
+    display: block;
+    text-align:center;
+    justify-content: center;
+    align-items:center
+}
+
+.form-bt:hover{
+    text-decoration:none;
+    background-color:rgb(252, 144, 243);
+    border: rgb(255, 166, 248);
+    color: black
+}
+

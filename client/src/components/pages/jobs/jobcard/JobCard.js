@@ -18,13 +18,18 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                     {
                         user._id === loggedInUser._id 
                             ?
-                            <ButtonGroup aria-label="Basic example" style={{ width: '100%' }}>
-                                <Link className="btn btn-light btn-sm" to={`/jobs/${_id}/editjob`}>Edit</Link>
-                                <Button onClick={deleteJob} className="btn btn-light btn-sm">Delete</Button>
-                                <Link className="btn btn-outline-success  btn-sm" to={`/jobs/${_id}`}>Details</Link>
-                            </ButtonGroup>
+
+                            <div className="btn-group">
+                                
+                                <Link className="detailsjob-bt" style={{padding:'6px 20px'}} to={`/jobs/${_id}`}>Details</Link>
+                                <Link className="editjob-bt" style={{padding:'6px 20px'}} to={`/jobs/${_id}/editjob`}>Edit</Link>
+                                <Link className="deletejob-bt" style={{padding:'6px 20px'}} onClick={deleteJob}>Delete</Link>
+
+                                </div>
+                           
                             :
-                            <Link className="btn btn-outline-success btn-block btn-sm" to={`/jobs/${_id}`}>Details</Link>
+
+                            <Link className="detailsjob-bt" style={{padding:'6px 20px'}} to={`/jobs/${_id}`}>Details</Link>
                     }
         
                     

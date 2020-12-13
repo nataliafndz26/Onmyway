@@ -128,7 +128,7 @@ class JobDetails extends Component {
                                         <Card className="job-card">
                                         <Card.Body>
                                         <Card.Text className='job-info'>
-                                            <p>You will stay in a {this.state.job.accommodation} in {this.state.job.location}</p>
+                                            <h5>You will stay in a {this.state.job.accommodation} in {this.state.job.location}</h5>
                                             <p>Your timetable will be: {this.state.job.timetable}</p>
                                             <p>{this.state.job.user.name} will be your host!</p>
                                             <h5 className="pref-title">What do we offer you?</h5>

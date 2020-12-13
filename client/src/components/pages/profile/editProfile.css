@@ -1,6 +1,6 @@
 .ed-pro-form{
-    background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
-    backdrop-filter: blur(5px);
+    /* background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)); */
+    /* backdrop-filter: blur(5px); */
     border-radius: 5px;
     margin-bottom: 30px;
 }
@@ -10,4 +10,30 @@
     width: 100%;
     z-index: -1000;
     object-fit: cover;
+}
+
+.col-edit{
+    background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    margin:20px;
+}
+
+.bt-edit{
+    background-color:rgb(106, 197, 250);
+    border: rgb(106, 197, 250);
+    color: rgb(255, 255, 255);
+    margin-top:10px;
+    margin-bottom: 25px;
+    display: block;
+    text-align:center;
+    justify-content: center;
+    align-items:center
+}
+
+.bt-edit:hover{
+    text-decoration:none;
+    background-color:rgb(106, 197, 250);
+    border: rgb(106, 197, 250);
+    color: black
 }

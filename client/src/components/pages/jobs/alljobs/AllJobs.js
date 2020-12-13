@@ -62,7 +62,9 @@ class AllJobs extends Component {
     render() {
         return (
             <div>
-                <img className="all" src="https://images.unsplash.com/photo-1500301111609-42f1aa6df72a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"/>
+                <img className="all" src="https://images.unsplash.com/photo-1442570468985-f63ed5de9086?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1393&q=80"
+                // src="https://images.unsplash.com/photo-1500301111609-42f1aa6df72a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" 
+                />
                     <Container >
                     <h1>All jobs</h1>
                         

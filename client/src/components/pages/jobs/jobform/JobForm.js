@@ -77,11 +77,12 @@ class JobForm extends Component {
         return (
 
             <div>
-                    <img className="bg-img" src="https://images.unsplash.com/photo-1491131346874-e9854a44e6ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"/>
+                <img className="bg-img" src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"/>
                 <Container className="cr-form">
-                    <h1 style={{ textAlign: 'center' }}>Create a new job</h1>
-                    <Row  style={{ justifyContent:'center' }}>
-
+                    <h2 style={{ textAlign: 'center', paddingTop: '30px', paddingBottom: '10px'}}>Do you want to contribute to our community with a new job?</h2>
+                    <h3 style={{ textAlign: 'center' }}>Tell us more about it! ;)</h3>
+                    <Row style={{ justifyContent: 'center' }}>
+                        <Col className= "col-form" lg={{span: 5}}>
                         <Form onSubmit={this.handleSubmit}>
 
                             <Form.Group controlId="name">
@@ -173,8 +174,10 @@ class JobForm extends Component {
                                     <option>More than 1 year</option>
                                 </Form.Control>
                             </Form.Group>
-                            <Button variant="outline-success" type="submit">Create job</Button>
-                        </Form>
+                            <Button className="form-bt" type="submit">Create job</Button>
+                            </Form>
+                            </Col>
+
                     </Row>
                 </Container>
             </div>

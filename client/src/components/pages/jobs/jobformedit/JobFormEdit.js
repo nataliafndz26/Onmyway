@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import JobsService from '../../../../service/jobs.service'
-import { Container,Row, Form, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import FilesService from './../../../../service/upload.service'
+import './JobFormEdit.css'
 
 class JobFormEdit extends Component {
 
@@ -105,10 +106,11 @@ class JobFormEdit extends Component {
         console.log(this.state.job.preferences)
         return (
             <div>
-                <img className="bg-img" src="https://images.unsplash.com/photo-1491131346874-e9854a44e6ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" />
-                <Container className="ed-form">
+                <img className="bg-img" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" />
+                <Container>
                     <h1 style={{ textAlign: 'center' }}>Edit this job</h1>
                     <Row style={{ justifyContent: 'center' }}>
+                    <Col className="ed-form" lg={5}>
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Group controlId="name">
                                 <Form.Label>Name</Form.Label>
@@ -197,8 +199,9 @@ class JobFormEdit extends Component {
                                     <option selected={this.state.job.preferences.time.includes("More than 1 year") ? true : false}>More than 1 year</option>
                                 </Form.Control>
                             </Form.Group>
-                            <Button variant="outline-success" type="submit">Edit job</Button>
-                        </Form>
+                            <Button className="formedit-bt" type="submit">Edit job</Button>
+                            </Form>
+                            </Col>
                     </Row>
                 </Container>
 

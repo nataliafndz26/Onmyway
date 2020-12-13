@@ -1,0 +1,11 @@
+.login-bt{
+    color: #009485;
+    border: 1px solid #009485;
+    background-color: white;
+}
+
+.login-bt:hover{
+    color: white;
+    border: 1px solid #019e8e;
+    background-color: #019e8e;
+}
