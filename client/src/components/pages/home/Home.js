@@ -13,16 +13,18 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            showModal1: false,
-            showModal2: false
+            showModal: false,
+            isloggingIn: false,
         }
     }
 
     handleModalLogin = visible => this.setState({
-        showModal1: visible
+        showModal: visible,
+        isloggingIn: true
     })
     handleModalSignup = visible => this.setState({
-        showModal2: visible
+        showModal: visible,
+        isloggingIn: false
     })
     
     render() {
@@ -45,14 +47,13 @@ class Home extends Component {
                      </Row>
                 </Container>
                 
-                <Modal show={this.state.showModal1} onHide={() => this.handleModalLogin(false)}>
+                <Modal show={this.state.showModal} onHide={() => this.handleModalLogin(false)}>
                     <Modal.Body>
-                        <Login {...this.props} setTheUser={this.props.setTheUser} closeModal={() => this.handleModalLogin(false)}/>
-                    </Modal.Body>
-                </Modal>
-                <Modal show={this.state.showModal2} onHide={() => this.handleModalSignup(false)}>
-                    <Modal.Body>
-                        <Signup {...this.props} closeModal={() => this.handleModalSignup(false)}/>
+                        {this.state.isloggingIn ?
+                         <Login {...this.props} setTheUser={this.props.setTheUser} closeModal={() => this.handleModalLogin(false)}/>
+                         :
+                         <Signup {...this.props} closeModal={() => this.handleModalSignup(false)}/>
+                         }
                     </Modal.Body>
                 </Modal>
                 </>

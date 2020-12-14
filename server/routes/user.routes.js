@@ -5,9 +5,9 @@ const mongoose = require('mongoose')
 
 const User = require('../models/user')
 
-router.get('/getuser/:user_id', (req, res) => {
+router.get('/getuser/:id', (req, res) => {
         User
-                .findById(req.params.user_id)
+                .findById(req.params.id)
                 .populate('favourites')
                 .populate('applied')
                 .populate('preferences')
@@ -15,16 +15,16 @@ router.get('/getuser/:user_id', (req, res) => {
                 .catch(err => res.status(500).json({ message: 'No se encontró información en la base de datos' }))
 })
 
-router.put('/edituser/:user_id', (req, res) => {
+router.put('/edituser/:id', (req, res) => {
         User
-                .findByIdAndUpdate(req.params.user_id, req.body, { new: true })
+                .findByIdAndUpdate(req.params.id, req.body, { new: true })
                 .then(data => res.status(200).json(data))
                 .catch(err => res.status(500).json({ message: 'No fue posible actualizar' }))
 })
 
-router.delete("/deleteuser/:user_id", (req, res, next) => {
+router.delete("/deleteuser/:id", (req, res, next) => {
         User
-                .findByIdAndDelete(req.params.user_id)
+                .findByIdAndDelete(req.params.id)
                 .then(data => res.status(204))
                 .catch(err => res.status(500).json({ message: 'No fue posible eliminar la información seleccionada' }))
 })

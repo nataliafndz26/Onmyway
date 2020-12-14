@@ -5,15 +5,6 @@ import { Link } from 'react-router-dom'
 import './travel.css'
 
 
-
-    const isInViewport = el => {
-        const rect = el.getBoundingClientRect()
-        const vertInView = (rect.top <= window.innerHeight) && ((rect.top + rect.height) >= 0)
-        const horInView = (rect.left <= window.innerWidth) && ((rect.left + rect.width) >= 0)
-        return (vertInView && horInView)
-    }
-
-
 function ControlledCarousel() {
 
     return (

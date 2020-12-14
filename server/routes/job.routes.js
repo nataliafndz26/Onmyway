@@ -5,11 +5,13 @@ const mongoose = require('mongoose')
 const Job = require('../models/jobs')
 const Preferences = require('../models/preferences')
 
+const checkId  = require('./../middlewares/middlewares') 
+
 
 router.get('/allJobs', (req, res) => {
 
     Job
-        .find()
+        .find({}, { name: 1, image: 1, location: 1, accommodation: 1, _id: 1 })
         .populate('preferences')
         .populate('user')
         .then(response => res.status(200).json(response))
@@ -17,15 +19,10 @@ router.get('/allJobs', (req, res) => {
 })
 
 
-router.get('/getOneJob/:job_id', (req, res) => {
-
-    if (!mongoose.Types.ObjectId.isValid(req.params.job_id)) {
-        res.status(404).json({ message: 'Invalid ID' })
-        return
-    }
+router.get('/getOneJob/:id', checkId, (req, res) => {
 
     Job
-        .findById(req.params.job_id)
+        .findById(req.params.id)
         .populate('preferences')
         .populate('user')
         .then(response => res.status(200).json(response))
@@ -44,23 +41,23 @@ router.post('/newJob', (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.put('/editJob/:job_id', (req, res) => {
+router.put('/editJob/:id', (req, res) => {
 
     console.log (req.body.preferences)
 
     const {name, location, accommodation, timetable, benefits, image, description, preferences} = req.body
 
     Job
-        .findByIdAndUpdate(req.params.job_id, {name, location, accommodation, timetable, benefits, image, description}, {new:true})
+        .findByIdAndUpdate(req.params.id, {name, location, accommodation, timetable, benefits, image, description}, {new:true})
         .then(response => Preferences.findByIdAndUpdate(response.preferences, preferences, {new:true}))
         .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })
 
-router.delete('/deleteJob/:job_id', (req, res) => {
+router.delete('/deleteJob/:id', (req, res) => {
    
     Job
-        .findByIdAndDelete(req.params.job_id)
+        .findByIdAndDelete(req.params.id)
         .then(response => res.status(204).json(response))
         .catch(err => res.status(500).json(err))
 })

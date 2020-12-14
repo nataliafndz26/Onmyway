@@ -35,7 +35,7 @@ class JobFormEdit extends Component {
 
     componentDidMount = () => {
 
-        const job_id = this.props.match.params.job_id
+        const job_id = this.props.match.params.id
 
         console.log(this.props)
 
@@ -89,7 +89,7 @@ class JobFormEdit extends Component {
 
     handleSubmit = e => {
 
-        const job_id = this.props.match.params.job_id
+        const job_id = this.props.match.params.id
         e.preventDefault()
 
         this.jobService

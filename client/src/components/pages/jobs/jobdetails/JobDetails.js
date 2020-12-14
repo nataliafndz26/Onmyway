@@ -27,7 +27,7 @@ class JobDetails extends Component {
     }
 
     componentDidMount = () => {
-        const job_id = this.props.match.params.job_id
+        const job_id = this.props.match.params.id
 
         this.jobsService
             .getOneJob(job_id)
