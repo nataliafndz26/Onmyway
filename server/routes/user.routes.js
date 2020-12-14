@@ -18,7 +18,6 @@ router.get('/getuser/:user_id', (req, res) => {
 router.put('/edituser/:user_id', (req, res) => {
         User
                 .findByIdAndUpdate(req.params.user_id, req.body, { new: true })
-                .populate('preferences')
                 .then(data => res.status(200).json(data))
                 .catch(err => res.status(500).json({ message: 'No fue posible actualizar' }))
 })

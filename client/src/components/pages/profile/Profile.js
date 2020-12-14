@@ -115,7 +115,7 @@ class Profile extends Component {
                             </Row>
 
 
-                            <Tabs defaultActiveKey="posted" id="noanim-tab-example" style={{ marginTop: '50px' }}>
+                            <Tabs defaultActiveKey={this.props.loggedInUser.role === "HOST" ? "posted" : "favourites"} id="noanim-tab-example" style={{ marginTop: '50px' }}>
                                 {this.props.loggedInUser.role === 'HOST'
                                     ?
                                     <Tab eventKey="posted" title="Posted">

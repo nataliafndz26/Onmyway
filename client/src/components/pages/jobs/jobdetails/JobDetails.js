@@ -83,67 +83,67 @@ class JobDetails extends Component {
                     this.state.job
                         ?
                         <Row>
-                        
+
                             <Col className='job-image' lg={6}>
-                            <img variant="top" style={{width:'100%'}} src={this.state.job.image} />
+                                <img variant="top" style={{ width: '100%' }} src={this.state.job.image} />
                             </Col>
                             <Col className='job-title' lg={6}>
-                                <h3 className='title'>{this.state.job.name}</h3> 
+                                <h3 className='title'>{this.state.job.name}</h3>
                                 <p className='description'>{this.state.job.description}</p>
-                                
+
                                 <div className="buttons">
 
-                            {this.props.loggedInUser.role === 'USER' ?
 
-                          <>
-                                            {this.props.loggedInUser.favourites.includes(this.state.job._id)
-                                                
-                                                ?
-                                                
-                                                <Link className="remove-fav" onClick={() => this.removeFav(this.state.job._id)}>Remove Fav</Link>
-                                            
-                                                :
-                                                
-                                                <Link className="fav" onClick={() => this.saveFav(this.state.job._id)}> Add to Fav</Link>
-                                            }
-                                            
-                      
-                                            {this.props.loggedInUser.applied.includes(this.state.job._id)
-                      
-                                                ?
-                       
-                                                <Link className="applied" disabled>Applied</Link>
-                      
-                                                :
-                      
-                                                <Link className="apply" onClick={() => {
-                                                    this.applyJob(this.state.job._id)
-                                                    this.handleModal(true)
-                                                    
-                                                }}>Apply now!</Link>
 
-                                            }
-                                        </>
-  
-                                        :
-  
-                                        null
+                                   
+                                        {this.props.loggedInUser.favourites.includes(this.state.job._id)
 
-                                    }
+                                            ?
+
+                                            <Link className="remove-fav" onClick={() => this.removeFav(this.state.job._id)}>Remove Fav</Link>
+
+                                            :
+
+                                            <Link className="fav" onClick={() => this.saveFav(this.state.job._id)}> Add to Fav</Link>
+                                        }
+
+
+                                        {this.props.loggedInUser.applied.includes(this.state.job._id)
+
+                                            ?
+
+                                            <Link className="applied" disabled>Applied</Link>
+
+                                            :
+
+                                            <Link className="apply" onClick={() => {
+                                                this.applyJob(this.state.job._id)
+                                                this.handleModal(true)
+
+                                            }}>Apply now!</Link>
+
+                                        }
+                                    
+
+
+
+
+
+
 
                                 </div>
 
                                 <Modal show={this.state.showModal} onHide={() => this.handleModal(false)}>
                                     <Modal.Body>
-                                        <EmailForm hideModal ={this.handleModal}  {...this.props} hostInfo={this.state.job.user} userInfo={this.props.loggedInUser} closeModal={() => this.handleModal(false)} />
+                                        <EmailForm hideModal={this.handleModal}  {...this.props} hostInfo={this.state.job.user} userInfo={this.props.loggedInUser} closeModal={() => this.handleModal(false)} />
                                     </Modal.Body>
                                 </Modal>
 
                             </Col>
-                        
-                                <Col lg={12}>
-                                        <Card className="job-card">
-                                        <Card.Body>
+
+                            <Col lg={12}>
+                                <Card className="job-card">
+                                    <Card.Body>
                                         <Card.Text className='job-info'>
                                             <h5>You will stay in a {this.state.job.accommodation} in {this.state.job.location}</h5>
                                             <p>Your timetable will be: {this.state.job.timetable}</p>
@@ -170,9 +170,9 @@ class JobDetails extends Component {
                                         </Card.Text>
 
                                     </Card.Body>
-                                 
-                                    </Card>
-                                    </Col>
+
+                                </Card>
+                            </Col>
 
                         </Row>
                         :
