@@ -96,7 +96,7 @@ function ControlledCarousel() {
                 </Carousel.Item>
             </Carousel>
 
-            <Link className="explore btn" to='/jobs'>EXPLORE <BsArrowRight size='30px' style={{marginBottom:'4px'}}/> </Link>
+            {/* <Link className="explore btn" to='/jobs'>EXPLORE <BsArrowRight size='30px' style={{marginBottom:'4px'}}/> </Link> */}
         </>
 
     )

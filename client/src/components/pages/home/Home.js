@@ -6,7 +6,7 @@ import './Home.css'
 import Video from './video/video2.mov'
 import PopUp from './../../shared/popUp/PopUp'
 
-import { Container, Row, Button, Modal } from 'react-bootstrap'
+import { Container, Row, Button } from 'react-bootstrap'
 
 class Home extends Component {
 
@@ -26,6 +26,8 @@ class Home extends Component {
         showModal: visible,
         isloggingIn: false
     })
+
+    
     
     render() {
         return (
