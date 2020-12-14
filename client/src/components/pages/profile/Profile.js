@@ -25,19 +25,7 @@ class Profile extends Component {
     componentDidMount = () => {
         if (this.props.loggedInUser) {
             this.getAll()
-            this.refreshJobs()
         }
-    }
-
-    refreshJobs = () => {
-        this.jobService
-            .getJobs()
-            .then(response => {
-                const data = response.data
-                const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
-                this.setState({ jobs: ownJob })
-            })
-            .catch(err => console.log(err))
     }
 
     getAll = () => {

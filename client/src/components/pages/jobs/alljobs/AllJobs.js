@@ -21,16 +21,16 @@ class AllJobs extends Component {
     }
 
     componentDidMount = () => {
-        this.refreshJobs()
+        //this.refreshJobs()
         this.refreshfilteredJobs()
     }
 
-    refreshJobs = () => {
-        this.jobsService
-            .getJobs()
-            .then(res => this.setState({ jobs: res.data }))
-            .catch(err => console.log(err))
-    }
+    // refreshJobs = () => {
+    //     this.jobsService
+    //         .getJobs()
+    //         .then(res => this.setState({ jobs: res.data }))
+    //         .catch(err => console.log(err))
+    // }
 
     refreshfilteredJobs = () => {
         let allJobs
@@ -38,6 +38,7 @@ class AllJobs extends Component {
             .getJobs()
             .then(res => {
                 allJobs = res.data
+                this.setState({ jobs: allJobs })
                 return this.preferenceService.getOnePreference(this.props.loggedInUser.preferences)
             })
             .then(response => {
