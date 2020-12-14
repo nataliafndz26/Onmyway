@@ -1,4 +1,5 @@
 import { Carousel } from 'react-bootstrap'
+import { BsArrowRight } from 'react-icons/bs'
 
 import { Link } from 'react-router-dom'
 
@@ -95,7 +96,7 @@ function ControlledCarousel() {
                 </Carousel.Item>
             </Carousel>
 
-            <Link className="explore btn btn-light" to='/jobs'> Explore!</Link>
+            <Link className="explore btn" to='/jobs'>EXPLORE <BsArrowRight size='30px' style={{marginBottom:'4px'}}/> </Link>
         </>
 
     )

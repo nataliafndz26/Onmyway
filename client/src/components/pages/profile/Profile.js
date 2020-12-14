@@ -3,8 +3,7 @@ import './Profile.css'
 import UserService from './../../../service/user.service'
 import JobService from './../../../service/jobs.service'
 import JobCard from './../jobs/jobcard/JobCard'
-import JobForm from './../jobs/jobform/JobForm'
-import { Container, Row, Col, Button, Tabs, Tab, } from 'react-bootstrap'
+import { Container, Row, Col, Tabs, Tab, } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 class Profile extends Component {

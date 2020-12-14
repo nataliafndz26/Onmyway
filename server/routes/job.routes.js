@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 const Job = require('../models/jobs')
 const Preferences = require('../models/preferences')
+const User = require('../models/user')
 
 const checkId  = require('./../middlewares/middlewares') 
 
@@ -29,6 +30,14 @@ router.get('/getOneJob/:id', checkId, (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
+router.get('/getPostedJob/:id', checkId, (req, res) => { 
+
+    User
+        .findById(req.params.id)
+        .then (response => Job.find({ user: response._id }))
+        .then(response => res.status(200).json(response))
+        .catch(err => res.status(500).json(err))
+})
 
 router.post('/newJob', (req, res) => {
 

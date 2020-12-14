@@ -29,8 +29,19 @@
 .explore{
     position: absolute;
     top:520px;
-    left: 1100px;
-    color: #00776b
+    left: 1000px;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 5px 20px;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.explore:hover{
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
 }
 
 .next{

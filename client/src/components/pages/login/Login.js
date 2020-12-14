@@ -42,7 +42,7 @@ class Login extends Component {
 
             <Row>
                 <Col>
-                    <h1>We are happy to see you are back!</h1>
+                    <h1>Hi again!</h1>
                     <hr />
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="username">

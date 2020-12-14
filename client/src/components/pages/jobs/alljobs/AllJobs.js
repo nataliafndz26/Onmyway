@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import { Container, Row, Col, Spinner, Tab, Tabs } from 'react-bootstrap'
+
 import JobsService from '../../../../service/jobs.service'
 import AuthService from '../../../../service/auth.service'
 import PreferenceService from '../../../../service/preferences.service'
+
 import JobCard from '../jobcard/JobCard'
 
 import './AllJobs.css'
-
-import { Container, Row, Col, Spinner, Tab, Tabs } from 'react-bootstrap'
 
 class AllJobs extends Component {
     constructor() {
@@ -66,14 +67,14 @@ class AllJobs extends Component {
                  
                 />
                     <Container >
-                    <h1 style={{textAlign:'center'}}>Exchanges and volunteering with free accommodation</h1>
+                    <h1 style={{textAlign:'center', paddingTop: '50px'}}>Exchanges and volunteering with free accommodation</h1>
                         
                             {
                                 this.state.jobs
                                     ?
-                            <Tabs defaultActiveKey="filteredjobs" id="noanim-tab-example" style={{ marginTop: '50px' }}>
+                            <Tabs defaultActiveKey="filteredjobs" id="noanim-tab-example" style={{ marginTop: '50px'}}>
                                     
-                                    <Tab eventKey="filteredjobs" title="Jobs for you">
+                                <Tab eventKey="filteredjobs" title="Jobs for you">
                                         <Row>
                                             {this.state.filteredjobs.map(elm => {
                                                 return (

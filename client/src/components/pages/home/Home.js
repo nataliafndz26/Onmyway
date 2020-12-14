@@ -4,6 +4,7 @@ import Login from './../login/Login'
 import Signup from './../signup/Signup'
 import './Home.css'
 import Video from './video/video2.mov'
+import PopUp from './../../shared/popUp/PopUp'
 
 import { Container, Row, Button, Modal } from 'react-bootstrap'
 
@@ -42,19 +43,19 @@ class Home extends Component {
                         <Button onClick={() => this.handleModalLogin(true)} className="login" variant="light" size="sm">Login</Button>
                     
                         <Button onClick={() => this.handleModalSignup(true)} className= "signup" variant="outline-light" size="sm">Become a member</Button>
-                        
+
                      </Row>
                 </Container>
                 
-                <Modal show={this.state.showModal} onHide={() => this.handleModalLogin(false)}>
-                    <Modal.Body>
+                <PopUp show={this.state.showModal} onHide={() => this.handleModalLogin(false)}>
+                    
                         {this.state.isloggingIn ?
                          <Login {...this.props} setTheUser={this.props.setTheUser} closeModal={() => this.handleModalLogin(false)}/>
                          :
                          <Signup {...this.props} closeModal={() => this.handleModalSignup(false)}/>
                          }
-                    </Modal.Body>
-                </Modal>
+                  
+                </PopUp>
                 </>
         )
     }

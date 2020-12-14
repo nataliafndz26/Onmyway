@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+
 import JobsService from '../../../../service/jobs.service'
 import PreferencesService from '../../../../service/preferences.service'
 import UserService from '../../../../service/user.service'
 
 import EmailForm from '../../email/EmailForm'
+import PopUp from '../../../shared/popUp/PopUp'
 
 import './JobDetails.css'
 
@@ -123,21 +125,13 @@ class JobDetails extends Component {
                                             }}>Apply now!</Link>
 
                                         }
-                                    
-
-
-
-
-
-
+            
 
                                 </div>
 
-                                <Modal show={this.state.showModal} onHide={() => this.handleModal(false)}>
-                                    <Modal.Body>
+                                <PopUp show={this.state.showModal} onHide={() => this.handleModal(false)}>
                                         <EmailForm hideModal={this.handleModal}  {...this.props} hostInfo={this.state.job.user} userInfo={this.props.loggedInUser} closeModal={() => this.handleModal(false)} />
-                                    </Modal.Body>
-                                </Modal>
+                                </PopUp>
 
                             </Col>
 
