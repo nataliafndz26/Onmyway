@@ -106,7 +106,7 @@ class JobFormEdit extends Component {
         console.log(this.state.job.preferences)
         return (
             <div>
-                <img className="bg-img" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" />
+                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944721/Onmyway/BACKGROUND%20IMAGES/photo-1543269865-cbf427effbad_qlnbg3.jpg" />
                 <Container>
                     <h1 style={{ textAlign: 'center' }}>Edit this job</h1>
                     <Row style={{ justifyContent: 'center' }}>

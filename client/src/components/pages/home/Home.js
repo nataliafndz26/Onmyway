@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 import Login from './../login/Login'
 import Signup from './../signup/Signup'
 import './Home.css'
-import Video from './../../video/video2.mov'
-// import Video from 'react-native-video';
+import Video from './video/video2.mov'
 
 import { Container, Row, Button, Modal } from 'react-bootstrap'
 

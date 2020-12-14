@@ -86,7 +86,7 @@ class Profile extends Component {
 
         return (
             <div className="profile">
-                   <img className="bg-img" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1533&q=80" />
+                   <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944984/Onmyway/BACKGROUND%20IMAGES/photo-1488646953014-85cb44e25828_y4djls.jpg" />
                 {
 
                     this.props.loggedInUser ?

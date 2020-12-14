@@ -11,11 +11,11 @@ import Home from './pages/home/Home'
 import AllJobs from './pages/jobs/alljobs/AllJobs'
 import JobDetails from './pages/jobs/jobdetails/JobDetails'
 import Profile from './pages/profile/Profile'
-import PreferencesForm from './pages/preferences/preferences'
+import PreferencesForm from './pages/preferences/Preferences'
 import JobForm from './pages/jobs/jobform/JobForm'
 import JobFormEdit from './pages/jobs/jobformedit/JobFormEdit'
-import EditUser from './pages/profile/editProfile'
-import Carousel from './pages/travel/travel'
+import EditUser from './pages/profile/EditProfile'
+import Carousel from './pages/travel/Travel'
 
 
 
