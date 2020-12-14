@@ -35,8 +35,10 @@ class Email extends Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                <img className="email" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1200px-Gmail_icon_%282020%29.svg.png" style={{width: '30px'}}></img><h2>Email</h2>
-                <h5>If you are interested in this job offer, you can apply by sending an email to {this.state.hostName} ;) </h5>
+                <div className="email-div" style={{display:'flex', alignItems:'baseline'}}>
+                    <img className="email" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1200px-Gmail_icon_%282020%29.svg.png" style={{ width: '33px', height: '28px', marginLeft:'4px' }}></img><h2 style={{fontWeight:'bold'}}>Email</h2>
+                    </div>
+                <h5 style={{marginTop:'18px', marginBottom:'25px'}}>If you are interested in this job offer, you can apply by sending an email to {this.state.hostName} ;) </h5>
                 <Form.Group controlId="from">
                     <Form.Label>From</Form.Label>
                     <Form.Control type="email" name="from" value={`${this.state.userName}`} disabled />
@@ -53,7 +55,7 @@ class Email extends Component {
                     <Form.Label>Message</Form.Label>
                     <Form.Control type="text" as="textarea" name="message" value={this.state.message} onChange={this.handleInput} />
                 </Form.Group>
-                <Button variant="secondary" type="submit" block>Submit</Button>
+                <Button className="email-bt" type="submit" block>Send email</Button>
             </Form>
         )
     }

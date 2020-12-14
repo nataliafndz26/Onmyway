@@ -6,6 +6,7 @@ const userSchema = new Schema(
         username: {
             type: String,
             unique: true,
+            default: 'traveller',
             required: true
         },
         name: {
@@ -13,13 +14,15 @@ const userSchema = new Schema(
         },
         password: {
             type: String,
-            required: true
+            required: true,
         },
         email: {
             type: String,
+            match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]
         },
         image: {
-            type: String
+            type: String,
+            default: 'https://res.cloudinary.com/nataliafndz26/image/upload/v1607942500/Onmyway/user-alt-512_metot9.webp'
         },
         description: {
             type: String

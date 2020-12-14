@@ -77,7 +77,7 @@ class JobForm extends Component {
         return (
 
             <div>
-                <img className="bg-img" src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"/>
+                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944606/Onmyway/BACKGROUND%20IMAGES/photo-1498307833015-e7b400441eb8_vgwewv.jpg"/>
                 <Container className="cr-form">
                     <h2 style={{ textAlign: 'center', paddingTop: '30px', paddingBottom: '10px'}}>Do you want to contribute to our community with a new job?</h2>
                     <h3 style={{ textAlign: 'center' }}>Tell us more about it! ;)</h3>

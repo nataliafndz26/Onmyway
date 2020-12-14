@@ -1,0 +1,11 @@
+.email-bt{
+    background-color:rgb(108, 218, 81);
+    border: rgb(108, 218, 81);
+    color: rgb(255, 255, 255);
+    margin-top:10px;
+    margin-bottom: 25px;
+    display: block;
+    text-align:center;
+    justify-content: center;
+    align-items:center
+}
