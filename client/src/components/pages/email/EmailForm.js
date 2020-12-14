@@ -35,13 +35,15 @@ class Email extends Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
+                <img className="email" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1200px-Gmail_icon_%282020%29.svg.png" style={{width: '30px'}}></img><h2>Email</h2>
+                <h5>If you are interested in this job offer, you can apply by sending an email to {this.state.hostName} ;) </h5>
                 <Form.Group controlId="from">
                     <Form.Label>From</Form.Label>
-                    <Form.Control type="email" name="from" value={`${this.state.userName} <${this.state.userEmail}>`} disabled />
+                    <Form.Control type="email" name="from" value={`${this.state.userName}`} disabled />
                 </Form.Group>
                 <Form.Group controlId="to">
                     <Form.Label>To</Form.Label>
-                    <Form.Control type="email" name="to" value={`${this.state.hostName} <${this.state.hostEmail}>`} disabled />
+                    <Form.Control type="email" name="to" value={`${this.state.hostName}`} disabled />
                 </Form.Group>
                 <Form.Group controlId="subject">
                     <Form.Label>Subject</Form.Label>
