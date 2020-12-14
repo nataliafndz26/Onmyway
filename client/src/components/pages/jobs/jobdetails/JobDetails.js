@@ -3,10 +3,12 @@ import JobsService from '../../../../service/jobs.service'
 import PreferencesService from '../../../../service/preferences.service'
 import UserService from '../../../../service/user.service'
 
+import EmailForm from '../../email/EmailForm'
+
 import './JobDetails.css'
 
 
-import { Container, Row, Col, Card, Spinner, Button } from 'react-bootstrap'
+import { Container, Row, Col, Card, Spinner, Button, Modal } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
@@ -17,6 +19,7 @@ class JobDetails extends Component {
             job: undefined,
             favourites: this.props.loggedInUser ? this.props.loggedInUser.favourites : [],
             applied: this.props.loggedInUser ? this.props.loggedInUser.applied : [],
+            showModal: false
         }
         this.jobsService = new JobsService()
         this.preferencesService = new PreferencesService()
@@ -69,6 +72,10 @@ class JobDetails extends Component {
         this.setState({ applied: updateUser })
     }
 
+    handleModal = visible => this.setState({
+        showModal: visible
+    })
+
     render() {
         return (
             <Container>
@@ -109,7 +116,11 @@ class JobDetails extends Component {
                       
                                                 :
                       
-                                                <Link className="apply" onClick={() => this.applyJob(this.state.job._id)}>Apply now!</Link>
+                                                <Link className="apply" onClick={() => {
+                                                    this.applyJob(this.state.job._id)
+                                                    this.handleModal(true)
+                                                    
+                                                }}>Apply now!</Link>
 
                                             }
                                         </>
@@ -121,6 +132,12 @@ class JobDetails extends Component {
                                     }
 
                                 </div>
+
+                                <Modal show={this.state.showModal} onHide={() => this.handleModal(false)}>
+                                    <Modal.Body>
+                                        <EmailForm hideModal ={this.handleModal}  {...this.props} hostInfo={this.state.job.user} userInfo={this.props.loggedInUser} closeModal={() => this.handleModal(false)} />
+                                    </Modal.Body>
+                                </Modal>
 
                             </Col>
                         
