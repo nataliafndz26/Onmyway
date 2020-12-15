@@ -6,6 +6,7 @@ import AuthService from '../../../../service/auth.service'
 import PreferenceService from '../../../../service/preferences.service'
 
 import JobCard from '../jobcard/JobCard'
+import SearchBar from './../../../shared/searchBar/SearchBar'
 
 import './AllJobs.css'
 
@@ -15,6 +16,7 @@ class AllJobs extends Component {
         this.state = {
             jobs: undefined,
             filteredjobs: [],
+            searchjobs: undefined
         }
         this.jobsService = new JobsService()
         this.authService = new AuthService()
@@ -22,16 +24,13 @@ class AllJobs extends Component {
     }
 
     componentDidMount = () => {
-        //this.refreshJobs()
         this.refreshfilteredJobs()
     }
 
-    // refreshJobs = () => {
-    //     this.jobsService
-    //         .getJobs()
-    //         .then(res => this.setState({ jobs: res.data }))
-    //         .catch(err => console.log(err))
-    // }
+    searchBy = (value, filter) => {
+        const searchedjobs = this.state.jobs.filter(elm => elm[filter].toLowerCase().includes(value.toLowerCase()))
+        this.setState({ searchjobs: searchedjobs })
+    }
 
     refreshfilteredJobs = () => {
         let allJobs
@@ -65,32 +64,50 @@ class AllJobs extends Component {
         return (
             <div>
                 <img className="all" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607943555/Onmyway/BACKGROUND%20IMAGES/photo-1442570468985-f63ed5de9086_gd41tq.jpg"
-                 
+
                 />
-                    <Container >
-                    <h1 style={{textAlign:'center', paddingTop: '50px'}}>Exchanges and volunteering with free accommodation</h1>
-                        
-                            {
-                                this.state.jobs
-                                    ?
-                            <Tabs defaultActiveKey="filteredjobs" id="noanim-tab-example" style={{ marginTop: '50px'}}>
-                                    
+                <Container >
+                    <h1 style={{ textAlign: 'center', paddingTop: '50px' }}>Exchanges and volunteering with free accommodation</h1>
+
+                    {
+                        this.state.jobs
+                            ?
+                            <Tabs defaultActiveKey="filteredjobs" id="noanim-tab-example" style={{ marginTop: '50px' }}>
+
                                 <Tab eventKey="filteredjobs" title="Jobs for you">
-                                        <Row>
-                                            {this.state.filteredjobs.map(elm => {
-                                                return (
-                                                    <Col lg={4} >
-                                                        <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
-                                                    </Col>
-                                                )
-                                            })
-                                            }
-                                        </Row>
-                                    </Tab>
-                                        
-                                        <Tab eventKey="alljobs" title="All jobs">
-                                            <Row>
-                                                {this.state.jobs.map(elm => {
+                                    <Row>
+                                        {this.state.filteredjobs.map(elm => {
+                                            return (
+                                                <Col lg={4} >
+                                                    <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                </Col>
+                                            )
+                                        })
+                                        }
+                                    </Row>
+                                </Tab>
+
+                                <Tab eventKey="alljobs" title="All jobs">
+                                    <Row style={{ justifyContent: "center" }}>
+
+                                        <SearchBar searchFor={(value, filter) => this.searchBy(value, filter)} />
+                                        {this.state.searchjobs === undefined
+                                            ?
+                                            <>
+                                                {
+                                                    this.state.jobs.map(elm => {
+                                                        return (
+                                                            <Col lg={4}>
+                                                                <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                            </Col>
+                                                        )
+                                                    })
+                                                }
+                                            </>
+                                            :
+                                                <>
+                                            {
+                                                this.state.searchjobs.map(elm => {
                                                     return (
                                                         <Col lg={4}>
                                                             <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
@@ -98,18 +115,20 @@ class AllJobs extends Component {
                                                     )
                                                 })
                                                 }
-                                            </Row>
-                                        </Tab>
-                                        
-                                    
-                                </Tabs>
-                                    :
-                                    <Spinner animation="border" variant="primary" />
-                            }
-                        
+                                                </>
+                                        }
+                                    </Row>
+                                </Tab>
+
+
+                            </Tabs>
+                            :
+                            <Spinner animation="border" variant="primary" />
+                    }
+
 
                 </Container>
-                    
+
             </div>
         )
     }

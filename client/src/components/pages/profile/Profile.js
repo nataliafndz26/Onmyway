@@ -28,21 +28,38 @@ class Profile extends Component {
         }
     }
 
-    getAll = () => {
+    // getAll = () => {
 
-        this.jobService.getJobs()
+    //     this.jobService.getJobs()
+    //         .then(response => {
+    //             const data = response.data
+    //             switch (this.props.loggedInUser.role) {
+    //                 case 'HOST':
+    //                     const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
+    //                     console.log(ownJob)
+    //                     this.setState({ jobs: ownJob })
+    //                     break;
+    //                 case 'USER':
+    //                     const favJobs = data.filter(elm => this.props.loggedInUser.favourites.includes(elm._id))
+    //                     const appliedJobs = data.filter(elm => this.props.loggedInUser.applied.includes(elm._id))
+    //                     this.setState({ favourites: favJobs, applied: appliedJobs })
+    //                     break;
+    //             }
+    //         })
+    //         .catch(err => console.log(err))
+    // }
+
+    getAll = () => {
+        this.jobService
+            .getUserJobs(this.props.loggedInUser._id)
             .then(response => {
                 const data = response.data
                 switch (this.props.loggedInUser.role) {
                     case 'HOST':
-                        const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
-                        console.log(ownJob)
-                        this.setState({ jobs: ownJob })
+                        this.setState({ jobs: data.posted, favourites: data.favourites, applied: data.applied })
                         break;
                     case 'USER':
-                        const favJobs = data.filter(elm => this.props.loggedInUser.favourites.includes(elm._id))
-                        const appliedJobs = data.filter(elm => this.props.loggedInUser.applied.includes(elm._id))
-                        this.setState({ favourites: favJobs, applied: appliedJobs })
+                        this.setState({ favourites: data.favourites, applied: data.applied })
                         break;
                 }
             })
@@ -76,7 +93,7 @@ class Profile extends Component {
 
         return (
             <div className="profile">
-                   <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944984/Onmyway/BACKGROUND%20IMAGES/photo-1488646953014-85cb44e25828_y4djls.jpg" />
+                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944984/Onmyway/BACKGROUND%20IMAGES/photo-1488646953014-85cb44e25828_y4djls.jpg" />
                 {
 
                     this.props.loggedInUser ?

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import AuthService from './../../../service/auth.service'
 import './Login.css'
 
+import Toastie from './../../shared/toast/Toast'
+
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
 class Login extends Component {
@@ -9,30 +11,35 @@ class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: '',
-            password: ''
+            user: {
+                username: '',
+                password: ''    
+            },
+            showToast: false,
+            toastText: ''
+
         }
 
         this.authService = new AuthService()
     }    
 
-    handleInputChange = e => this.setState({ [e.target.name]: e.target.value })
+    handleInputChange = e => this.setState({ user: { ...this.state.user, [e.target.name]: e.target.value } })
 
     handleSubmit = e => {
-
-        console.log (this.authService.baseUrl)
 
         e.preventDefault()
         
         this.authService
-            .login(this.state)
+            .login(this.state.user)
             .then(theLoggedInUser => {
                 console.log(this.props)
                 this.props.setTheUser(theLoggedInUser.data)
                 this.props.history.push('/travel')
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({ showToast: true, toastText: err.response.data.message }))
     }
+
+    handleToast = (visible, text) => this.setState({ showToast: visible, toastText: text })
 
     render() {
         
@@ -56,7 +63,9 @@ class Login extends Component {
                         <Button className="login-bt" size="sm" type="submit">Login</Button>
                     </Form>
                 </Col>
-            </Row>
+                </Row>
+                <Toastie show={this.state.showToast} handleToast={this.handleToast} toastText={this.state.toastText} />
+
         </Container>
         )
     }
