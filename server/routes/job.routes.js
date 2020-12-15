@@ -26,6 +26,7 @@ router.get('/getOneJob/:id', checkId, (req, res) => {
         .findById(req.params.id)
         .populate('preferences')
         .populate('user')
+        .populate ('comments')
         .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json(err))
 })

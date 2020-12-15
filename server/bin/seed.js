@@ -37,6 +37,7 @@ const jobs = [
         benefits: ['Breakfast', 'Lunch', 'Health insurance', 'Shared bedroom'],
         image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/018/272/main/H6_BackGarden_Social_copy.jpg',
         description: 'We´re currently looking for new general staff at our RICHMOND and BRUNSWICK hostels. This role is mainly about cleaning. You will also perform office duties, take rent payments and check in guests. Also you will help create an inclusive culture of shared experiences in a easy going and open minded culture while maintaining a Clean, Safe and Fun place to live.',
+        comments: []
     },
     {
         name: 'Help us make a difference in kid´s lives!',
@@ -46,6 +47,7 @@ const jobs = [
         benefits: ['Breakfast', 'Lunch', 'Dinner', 'Health insurance', 'Individual bedroom', 'Laundry'],
         image: 'https://asanteafrica.files.wordpress.com/2010/11/img_1065-copy.jpg',
         description: 'We´re looking for volunteers to help with our kid´s daycare program. This is some daily activities: 1. Painting, drawing, and writing; 2. Clay or play dough play; 3. Puzzles and games; 4. Reading books; 5. sensory activities; 6. Sports and Games',
+        comments: []
     },
     {
         name: 'Experience rural life in a horseback ridind proyect in Amazonas',
@@ -55,6 +57,7 @@ const jobs = [
         benefits: ['Breakfast', 'Lunch', 'Dinner', 'Individual bedroom', 'Laundry'],
         image: 'https://d34ad2g4hirisc.cloudfront.net/location_photos/files/000/159/169/main/ed650235530703f6692db4aaf8ed80fa.jpg',
         description: 'My wife Jessica and I are an international couple with our first child, living in the North of Peru. I am a medical veterinarian by trade, specializing in horses. Jessica has her education in preventative wellness. Needs: ️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️Help us taking care with the horses, Photo sessions in real horse expeditions in Peruvian farming communities, Web developer, Digital design development for educational material.',
+        comments: []
     },
     {
         name: 'Teach some yoga and make the world healthy!',
@@ -265,6 +268,7 @@ const users = [
         image: 'https://media-exp1.licdn.com/dms/image/C5603AQF9fnDDBfA6cQ/profile-displayphoto-shrink_800_800/0?e=1613001600&v=beta&t=uAw4DkIVjzeBkyPfdFXeLV9XbyoMn6h-HJjHiJEUa54',
         description: 'Tech lover, and ',
         role: 'HOST',
+     
     },
     {
         username: "hector",
@@ -274,6 +278,7 @@ const users = [
         image: 'https://media-exp1.licdn.com/dms/image/C4D03AQHLId1sh1tzmA/profile-displayphoto-shrink_800_800/0?e=1613001600&v=beta&t=J9EWfnzmELZ4_rpDVEoLoV6_HT5R4v5_PtvfByf9SPo',
         description: 'I consider myself responsible, empathetic and a good work partner, with contagious joy. I love bad jokes, good food and making people laugh. ',
         role: 'HOST',
+       
     },
     {
         username: "belen",
@@ -283,6 +288,7 @@ const users = [
         image: 'https://res.cloudinary.com/nataliafndz26/image/upload/v1607772462/Onmyway/noxsgkajxn8f2tujh8f4.jpg',
         description: 'Always trying to think outside the box. Connecting the dots. Enthusiastic reader. Keep learning everyday! ',
         role: 'HOST',
+       
     },
     {
         username: "natalia",
@@ -293,6 +299,7 @@ const users = [
         description: 'I love to travel around the world, helping people, caring and giving a hand always that´s needed. My pasions are music, learning new languages, animals, and children :)',
         favourites: [],
         role: 'USER',
+  
     },
     {
         username: "gonza",
@@ -303,6 +310,7 @@ const users = [
         description: 'Pasionate traveller, food lover and nature enthusiast',
         favourites: [],
         role: 'USER',
+       
     },
 ]
 

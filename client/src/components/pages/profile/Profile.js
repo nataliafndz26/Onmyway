@@ -3,7 +3,7 @@ import './Profile.css'
 import UserService from './../../../service/user.service'
 import JobService from './../../../service/jobs.service'
 import JobCard from './../jobs/jobcard/JobCard'
-import { Container, Row, Col, Tabs, Tab, } from 'react-bootstrap'
+import { Container, Row, Col, Tabs, Tab, Form, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 class Profile extends Component {
@@ -15,6 +15,7 @@ class Profile extends Component {
             jobs: [],
             favourites: [],
             applied: [],
+            
         }
 
         this.userService = new UserService()
@@ -60,6 +61,8 @@ class Profile extends Component {
     }
 
 
+
+
     render() {
 
         const username = this.props.loggedInUser ? this.props.loggedInUser.username : ""
@@ -81,19 +84,49 @@ class Profile extends Component {
                             
                                     <Row  style={{ display: "flex" }}>
                                         <Col lg={{ span: 3, offset: 0 }} style={{marginTop: '20px'}}>
-                                        <img  className="rounded-circle z-depth-2" src={image} style={{width:'200px', marginTop:'30px'}}/>
+                                        <img  className="rounded-circle z-depth-2" src={image} style={{width:'220px', marginTop:'60px'}}/>
                                         </Col>
                                 <Col lg={{ span: 7, offset: 0 }} className="init" style={{marginTop: '50px'}}>
                                             <h2 className="name">Welcome back, {name}! </h2>
                                         <h5 className="description">{description}</h5>
                                         <div>
-                                        <Link id="edit" className="editprofile" to={`/profile/edit/${id}`}>Edit your profile</Link>
+                                        <Link id="edit" className="editprofile"  style={{textDecoration: 'none'}} to={`/profile/edit/${id}`}>
+                                        <svg width="277" height="62">
+                                            <defs>
+                                                <linearGradient id="grad1">
+                                                    <stop offset="0%" stop-color="rgb(39, 176, 255)"/>
+                                                    <stop offset="100%" stop-color="rgb(69, 102, 172)"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <rect x="5" y="7" rx="5" fill="none" stroke="url(#grad1)" width="150" height="40"></rect>
+                                        </svg>
+                                            <span>Edit your profile</span></Link>
 
                                         {this.props.loggedInUser.role === 'HOST' ?
 
-                                            <Link className="newjob" id="new" to={`profile/newjob`} >Create a new job</Link>
+                                            <Link className="newjob" style={{textDecoration: 'none'}} id="new" to={`profile/newjob`}>
+                                            <svg width="277" height="62">
+                                            <defs>
+                                                <linearGradient id="grad2">
+                                                    <stop offset="0%" stop-color="rgb(153, 0, 120)"/>
+                                                    <stop offset="100%" stop-color="rgb(255, 18, 97)"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <rect x="5" y="7" rx="5" fill="none" stroke="url(#grad2)" width="150" height="40"></rect>
+                                        </svg>
+                                            <span>Create a new job</span></Link>
                                             :
-                                            <Link id="edit-preferences" className="editpreferences" to={`/preferences`}>Edit preferences</Link>
+                                            <Link id="edit-preferences" className="editpreferences" style={{ textDecoration: 'none' }} to={`/preferences`}>
+                                            <svg width="277" height="62">
+                                            <defs>
+                                                <linearGradient id="grad2">
+                                                    <stop offset="0%" stop-color="rgb(153, 0, 120)"/>
+                                                    <stop offset="100%" stop-color="rgb(255, 18, 97)"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <rect x="5" y="7" rx="5" fill="none" stroke="url(#grad2)" width="150" height="40"></rect>
+                                        </svg>
+                                            <span>Edit preferences</span></Link>
                                             }
                                     
                                         
@@ -144,7 +177,6 @@ class Profile extends Component {
                                     </Row>
                                 </Tab>
                             </Tabs>
-
 
                         </Container>
                         :

@@ -96,7 +96,18 @@ function ControlledCarousel() {
                 </Carousel.Item>
             </Carousel>
 
-            <Link className="explore btn" to='/jobs'>EXPLORE <BsArrowRight size='30px' style={{marginBottom:'4px'}}/> </Link>
+            <Link className="explore" to='/jobs' style={{ textDecoration: 'none' }}>
+                <svg width="277" height="62">
+                <defs>
+                    <linearGradient id="grad3">
+                        <stop offset="0%" stop-color="rgb(255, 255, 255)"/>
+                        <stop offset="100%" stop-color="rgb(255, 255, 255)"/>
+                    </linearGradient>
+                </defs>
+                    <rect x="10" y="5" rx="5" fill="none" stroke="url(#grad3)" width="150" height="45"></rect>
+                </svg>
+                <span>EXPLORE</span>
+                <BsArrowRight size='30px' style={{ marginTop: '13px', color: 'white', marginLeft: '8px' }} /></Link>
         </>
 
     )
