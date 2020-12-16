@@ -53,16 +53,16 @@ class NavBar extends Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Link className="preferences" to="/preferences">
-                            <Nav.Link  as="div">Preferences</Nav.Link>
+                            <Nav.Link style={{color:'black'}}  as="div">Preferences</Nav.Link>
                         </Link>
                         <Link className="jobs" to="/jobs">
-                            <Nav.Link as="div">Jobs</Nav.Link>
+                            <Nav.Link style={{color:'black'}} as="div">Jobs</Nav.Link>
                         </Link>
                         <Link className="logout" to="/" onClick={this.logout}>
-                            <Nav.Link as="div">Log out</Nav.Link>
+                            <Nav.Link style={{color:'black'}}as="div">Log out</Nav.Link>
                         </Link>
                         <Link className="profile-nav" to="/profile">
-                            <Nav.Link as="div">Profile</Nav.Link>
+                            <Nav.Link style={{color:'black'}} as="div">Profile</Nav.Link>
                         </Link>
                     </Nav>
                 </Navbar.Collapse>

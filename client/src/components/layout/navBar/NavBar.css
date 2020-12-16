@@ -5,17 +5,9 @@
     font-size: 24px;
 }
 
-.preferences{
-    font-weight: bold;
-}
-
 .preferences:hover{
     text-decoration:none;
     color:black;
-}
-
-.jobs{
-    font-weight: bold;
 }
 
 .jobs:hover{
@@ -23,17 +15,9 @@
     color:black;
 }
 
-.logout{
-    font-weight: bold;
-}
-
 .logout:hover{
     text-decoration:none;
     color:black;
-}
-
-.profile-nav{
-    font-weight: bold;
 }
 
 .profile-nav:hover{

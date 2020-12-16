@@ -93,7 +93,7 @@ class Profile extends Component {
 
         return (
             <div  className="profile">
-                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944984/Onmyway/BACKGROUND%20IMAGES/photo-1488646953014-85cb44e25828_y4djls.jpg" />
+                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1608143483/Onmyway/BACKGROUND%20IMAGES/profilepic_xtoepi.jpg" />
                 {
 
                     this.props.loggedInUser ?
@@ -157,7 +157,7 @@ class Profile extends Component {
                             <Tabs defaultActiveKey={this.props.loggedInUser.role === "HOST" ? "posted" : "favourites"} id="noanim-tab-example" style={{ marginTop: '50px' }}>
                                 {this.props.loggedInUser.role === 'HOST'
                                     ?
-                                    <Tab eventKey="posted" title="Posted">
+                                    <Tab eventKey="posted" title="Posted" tabClassName="tabs">
                                         <Row>
                                             {this.state.jobs.map(elm => {
                                                 return (
@@ -171,7 +171,7 @@ class Profile extends Component {
                                     </Tab>
                                     :
                                     null}
-                                <Tab eventKey="favourites" title="Favourites">
+                                <Tab eventKey="favourites" title="Favourites" tabClassName="tabs">
                                     <Row>
                                         {this.state.favourites.map(elm => {
                                             return (
@@ -183,7 +183,7 @@ class Profile extends Component {
                                         }
                                     </Row>
                                 </Tab>
-                                <Tab eventKey="applied" title="Applied" >
+                                <Tab eventKey="applied" title="Applied" tabClassName="tabs">
                                     <Row>
                                         {this.state.applied.map(elm => {
                                             return (

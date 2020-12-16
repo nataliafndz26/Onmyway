@@ -8,3 +8,12 @@
     z-index: -1000;
     object-fit: cover;
 }
+
+.tabs{
+    color: black;
+}
+
+.tabs:hover{
+    color: black;
+    font-weight:bold
+}

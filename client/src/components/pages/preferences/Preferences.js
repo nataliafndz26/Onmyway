@@ -4,6 +4,8 @@ import UserService from '../../../service/user.service'
 
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
+import { Link } from 'react-router-dom'
+
 import './Preferences.css'
 
 class PreferencesForm extends Component {
@@ -28,7 +30,6 @@ class PreferencesForm extends Component {
     }
 
     handleInputChange = e => this.setState({ [e.target.name]: e.target.value })
-
 
 
     handleSubmit = e => {
@@ -117,7 +118,18 @@ class PreferencesForm extends Component {
                                         <option className="option">More than 1 year</option>
                                     </Form.Control>
                                 </Form.Group>
-                            <Button variant="dark" className="buton" type="submit">Show me the magic!</Button>
+                                <Link className="magic" style={{textDecoration: 'none'}} type="submit">
+                                <svg width="277" height="62">
+                                            <defs>
+                                                <linearGradient id="grad2">
+                                                    <stop offset="0%" stop-color="rgb(153, 0, 120)"/>
+                                                    <stop offset="100%" stop-color="rgb(255, 18, 97)"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <rect x="5" y="7" rx="5" fill="none" stroke="url(#grad2)" width="183" height="40"></rect>
+                                        </svg>
+                                            <span>Show me the magic!</span>
+                            </Link>
                             </Col>
                         </Row>
                     </Form>
