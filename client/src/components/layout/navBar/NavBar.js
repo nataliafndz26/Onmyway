@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo from './logo.png'
-import './navBar.css'
+import './NavBar.css'
 
-import AuthService from './../../../service/auth.service'
+import AuthService from '../../../service/auth.service'
 
 
 class NavBar extends Component {
@@ -12,6 +12,10 @@ class NavBar extends Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            navBackground: 'transparent'
+        }
+
         this.authService = new AuthService()
     }
 
@@ -22,17 +26,25 @@ class NavBar extends Component {
             .catch(err => console.log(err))
     }
 
+    componentDidMount = () => {
+        document.addEventListener('scroll', () => {
+            const backgroundcolor = window.scrollY < 20 ? 'white' : 'transparent';
+            this.setState({navBackground: backgroundcolor})
+        })
+    }
+
+
     render() {
 
         return (
-            <Navbar className="nav" expand="md" sticky="top">
+            <Navbar className="navbar" style={{zIndex: '+1000'}} backgroundColor={this.state.navBackground} expand="md" fixed="top">
                 <Link to="/travel">
-                    <Navbar.Brand >
+                    <Navbar.Brand className="omw">
                         <img
                             alt="Logotipo"
                             src={logo}
-                            width="35"
-                            height="45"
+                            width="30"
+                            height="40"
                             className="d-inline-block align-top"
                         />{' '}OnmyWay</Navbar.Brand>
                 </Link>

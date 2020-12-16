@@ -6,6 +6,7 @@ import UserService from '../../../../service/user.service'
 
 import EmailForm from '../../email/EmailForm'
 import PopUp from '../../../shared/popUp/PopUp'
+import Comment from '../../comments/Comments'
 
 import mail from './mail.png'
 import mailSuccess from './mail-success.png'
@@ -19,7 +20,7 @@ import skillIcon from './skillsicon.png'
 import './JobDetails.css'
 
 
-import { Container, Row, Col, Card, Spinner, Button, Modal } from 'react-bootstrap'
+import { Container, Row, Col, Card, Spinner, Button, Form } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
@@ -30,7 +31,8 @@ class JobDetails extends Component {
             job: undefined,
             favourites: this.props.loggedInUser ? this.props.loggedInUser.favourites : [],
             applied: this.props.loggedInUser ? this.props.loggedInUser.applied : [],
-            showModal: false
+            showModal: false,
+
         }
         this.jobsService = new JobsService()
         this.preferencesService = new PreferencesService()
@@ -45,6 +47,12 @@ class JobDetails extends Component {
             .then(res => this.setState({ job: res.data }))
             .catch(err => console.log(err))
     }
+
+    updateComment = (comments) => {
+
+        this.setState({ job: {...this.state.job, comments: comments } })
+   }
+
 
     saveFav = (jobId) => {
         const favourites = [...this.props.loggedInUser.favourites]
@@ -93,6 +101,7 @@ class JobDetails extends Component {
                 {
                     this.state.job
                         ?
+                    <>
                         <Row>
 
                             <Col  lg={12}>
@@ -239,8 +248,34 @@ class JobDetails extends Component {
                                 </Card>
                             </Col>
 
-                        </Row>
+                            </Row>
+                            
+                            <Row>
+                                <Comment updateComment={this.updateComment} job={this.state.job} {...this.props} setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                
+                                {this.state.job.comments.map(elm => {
+
+                                   return ( <>
+
+                                    <Card>
+                                        <Card.Header>{elm.user}</Card.Header>
+                                            <Card.Body>
+                                            <Card.Title>{elm.title} {elm.rating}</Card.Title>
+                                            <Card.Text>
+                                            {elm.text}
+                                             </Card.Text>
+                                            </Card.Body>
+                                            </Card>
+
+                                   </> )
+
+                                })}
+                            </Row>
+
+                        </>
+            
                         :
+
                         <Spinner animation="border" variant="primary" />
                 }
             </Container>
@@ -249,3 +284,16 @@ class JobDetails extends Component {
 }
 
 export default JobDetails
+
+
+
+
+{/* <Form.Group controlId="text">
+                                    
+<Form.Control as="textarea" rows={3} placeholder="Leave it here!" type="text" name="comments" value={this.state.comments} onChange={this.handleInputChange} />
+
+</Form.Group> */}
+
+
+
+

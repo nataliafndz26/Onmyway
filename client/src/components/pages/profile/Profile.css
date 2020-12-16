@@ -14,33 +14,146 @@ background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
     padding-top:30px;
     padding-bottom:30px;
 }
-
+/* 
 .editprofile{
     background-color: rgb(106, 197, 250);
     padding: 8px;
     border-radius: 10px;
     color: white;
     margin-left: 40px;
-    /* display: flex;
-    justify-content:center */
+  
+} */
+
+.editprofile {
+    position: relative;
+    display: inline-block;
+    width: 277px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.editprofile:hover{
-    text-decoration: none;
-    color: black;
+.editprofile svg {
+    position: absolute;
+    right: 2;
 }
 
-.newjob{
-    background-color: rgb(251, 145, 255);
-    padding: 8px;
-    border-radius: 10px;
-    color: white;
-    margin-left: 40px;
+.editprofile svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 353, 0;
+    stroke-dashoffset: 0;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
 }
 
-.newjob:hover{
-    text-decoration: none;
-    color: black;
+.editprofile span{
+  background:rgb(106, 197, 250);
+  background: -moz-linear-gradient(left,  rgb(39, 176, 255) 0%, rgb(69, 102, 172) 100%);
+  background: -webkit-linear-gradient(left,  rgba(39, 176, 255, 1) 0%,rgba(69, 102, 172, 1) 100%);
+  background: linear-gradient(to right,  rgba(39, 176, 255, 1) 0%,rgba(69, 102, 172, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  padding-left: 15px;
+}
+
+.editprofile:hover svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 120, 415;
+    stroke-dashoffset: 337;
+}
+
+.newjob {
+    position: relative;
+    display: inline-block;
+    width: 277px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.newjob svg {
+    position: absolute;
+    right: 2;
+}
+
+.newjob svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 353, 0;
+    stroke-dashoffset: 0;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.newjob span{
+  background:rgb(248, 137, 206);
+  background: -moz-linear-gradient(left,  rgb(153, 0, 120) 0%, rgb(255, 18, 97) 100%);
+  background: -webkit-linear-gradient(left,  rgba(153, 0, 120, 1) 0%, rgb(255, 18, 97, 1) 100%);
+  background: linear-gradient(to right,  rgba(153, 0, 120, 1) 0%, rgba(255, 18, 97, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  padding-left: 13px;
+}
+
+.newjob:hover svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 120, 415;
+    stroke-dashoffset: 337;
+}
+
+.editpreferences {
+    position: relative;
+    display: inline-block;
+    width: 277px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.editpreferences svg {
+    position: absolute;
+    right: 2;
+}
+
+.editpreferences svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 353, 0;
+    stroke-dashoffset: 0;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.editpreferences span{
+  background:rgb(248, 137, 206);
+  background: -moz-linear-gradient(left,  rgb(153, 0, 120) 0%, rgb(255, 18, 97) 100%);
+  background: -webkit-linear-gradient(left,  rgba(153, 0, 120, 1) 0%, rgb(255, 18, 97, 1) 100%);
+  background: linear-gradient(to right,  rgba(153, 0, 120, 1) 0%, rgba(255, 18, 97, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  padding-left: 14px;
+}
+
+.editpreferences:hover svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 120, 415;
+    stroke-dashoffset: 337;
 }
 
 .description{
@@ -53,16 +166,3 @@ background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
 }
 
 
-.editpreferences{
-    background-color: rgb(255, 169, 222);
-    padding: 8px;
-    border-radius: 10px;
-    color: white;
-    margin-left: 40px;  
-    text-align:center
-}
-
-.editpreferences:hover{
-    text-decoration: none;
-    color: black;
-}

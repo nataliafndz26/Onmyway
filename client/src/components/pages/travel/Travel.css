@@ -27,37 +27,52 @@
 }
 
 .explore{
-    position: absolute;
-    top:520px;
-    left: 1000px;
-    border: 2px solid white;
-    color: white;
-    font-weight: bold;
-    padding: 5px 20px;
-    align-items: center;
-    backdrop-filter: blur(5px);
-}
-
-.explore:hover{
-    border: 2px solid white;
-    color: white;
-    font-weight: bold;
-}
-
-.next{
-    position: absolute;
-    top:100px;
-    left: 1000px;
-    bottom: 100px;
-    width: 200px;
+    position: relative;
+    top: 430px;
+    left: 900px;
+    display: inline-block;
+    width: 250px;
     height: 100px;
-    z-index: +1000;  
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+
 }
 
-.next img{
-    border-radius: 10px;
-    object-fit: cover;
-    height: fit-content;
-    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.3)
+.explore svg {
+    position: absolute;
+    right: 2;
+}
+
+.explore svg rect {
+    stroke-width: 2;
+    stroke-dasharray: 353, 0;
+    stroke-dashoffset: 0;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.explore span{
+    background:rgb(255, 255, 255);
+    background: -moz-linear-gradient(left,  rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+    background: -webkit-linear-gradient(left,  rgb(255, 255, 255) 0%,rgb(255, 255, 255) 100%);
+    background: linear-gradient(to right,  rgb(255, 255, 255) 0%,rgb(255, 255, 255) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    padding-left: 25px;
+    padding-bottom: 6px;
+  }
+
+.explore:hover svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 120, 420;
+    stroke-dashoffset: 337;
 }
 

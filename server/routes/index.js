@@ -7,4 +7,5 @@ module.exports = app => {
     app.use('/api/preferences', require('./preference.routes'))
     app.use('/api/files', require('./files.routes'))
     app.use('/api/mail', require('./nodemailer.routes'))
+    app.use('/api/comments', require ('./comments.routes'))
 }
