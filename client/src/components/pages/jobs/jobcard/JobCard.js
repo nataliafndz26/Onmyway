@@ -1,4 +1,7 @@
-import { ButtonGroup, Button, Card } from 'react-bootstrap'
+import { BsArrowRight } from 'react-icons/bs'
+
+import bin from './bin.png'
+import pen from './pen.png'
 
 import './JobCard.css'
 
@@ -7,36 +10,57 @@ import { Link } from 'react-router-dom'
 const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser, deleteJob }) => {
     
     return (
-        <>
-            <Card bsPrefix="job-card" key={_id}>
-                <Card.Img variant="top" src={image} />
-                <Card.Body >
-                    <Card.Title className='title' >{name}</Card.Title>
-                    <Card.Text><strong>{location}</strong> </Card.Text>
-                    <Card.Text>You will stay in a {accommodation}</Card.Text>
 
+        <section className="cards" >
+            
+                 <article className="card card--1" style={{height:'480px', marginTop:'40px'}}>
+                     
+                        <div className="card__img" style={{ backgroundImage: `url(${image})`}} ></div>
+                        <a href="#" className="card_link">
+                            <div className="card__img--hover" style={{ backgroundImage: `url(${image})` }} ></div>
+                        </a>
+                        <div className="card__info">
+                            <span className="card__category"><strong>{location}</strong></span>
+                            <h3 className="card__title">{name}</h3>
+                    <span className="card__by">You will stay in a <a href="#" class="card__author"> {accommodation}</a></span>
+                    
                     {
                         user._id === loggedInUser._id 
+                            
                             ?
 
-                            <div className="btn-group">
+                            <div className="card__info-hover host-ad" >
                                 
-                                <Link className="detailsjob-bt" style={{padding:'6px 20px'}} to={`/jobs/${_id}`}>Details</Link>
-                                <Link className="editjob-bt" style={{padding:'6px 20px'}} to={`/jobs/${_id}/editjob`}>Edit</Link>
-                                <Link className="deletejob-bt" style={{padding:'6px 20px'}} onClick={deleteJob}>Delete</Link>
-
+                                <Link className="editjob-bt" style={{padding:'6px 7px'}} to={`/jobs/${_id}/editjob`}><img
+                                        alt="pen"
+                                        src={pen}
+                                        width="24"
+                                        height="24"
+                                        className="d-inline-block align-top"
+                                    /></Link>
+                                <Link className="deletejob-bt" style={{padding:'6px 7px'}} onClick={deleteJob}><img
+                                        alt="bin"
+                                        src={bin}
+                                        width="24"
+                                        height="24"
+                                        className="d-inline-block align-top"
+                                    /></Link>
+                               
                                 </div>
                            
                             :
+                            null
 
-                            <Link className="detailsjob-bt" style={{padding:'6px 20px'}} to={`/jobs/${_id}`}>Details</Link>
                     }
         
-                    
-                </Card.Body>
-            </Card>
-        </>
+                            <Link className="detailsjob-bt" style={{padding:'6px 20px', position:'absolute', bottom:'3px', marginLeft:'150px', fontWeight:'bold', fontSize: '15px'}} to={`/jobs/${_id}`}>Details <BsArrowRight size='20px' style={{ color: '#007c70', marginBottom:'4px' }}/></Link>
+                </div>
+
+                </article>
+        </section>
     )
 }
+
+
 
 export default JobCard

@@ -131,8 +131,10 @@ class Profile extends Component {
                                             </defs>
                                             <rect x="5" y="7" rx="5" fill="none" stroke="url(#grad2)" width="150" height="40"></rect>
                                         </svg>
-                                            <span>Create a new job</span></Link>
+                                                <span>Create a new job</span></Link>
+                                            
                                             :
+                                            
                                             <Link id="edit-preferences" className="editpreferences" style={{ textDecoration: 'none' }} to={`/preferences`}>
                                             <svg width="277" height="62">
                                             <defs>

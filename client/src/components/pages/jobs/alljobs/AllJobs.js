@@ -67,7 +67,7 @@ class AllJobs extends Component {
 
                 />
                 <Container >
-                    <h1 style={{ textAlign: 'center', paddingTop: '50px' }}>Exchanges and volunteering with free accommodation</h1>
+                    <h1 style={{ textAlign: 'left', paddingTop: '100px', fontSize: '25px' }}>Exchanges and volunteering all over the World</h1>
 
                     {
                         this.state.jobs
@@ -79,7 +79,7 @@ class AllJobs extends Component {
                                         {this.state.filteredjobs.map(elm => {
                                             return (
                                                 <Col lg={4} >
-                                                    <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                    <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>
                                                 </Col>
                                             )
                                         })
@@ -88,7 +88,7 @@ class AllJobs extends Component {
                                 </Tab>
 
                                 <Tab eventKey="alljobs" title="All jobs">
-                                    <Row style={{ justifyContent: "center" }}>
+                                    <Row style={{ justifyContent: "center", marginTop: '30px'}}>
 
                                         <SearchBar searchFor={(value, filter) => this.searchBy(value, filter)} />
                                         {this.state.searchjobs === undefined

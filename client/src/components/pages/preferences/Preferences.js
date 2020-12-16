@@ -58,7 +58,7 @@ class PreferencesForm extends Component {
 
         return (
             <>
-                <h1>Select the options you're interested in</h1>
+                <h1 style={{marginTop:'70px', fontSize:'30px', marginLeft: '30px'}}>Select the options you're interested in</h1>
                 <hr />
 
                 <Container>
