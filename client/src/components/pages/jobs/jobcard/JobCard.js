@@ -35,6 +35,7 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                     
                 </Card.Body>
             </Card>
+                
         </>
     )
 }
