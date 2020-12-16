@@ -25,7 +25,7 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                     <span className="card__by">You will stay in a <a href="#" class="card__author"> {accommodation}</a></span>
                     
                     {
-                        user._id === loggedInUser._id 
+                        user._id === loggedInUser._id || user === loggedInUser._id
                             
                             ?
 

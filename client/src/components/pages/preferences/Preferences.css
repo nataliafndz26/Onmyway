@@ -117,3 +117,48 @@
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(0, 189, 189);
 }
+
+.magic {
+    position: relative;
+    display: inline-block;
+    width: 277px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.magic svg {
+    position: absolute;
+    right: 2;
+}
+
+.magic svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 353, 0;
+    stroke-dashoffset: 0;
+    -webkit-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.magic span{
+  background:rgb(248, 137, 206);
+  background: -moz-linear-gradient(left,  rgb(153, 0, 120) 0%, rgb(255, 18, 97) 100%);
+  background: -webkit-linear-gradient(left,  rgba(153, 0, 120, 1) 0%, rgb(255, 18, 97, 1) 100%);
+  background: linear-gradient(to right,  rgba(153, 0, 120, 1) 0%, rgba(255, 18, 97, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  padding-left: 14px;
+}
+
+.magic:hover svg rect {
+    stroke-width: 3;
+    stroke-dasharray: 148, 422;
+    stroke-dashoffset: 337;
+}
+

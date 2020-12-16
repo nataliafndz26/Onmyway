@@ -63,9 +63,7 @@ class AllJobs extends Component {
     render() {
         return (
             <div>
-                <img className="all" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607943555/Onmyway/BACKGROUND%20IMAGES/photo-1442570468985-f63ed5de9086_gd41tq.jpg"
-
-                />
+                <img className="all" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607943555/Onmyway/BACKGROUND%20IMAGES/photo-1442570468985-f63ed5de9086_gd41tq.jpg"/>
                 <Container >
                     <h1 style={{ textAlign: 'left', paddingTop: '100px', fontSize: '25px' }}>Exchanges and volunteering all over the World</h1>
 
@@ -74,7 +72,7 @@ class AllJobs extends Component {
                             ?
                             <Tabs defaultActiveKey="filteredjobs" id="noanim-tab-example" style={{ marginTop: '50px' }}>
 
-                                <Tab eventKey="filteredjobs" title="Jobs for you">
+                                <Tab eventKey="filteredjobs" title="Jobs for you" tabClassName="tabs">
                                     <Row>
                                         {this.state.filteredjobs.map(elm => {
                                             return (
@@ -87,7 +85,7 @@ class AllJobs extends Component {
                                     </Row>
                                 </Tab>
 
-                                <Tab eventKey="alljobs" title="All jobs">
+                                <Tab eventKey="alljobs" title="All jobs" tabClassName="tabs">
                                     <Row style={{ justifyContent: "center", marginTop: '30px'}}>
                                         
                                         <SearchBar searchFor={(value, filter) => this.searchBy(value, filter)} />
