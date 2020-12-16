@@ -108,7 +108,7 @@ class JobFormEdit extends Component {
             <div>
                 <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944721/Onmyway/BACKGROUND%20IMAGES/photo-1543269865-cbf427effbad_qlnbg3.jpg" />
                 <Container>
-                    <h1 style={{ textAlign: 'center' }}>Edit this job</h1>
+                    <h1 style={{ textAlign: 'center', paddingTop: '70px' }}>Edit this job</h1>
                     <Row style={{ justifyContent: 'center' }}>
                     <Col className="ed-form" lg={5}>
                         <Form onSubmit={this.handleSubmit}>

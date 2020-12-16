@@ -80,7 +80,7 @@ class JobForm extends Component {
             <div>
                 <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944606/Onmyway/BACKGROUND%20IMAGES/photo-1498307833015-e7b400441eb8_vgwewv.jpg"/>
                 <Container className="cr-form">
-                    <h2 style={{ textAlign: 'center', paddingTop: '30px', paddingBottom: '10px'}}>Do you want to contribute to our community with a new job?</h2>
+                    <h2 style={{ textAlign: 'center', paddingTop: '70px', paddingBottom: '10px'}}>Do you want to contribute to our community with a new job?</h2>
                     <h3 style={{ textAlign: 'center' }}>Tell us more about it! ;)</h3>
                     <Row style={{ justifyContent: 'center' }}>
                         <Col className= "col-form" lg={{span: 5}}>

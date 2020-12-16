@@ -13,8 +13,8 @@
 }
 
 .formedit-bt{
-    background-color: rgb(252, 175, 74);
-    border: 1px solid rgb(252, 175, 74);
+    background-color: #009485;
+    border: 1px solid #009485;
     padding: 6px;
     border-radius: 4px;
     color: white;
@@ -23,7 +23,7 @@
 
 .formedit-bt:hover{
     text-decoration:none;
-    background-color:rgb(252, 175, 74);
-    border:rgb(252, 175, 74);
-    color: black
+    background-color:#00AC9A;
+    border: 1px solid #009485;
+    color: white;
 }

@@ -28,7 +28,8 @@ class NavBar extends Component {
 
     componentDidMount = () => {
         document.addEventListener('scroll', () => {
-            const backgroundcolor = window.scrollY < 20 ? 'white' : 'transparent';
+            console.log(this.state.navBackground)
+            const backgroundcolor = window.scrollY < 20 ? 'transparent' : 'rgba(255, 255, 255, 0.6)';
             this.setState({navBackground: backgroundcolor})
         })
     }
@@ -37,7 +38,7 @@ class NavBar extends Component {
     render() {
 
         return (
-            <Navbar className="navbar" style={{zIndex: '+1000'}} backgroundColor={this.state.navBackground} expand="md" fixed="top">
+            <Navbar className="navbar" style={{ zIndex: '1000', borderBottom: '1px solid rgba(0, 0, 0, 0.4)' , backgroundColor: this.state.navBackground}}  expand="md" fixed="top">
                 <Link to="/travel">
                     <Navbar.Brand className="omw">
                         <img

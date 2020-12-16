@@ -8,6 +8,16 @@ import EmailForm from '../../email/EmailForm'
 import PopUp from '../../../shared/popUp/PopUp'
 import Comment from '../../comments/Comments'
 
+import mail from './mail.png'
+import mailSuccess from './mail-success.png'
+import favourite from './favourite.png'
+import favourited from './favourited.png'
+
+import benIcon from './benefitsicon.png'
+import intIcon from './interestsicon.png'
+import skillIcon from './skillsicon.png'
+import star from './star.png'
+
 import './JobDetails.css'
 
 
@@ -95,13 +105,20 @@ class JobDetails extends Component {
                     <>
                         <Row>
 
-                            <Col className='job-image' lg={6}>
-                                <img variant="top" style={{ width: '100%' }} src={this.state.job.image} />
+                            <Col  lg={12}>
+                                <img variant="top" className='job-image' style={{ width: '100%', marginTop:'71px' }} src={this.state.job.image} />
                             </Col>
-                            <Col className='job-title' lg={6}>
-                                <h3 className='title'>{this.state.job.name}</h3>
-                                <p className='description'>{this.state.job.description}</p>
+                            <Col className='job-title' lg={12}>
+                                <h3 className='title-info'>{this.state.job.name}</h3>
+                                <p className='description-job'>{this.state.job.description}</p>
+                                <p className='description-job'><small>{this.state.job.timetable}<br></br>You will stay in a {this.state.job.accommodation} in {this.state.job.location} </small></p>
+                                
 
+                                <PopUp show={this.state.showModal} onHide={() => this.handleModal(false)}>
+                                        <EmailForm hideModal={this.handleModal}  {...this.props} hostInfo={this.state.job.user} userInfo={this.props.loggedInUser} closeModal={() => this.handleModal(false)} />
+                                </PopUp>
+
+                            </Col>
                                 <div className="buttons">
 
 
@@ -111,11 +128,23 @@ class JobDetails extends Component {
 
                                             ?
 
-                                            <Link className="remove-fav" onClick={() => this.removeFav(this.state.job._id)}>Remove Fav</Link>
+                                    <Link className="remove-fav" onClick={() => this.removeFav(this.state.job._id)}><img
+                                        alt="Logotipo"
+                                        src={favourited}
+                                        width="30"
+                                        height="30"
+                                        className="d-inline-block align-top"
+                                    /></Link>
 
                                             :
 
-                                            <Link className="fav" onClick={() => this.saveFav(this.state.job._id)}> Add to Fav</Link>
+                                    <Link className="fav" onClick={() => this.saveFav(this.state.job._id)}><img
+                                        alt="Logotipo"
+                                        src={favourite}
+                                        width="30"
+                                        height="30"
+                                        className="d-inline-block align-top"
+                                    /></Link>
                                         }
 
 
@@ -123,7 +152,13 @@ class JobDetails extends Component {
 
                                             ?
 
-                                            <Link className="applied" disabled>Applied</Link>
+                                    <Link className="applied" disabled><img
+                                        alt="Logotipo"
+                                        src={mailSuccess}
+                                        width="30"
+                                        height="30"
+                                        className="d-inline-block align-top"
+                                    /></Link>
 
                                             :
 
@@ -131,44 +166,81 @@ class JobDetails extends Component {
                                                 this.applyJob(this.state.job._id)
                                                 this.handleModal(true)
 
-                                            }}>Apply now!</Link>
+                                    }}><img
+                                            alt="Logotipo"
+                                            src={mail}
+                                            width="30"
+                                            height="30"
+                                            className="d-inline-block align-top"
+                                        /></Link>
 
                                         }
             
 
                                 </div>
 
-                                <PopUp show={this.state.showModal} onHide={() => this.handleModal(false)}>
-                                        <EmailForm hideModal={this.handleModal}  {...this.props} hostInfo={this.state.job.user} userInfo={this.props.loggedInUser} closeModal={() => this.handleModal(false)} />
-                                </PopUp>
-
-                            </Col>
-
-                            <Col lg={12}>
-                                <Card className="job-card">
+                            <Col lg={{ span: 8, offset: 2 }} style={{ justifyContent: 'center'}}>
+                                <Card className="job-card-info" >
                                     <Card.Body>
                                         <Card.Text className='job-info'>
-                                            <h5>You will stay in a {this.state.job.accommodation} in {this.state.job.location}</h5>
-                                            <p>Your timetable will be: {this.state.job.timetable}</p>
-                                            <p>{this.state.job.user.name} will be your host!</p>
-                                            <h5 className="pref-title">What do we offer you?</h5>
+                                            <div className='host'>
+                                                <img
+                                                    alt="Logotipo"
+                                                    src={this.state.job.user.image}
+                                                    width="40"
+                                                    height="40"
+                                                    className="user-pic"
+                                                />
+                                                <p style={{ paddingTop: '14px' }}><strong>{this.state.job.user.name}</strong> will be your host!</p>
+                                            </div>
+                                            <hr></hr>
+                                            <Row>
+                                            <Col lg={4}>
+                                                    <img
+                                                        alt="Logotipo"
+                                                        src={benIcon}
+                                                        width="70"
+                                                        height="60"
+                                                        className="d-inline-block align-top"
+                                                    />
+                                                    <h5 className="pref-title"><strong> What do we offer you? </strong></h5>
                                             <ul>
                                                 {this.state.job.benefits.map(elm =>
                                                     <li className="benefits" key={elm}>{elm}</li>
                                                 )}
-                                            </ul>
-                                            <h5 className="pref-title">This job fits you if you are interested in...</h5>
+                                                </ul>
+                                            </Col>
+                                            <Col lg={4}>
+                                                    <img
+                                                        alt="Logotipo"
+                                                        src={intIcon}
+                                                        width="70"
+                                                        height="60"
+                                                        className="d-inline-block align-top"
+                                                    />
+                                                    <h5 className="pref-title"><strong> This job fits you if you are interested in... </strong></h5>
                                             <ul>
                                                 {this.state.job.preferences.interests.map(elm =>
                                                     <li className="interests" key={elm}>{elm}</li>
                                                 )}
-                                            </ul>
-                                            <h5 className="pref-title">What do you need to work with us?</h5>
+                                                </ul>
+                                            </Col>
+                                            <Col lg={4}>
+                                                    <img
+                                                        alt="Logotipo"
+                                                        src={skillIcon}
+                                                        width="60"
+                                                        height="60"
+                                                        className="d-inline-block align-top"
+                                                    />
+                                                    <h5 className="pref-title"><strong> What do you need to work with us?</strong></h5>
                                             <ul>
                                                 {this.state.job.preferences.skills.map(elm =>
                                                     <li className="skills" key={elm}>{elm}</li>
                                                 )}
-                                            </ul>
+                                                </ul>
+                                                </Col>
+                                            </Row>
 
                                         </Card.Text>
 
@@ -179,26 +251,44 @@ class JobDetails extends Component {
 
                             </Row>
                             
-                            <Row>
+                            <Row style={{marginTop:'350px', justifyContent:'center'}}>
+                                {this.props.loggedInUser.applied.includes(this.state.job._id)
+                                    ?
+                                <Col lg={6}>
                                 <Comment updateComment={this.updateComment} job={this.state.job} {...this.props} setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                </Col>
+                                    : 
+                                    null
+                                 }
                                 
+                                <Col lg={6} style={{ marginTop: '50px' }}>
+                                    <h3 style={{ paddingLeft: '15px' }}>Reviews of our guests</h3>
                                 {this.state.job.comments.map(elm => {
 
                                    return ( <>
-
-                                    <Card>
-                                        <Card.Header>{elm.user}</Card.Header>
+                                    <Col log={3}>
+                                           <Card style={{marginTop: '20px'}}>
+                                               <Card.Header style={{ display: 'flex', justifyContent: 'space-between' }}><p>{elm.title}</p><p><img
+                                                   alt="Logotipo"
+                                                   src={star}
+                                                   width="20"
+                                                   height="20"
+                                                   className="d-inline-block align-top"
+                                               />{elm.rating}</p></Card.Header>
                                             <Card.Body>
-                                            <Card.Title>{elm.title} {elm.rating}</Card.Title>
+                                            
                                             <Card.Text>
                                             {elm.text}
                                              </Card.Text>
                                             </Card.Body>
-                                            </Card>
+                                           </Card>
+                                       </Col>
+                                   
 
                                    </> )
 
                                 })}
+                                </Col>
                             </Row>
 
                         </>
