@@ -89,34 +89,26 @@ class AllJobs extends Component {
 
                                 <Tab eventKey="alljobs" title="All jobs">
                                     <Row style={{ justifyContent: "center", marginTop: '30px'}}>
-
+                                        
                                         <SearchBar searchFor={(value, filter) => this.searchBy(value, filter)} />
-                                        {this.state.searchjobs === undefined
-                                            ?
-                                            <>
-                                                {
-                                                    this.state.jobs.map(elm => {
-                                                        return (
-                                                            <Col lg={4}>
-                                                                <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
-                                                            </Col>
-                                                        )
-                                                    })
-                                                }
-                                            </>
+                                        
+                                        {!this.state.searchjobs
+                                            ?     
+                                                this.state.jobs.map(elm => {
+                                                    return(
+                                                    <Col lg={4}>
+                                                    <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                    </Col>               
+                                                )})
                                             :
-                                                <>
-                                            {
                                                 this.state.searchjobs.map(elm => {
                                                     return (
-                                                        <Col lg={4}>
-                                                            <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
-                                                        </Col>
-                                                    )
-                                                })
-                                                }
-                                                </>
+                                                    <Col lg={4}>
+                                                    <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                    </Col>
+                                                )})  
                                         }
+                                        
                                     </Row>
                                 </Tab>
 

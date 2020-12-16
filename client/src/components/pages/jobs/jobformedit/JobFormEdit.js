@@ -55,7 +55,7 @@ class JobFormEdit extends Component {
 
     handleBenefitsInput = e => {
         const selected = []
-        e.target.childNodes.forEach(e => e.selected === true ? selected.push(e.value) : null)
+        e.target.childNodes.forEach(e => e.selected && selected.push(e.value))
         const jobCopy = { ...this.state.job }
         jobCopy.benefits = selected
         this.setState({ job: jobCopy })

@@ -39,7 +39,7 @@ class JobForm extends Component {
 
     handleBenefitsInput = e => {
         const selected = []
-        e.target.childNodes.forEach(e => e.selected === true ? selected.push(e.value) : null)
+        e.target.childNodes.forEach(e => e.selected && selected.push(e.value))
         this.setState({ [e.target.name]: selected })
     }
 
@@ -69,7 +69,7 @@ class JobForm extends Component {
         this.jobService
             .saveNewJob(this.state)
             .then(res => this.props.history.push('/profile'))
-            .catch(err => console.log(err))
+            .catch(err => console.log( err ))
     }
 
 

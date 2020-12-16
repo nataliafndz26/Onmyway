@@ -179,7 +179,7 @@ class JobDetails extends Component {
 
                                 </div>
 
-                            <Col lg={{ span: 8, offset: 2 }} style={{ justifyContent: 'center'}}>
+                            <Col lg={{ span: 9, offset: 2 }} style={{ justifyContent: 'center'}}>
                                 <Card className="job-card-info" >
                                     <Card.Body>
                                         <Card.Text className='job-info'>
@@ -304,14 +304,6 @@ class JobDetails extends Component {
 
 export default JobDetails
 
-
-
-
-{/* <Form.Group controlId="text">
-                                    
-<Form.Control as="textarea" rows={3} placeholder="Leave it here!" type="text" name="comments" value={this.state.comments} onChange={this.handleInputChange} />
-
-</Form.Group> */}
 
 
 

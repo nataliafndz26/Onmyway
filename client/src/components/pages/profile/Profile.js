@@ -28,27 +28,6 @@ class Profile extends Component {
         }
     }
 
-    // getAll = () => {
-
-    //     this.jobService.getJobs()
-    //         .then(response => {
-    //             const data = response.data
-    //             switch (this.props.loggedInUser.role) {
-    //                 case 'HOST':
-    //                     const ownJob = data.filter(elm => elm.user._id === this.props.loggedInUser._id)
-    //                     console.log(ownJob)
-    //                     this.setState({ jobs: ownJob })
-    //                     break;
-    //                 case 'USER':
-    //                     const favJobs = data.filter(elm => this.props.loggedInUser.favourites.includes(elm._id))
-    //                     const appliedJobs = data.filter(elm => this.props.loggedInUser.applied.includes(elm._id))
-    //                     this.setState({ favourites: favJobs, applied: appliedJobs })
-    //                     break;
-    //             }
-    //         })
-    //         .catch(err => console.log(err))
-    // }
-
     getAll = () => {
         this.jobService
             .getUserJobs(this.props.loggedInUser._id)
@@ -77,19 +56,14 @@ class Profile extends Component {
 
     }
 
-
-
-
     render() {
 
-        const username = this.props.loggedInUser ? this.props.loggedInUser.username : ""
-        const name = this.props.loggedInUser ? this.props.loggedInUser.name : ""
-        const role = this.props.loggedInUser ? this.props.loggedInUser.role : ""
-        const image = this.props.loggedInUser ? this.props.loggedInUser.image : ""
-        const description = this.props.loggedInUser ? this.props.loggedInUser.description : ""
-        const id = this.props.loggedInUser ? this.props.loggedInUser._id : ""
-
-
+        const username = this.props.loggedInUser?.username || ""
+        const name = this.props.loggedInUser?.name || ""
+        const role = this.props.loggedInUser?.role || ""
+        const image = this.props.loggedInUser?.image || ""
+        const description = this.props.loggedInUser?.description || ""
+        const id = this.props.loggedInUser?._id || ""
 
         return (
             <div  className="profile">

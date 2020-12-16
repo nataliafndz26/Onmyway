@@ -12,7 +12,7 @@ export default class JobsService {
     getJobs = () => this.apiHandler.get('/allJobs') 
     getOneJob = jobId => this.apiHandler.get(`/getOneJob/${jobId}`)
     getUserJobs = userId  => this.apiHandler.get(`/getUserJobs/${userId}`)
-    saveNewJob = jobInfo => this.apiHandler.post(`/newJob/`, jobInfo)
+    saveNewJob = jobInfo => this.apiHandler.post('/newJob', jobInfo)
     editJob = (jobId, jobInfo) => this.apiHandler.put(`/editJob/${jobId}`, jobInfo)
     deleteJob = jobId => this.apiHandler.delete(`/deleteJob/${jobId}`)
 }

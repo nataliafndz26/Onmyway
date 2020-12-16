@@ -38,7 +38,7 @@ class NavBar extends Component {
     render() {
 
         return (
-            <Navbar className="navbar" style={{ zIndex: '1000', borderBottom: '1px solid rgba(0, 0, 0, 0.4)' , backgroundColor: this.state.navBackground}}  expand="md" fixed="top">
+            <Navbar className="navbar" style={{ zIndex: '1000', borderBottom: '1px solid rgba(0, 0, 0, 0.1)' , backgroundColor: this.state.navBackground}}  expand="md" fixed="top">
                 <Link to="/travel">
                     <Navbar.Brand className="omw">
                         <img

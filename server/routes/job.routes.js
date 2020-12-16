@@ -50,7 +50,7 @@ router.post('/newJob', (req, res) => {
         .create(preferences)
         .then(response => Job.create({ name, location, accommodation, timetable, benefits, image, description, preferences: response._id, user }))
         .then(response => res.status(200).json(response))
-        .catch(err => res.status(500).json(err))
+        .catch(err => res.status(500).json( err ))
 })
 
 router.put('/editJob/:id', (req, res) => {
