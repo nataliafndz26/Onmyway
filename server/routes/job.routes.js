@@ -6,7 +6,7 @@ const Job = require('../models/jobs')
 const Preferences = require('../models/preferences')
 const User = require('../models/user')
 
-const checkId = require('./../middlewares/middlewares')
+const { checkId } = require('./../middlewares/middlewares')
 
 
 router.get('/allJobs', (req, res) => {

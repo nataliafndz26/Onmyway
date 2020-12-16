@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const Preferences = require('../models/preferences')
 const User = require('../models/user')
 
-const checkId = require('./../middlewares/middlewares') 
+const { checkId } = require('./../middlewares/middlewares') 
 
 
 
