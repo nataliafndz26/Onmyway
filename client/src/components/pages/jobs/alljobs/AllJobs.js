@@ -67,7 +67,7 @@ class AllJobs extends Component {
 
                 />
                 <Container >
-                    <h1 style={{ textAlign: 'center', paddingTop: '50px' }}>Exchanges and volunteering with free accommodation</h1>
+                    <h1 style={{ textAlign: 'center', paddingTop: '50px', paddingTop:'70px'}}>Exchanges and volunteering with free accommodation</h1>
 
                     {
                         this.state.jobs

@@ -92,22 +92,22 @@ class Profile extends Component {
 
 
         return (
-            <div className="profile">
+            <div  className="profile">
                 <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944984/Onmyway/BACKGROUND%20IMAGES/photo-1488646953014-85cb44e25828_y4djls.jpg" />
                 {
 
                     this.props.loggedInUser ?
-                        <Container>
+                        <Container >
                             
-                                    <Row  style={{ display: "flex" }}>
+                            <Row style={{ display: "flex" }}>
                                         <Col lg={{ span: 3, offset: 0 }} style={{marginTop: '20px'}}>
                                         <img  className="rounded-circle z-depth-2" src={image} style={{width:'220px', marginTop:'60px'}}/>
                                         </Col>
-                                <Col lg={{ span: 7, offset: 0 }} className="init" style={{marginTop: '50px'}}>
+                                <Col lg={{ span: 7, offset: 0 }} className="init" style={{ marginTop: '70px'}}>
                                             <h2 className="name">Welcome back, {name}! </h2>
                                         <h5 className="description">{description}</h5>
                                         <div>
-                                        <Link id="edit" className="editprofile"  style={{textDecoration: 'none'}} to={`/profile/edit/${id}`}>
+                                        <Link id="edit" className="editprofile" style={{ textDecoration: 'none', marginTop: '30px' }} to={`/profile/edit/${id}`}>
                                         <svg width="277" height="62">
                                             <defs>
                                                 <linearGradient id="grad1">

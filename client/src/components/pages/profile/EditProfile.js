@@ -72,7 +72,7 @@ class EditUser extends Component {
                 <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944858/Onmyway/BACKGROUND%20IMAGES/photo-1499591934245-40b55745b905_jobz9i.jpg" />
 
                 <Container className="ed-pro-form">
-                    <Row style={{ justifyContent: 'center' }}>
+                    <Row style={{ justifyContent: 'center', paddingTop: '70px' }}>
                         <Col className= "col-edit" lg={5}>
                             <h1>Edit profile</h1>
                             <br />

@@ -16,6 +16,7 @@ import favourited from './favourited.png'
 import benIcon from './benefitsicon.png'
 import intIcon from './interestsicon.png'
 import skillIcon from './skillsicon.png'
+import star from './star.png'
 
 import './JobDetails.css'
 
@@ -105,12 +106,12 @@ class JobDetails extends Component {
                         <Row>
 
                             <Col  lg={12}>
-                                <img variant="top" className='job-image' style={{ width: '100%' }} src={this.state.job.image} />
+                                <img variant="top" className='job-image' style={{ width: '100%', marginTop:'71px' }} src={this.state.job.image} />
                             </Col>
                             <Col className='job-title' lg={12}>
                                 <h3 className='title-info'>{this.state.job.name}</h3>
-                                <p className='description'>{this.state.job.description}</p>
-                                <p className='description'><small>{this.state.job.timetable}<br></br>You will stay in a {this.state.job.accommodation} in {this.state.job.location} </small></p>
+                                <p className='description-job'>{this.state.job.description}</p>
+                                <p className='description-job'><small>{this.state.job.timetable}<br></br>You will stay in a {this.state.job.accommodation} in {this.state.job.location} </small></p>
                                 
 
                                 <PopUp show={this.state.showModal} onHide={() => this.handleModal(false)}>
@@ -178,7 +179,7 @@ class JobDetails extends Component {
 
                                 </div>
 
-                            <Col lg={{ span: 8, offset: 2 }} style={{ justifyContent: 'center' }}>
+                            <Col lg={{ span: 8, offset: 2 }} style={{ justifyContent: 'center'}}>
                                 <Card className="job-card-info" >
                                     <Card.Body>
                                         <Card.Text className='job-info'>
@@ -250,26 +251,44 @@ class JobDetails extends Component {
 
                             </Row>
                             
-                            <Row>
+                            <Row style={{marginTop:'350px', justifyContent:'center'}}>
+                                {this.props.loggedInUser.applied.includes(this.state.job._id)
+                                    ?
+                                <Col lg={6}>
                                 <Comment updateComment={this.updateComment} job={this.state.job} {...this.props} setTheUser={this.props.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                </Col>
+                                    : 
+                                    null
+                                 }
                                 
+                                <Col lg={6} style={{ marginTop: '50px' }}>
+                                    <h3 style={{ paddingLeft: '15px' }}>Reviews of our guests</h3>
                                 {this.state.job.comments.map(elm => {
 
                                    return ( <>
-
-                                    <Card>
-                                        <Card.Header>{elm.user}</Card.Header>
+                                    <Col log={3}>
+                                           <Card style={{marginTop: '20px'}}>
+                                               <Card.Header style={{ display: 'flex', justifyContent: 'space-between' }}><p>{elm.title}</p><p><img
+                                                   alt="Logotipo"
+                                                   src={star}
+                                                   width="20"
+                                                   height="20"
+                                                   className="d-inline-block align-top"
+                                               />{elm.rating}</p></Card.Header>
                                             <Card.Body>
-                                            <Card.Title>{elm.title} {elm.rating}</Card.Title>
+                                            
                                             <Card.Text>
                                             {elm.text}
                                              </Card.Text>
                                             </Card.Body>
-                                            </Card>
+                                           </Card>
+                                       </Col>
+                                   
 
                                    </> )
 
                                 })}
+                                </Col>
                             </Row>
 
                         </>

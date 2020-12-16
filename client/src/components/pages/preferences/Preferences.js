@@ -58,8 +58,7 @@ class PreferencesForm extends Component {
 
         return (
             <>
-                <h1>Select the options you're interested in</h1>
-                <hr />
+                <h1 style={{marginTop:'70px'}}>Select the options you're interested in</h1>
 
                 <Container>
                     <Form onSubmit={this.handleSubmit}>
