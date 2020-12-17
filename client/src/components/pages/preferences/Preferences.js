@@ -59,15 +59,17 @@ class PreferencesForm extends Component {
 
         return (
             <>
-                <h1 style={{marginTop:'70px', fontSize:'30px', marginLeft: '30px'}}>Select the options you're interested in</h1>
-                <hr />
+              
 
                 <Container>
+                    
+                    <h1 style={{ marginTop: '100px', marginBottom: '30px', fontSize: '30px', marginLeft: '30px' }}>Select the options you're interested in</h1>
+                    
                     <Form onSubmit={this.handleSubmit}>
                         <Row>
                             <Col md={4}>
                                 <Form.Group controlId="interests">
-                                    <Form.Label>Interests</Form.Label>
+                                    <Form.Label style={{marginLeft: '20px'}}>Interests</Form.Label>
                                     <Form.Control className="form myselect" as="select" custom multiple name="interests" onChange={this.handleInputMultiple}>
                                         <option className="option sy" >Sabbatical Year</option>
                                         <option className="option pd">Professional Development</option>
@@ -84,7 +86,7 @@ class PreferencesForm extends Component {
                             </Col>
                             <Col md={4}>
                                 <Form.Group controlId="skills">
-                                    <Form.Label>Skills</Form.Label>
+                                    <Form.Label style={{marginLeft: '20px'}}>Skills</Form.Label>
                                     <Form.Control className="form myselect" as="select" custom multiple name="skills" onChange={this.handleInputMultiple}>
                                         <option className="option wwg">Working with guests</option>
                                         <option className="option cl">Cleaning</option>
@@ -101,21 +103,21 @@ class PreferencesForm extends Component {
                                 <Form.Group controlId="Continent">
                                     <Form.Label>Continent</Form.Label>
                                     <Form.Control className="form" as="select" custom value={this.state.continent} name="continent" onChange={this.handleInputChange}>
-                                        <option className="option">Europe</option>
-                                        <option className="option">South America</option>
-                                        <option className="option">Central America</option>
-                                        <option className="option">North America</option>
-                                        <option className="option">Asia</option>
-                                        <option className="option">Africa</option>
-                                        <option className="option">Oceania</option>
+                                        <option className="option cont">Europe</option>
+                                        <option className="option cont">South America</option>
+                                        <option className="option cont">Central America</option>
+                                        <option className="option cont">North America</option>
+                                        <option className="option cont">Asia</option>
+                                        <option className="option cont">Africa</option>
+                                        <option className="option cont">Oceania</option>
                                     </Form.Control>
                                 </Form.Group>
                                 <Form.Group controlId="time">
                                     <Form.Label>Time</Form.Label>
                                     <Form.Control className="form" as="select" custom value={this.state.time} name="time" onChange={this.handleInputChange}>
-                                        <option className="option">0-6 months</option>
-                                        <option className="option">6 months-1 year</option>
-                                        <option className="option">More than 1 year</option>
+                                        <option className="option cont">0-6 months</option>
+                                        <option className="option cont">6 months-1 year</option>
+                                        <option className="option cont">More than 1 year</option>
                                     </Form.Control>
                                 </Form.Group>
                                 <Button bsPrefix="magic" style={{textDecoration: 'none', border:'none'}} type="submit">
