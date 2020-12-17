@@ -4,7 +4,8 @@ export default class JobsService {
 
     constructor() {
         this.apiHandler = axios.create({
-            baseURL: 'http://localhost:5000/api/jobs',
+            baseURL: `${process.env.REACT_APP_API_URL}/jobs`,
+            // baseURL: 'http://localhost:5000/api/jobs',
             withCredentials: true
         })
     }

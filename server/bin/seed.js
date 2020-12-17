@@ -240,6 +240,7 @@ const jobs = [
         image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/003/570/main/H11_Beers_in_the__garden___copy.jpg',
         description: 'Hi There, We have some plain boring white walls in our hostle including our hallways, dining, and lounge area. We are looking for an experienced Graffiti, Stencil or Graphic artist to add some color and life to our walls, with some inspirational text and Images We are open to ideas on what goes up so feel free to pitch your ideas, the theme would be and adventure and shared culture. Cheers Matt'
     },
+    
 ]
 
 const users = [

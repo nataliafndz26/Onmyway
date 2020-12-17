@@ -4,7 +4,8 @@ export default class PreferencesService {
 
     constructor() {
         this.apiHandler = axios.create({
-            baseURL: 'http://localhost:5000/api/preferences',
+            baseURL: `${process.env.REACT_APP_API_URL}/preferences`,
+            // baseURL: 'http://localhost:5000/api/preferences',
             withCredentials: true
         })
     }
