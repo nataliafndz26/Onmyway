@@ -64,7 +64,7 @@ class AllJobs extends Component {
 
     render() {
         return (
-            <div>
+            <div style ={{paddingBottom: '60px'}}>
                 <img className="all" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607943555/Onmyway/BACKGROUND%20IMAGES/photo-1442570468985-f63ed5de9086_gd41tq.jpg"/>
                 <Container >
                     <h1 style={{ textAlign: 'left', paddingTop: '100px', fontSize: '25px' }}>Exchanges and volunteering all over the World</h1>

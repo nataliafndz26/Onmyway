@@ -5,6 +5,8 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import CommentsService from '../../../service/comments.service'
 import UserService from '../../../service/user.service'
 
+import './Comments.css'
+
 
 class Comments extends Component{
 

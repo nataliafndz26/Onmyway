@@ -51,19 +51,19 @@ class NavBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Link className="preferences" to="/statistics">
-                            <Nav.Link style={{ color: 'black' }} as="div">Statistics</Nav.Link>
-                        </Link>
-                        <Link className="preferences" to="/preferences">
+                        <Link className="hover" to="/preferences">
                             <Nav.Link style={{color:'black'}}  as="div">Preferences</Nav.Link>
                         </Link>
-                        <Link className="jobs" to="/jobs">
+                        <Link className="hover" to="/jobs">
                             <Nav.Link style={{color:'black'}} as="div">Jobs</Nav.Link>
                         </Link>
-                        <Link className="logout" to="/" onClick={this.logout}>
+                        <Link className="hover" to="/statistics">
+                            <Nav.Link style={{ color: 'black' }} as="div">Statistics</Nav.Link>
+                        </Link>
+                        <Link className="hover" to="/" onClick={this.logout}>
                             <Nav.Link style={{color:'black'}}as="div">Log out</Nav.Link>
                         </Link>
-                        <Link className="profile-nav" to="/profile">
+                        <Link className="hover" to="/profile">
                             <Nav.Link style={{color:'black'}} as="div">Profile</Nav.Link>
                         </Link>
                     </Nav>

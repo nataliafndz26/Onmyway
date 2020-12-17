@@ -263,7 +263,7 @@ class JobDetails extends Component {
                                     null
                                  }
                                 
-                                <Col lg={6} style={{ marginTop: '50px' }}>
+                                <Col lg={6} style={{ marginTop: '110px' }}>
                                     {this.state.job.comments === undefined
                                         ?
                                         null

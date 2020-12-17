@@ -22,7 +22,7 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                         <div className="card__info">
                             <span className="card__category"><strong>{location}</strong></span>
                             <h3 className="card__title">{name}</h3>
-                    <span className="card__by">You will stay in a <a href="#" class="card__author"> {accommodation}</a></span>
+                    <span className="card__by">You will stay in a <strong class="card__author"> {accommodation}</strong></span>
                     
                     {
                         user._id === loggedInUser._id || user === loggedInUser._id
