@@ -40,7 +40,7 @@ class Home extends Component {
                 </div>
                 <Container className="home">
                     
-                    <Row>
+                    <Row style={{alignItems:'center'}}>
                         
                         <Button onClick={() => this.handleModalLogin(true)} className="login" variant="light" size="sm">Login</Button>
                     

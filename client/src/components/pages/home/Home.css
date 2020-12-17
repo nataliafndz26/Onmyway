@@ -1,6 +1,6 @@
 .login{
     position: absolute; 
-    margin-top: 480px;
+    margin-top: 350px;
     margin-left: 850px;
     color: #005950;
 }
@@ -12,9 +12,8 @@
 
 
 .signup{
-    position: absolute; 
     margin-top: 480px;
-    margin-left: 680px;
+    align-items: center;
 }
 
 
@@ -26,20 +25,17 @@
 .typewriter{
     position: absolute;
     width:700px;
-    top:100px;
-    left:100px
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 40px 100px ;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
 
-.typewriter p{
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  color: white;
-  white-space: wrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 5.5s steps(100, end),
-    blink-caret .75s step-end infinite;
-}
+
 
 
 @keyframes typing {
