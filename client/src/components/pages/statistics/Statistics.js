@@ -61,18 +61,30 @@ class Statistics extends Component {
 
             <div> 
                 
-                <img className="stats-bg" src="https://www.segurosredondo.es/wp-content/uploads/2020/01/656670.jpg"/>
-        
-            <Container>
-                
-                <Row>
+                <img className="stats-bg" src="https://www.segurosredondo.es/wp-content/uploads/2020/01/656670.jpg" />
                     
-                    <Col className="stats statcard" lg={{ span: 5, offset: 1}} style={{marginTop: '120px', marginBottom: '30px'}}>
+        
+                <Container>
+                
+                    <Row>
+                        <Col lg={6}>
+                        <h3 style={{fontSize: '24px', paddingTop: '100px', color: 'black', marginLeft: '85px' }}>Number of jobs per continent</h3>
+                            
+                        </Col>
                         
-                        <ContinentPie {...this.state} />
+                        <Col lg={6}>
+                        <h3 style={{fontSize: '24px', marginLeft:'20px', paddingTop: '100px', color: 'black' }}>Number of jobs per continent</h3>
+                            
+                        </Col>
+                        
+                    <Col className="stats statcard" lg={{ span: 5, offset: 1}} style={{marginTop: '30px', marginBottom: '30px'}}>
+                        
+                            <ContinentPie {...this.state}/>
+                            
 
-                    </Col>
-                    <Col className="stats statcard" lg={5} style={{marginTop: '120px', marginBottom: '10px'}}>
+                        </Col>
+                        
+                    <Col className="stats statcard" lg={5} style={{marginTop: '30px', marginBottom: '10px'}}>
                         
                         <TimePie {...this.state} />
 
