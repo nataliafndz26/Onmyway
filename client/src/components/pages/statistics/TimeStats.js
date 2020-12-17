@@ -27,7 +27,7 @@ const TimePie = ({ ShortPeriod, MediumPeriod, LongPeriod}) => (
             ]
             
         }
-        margin={{ top: 10, right: 110, bottom: 80, left: 110 }}
+        margin={{ top: -140, right: 110, bottom: 80, left: 110 }}
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
@@ -114,11 +114,11 @@ const TimePie = ({ ShortPeriod, MediumPeriod, LongPeriod}) => (
                 anchor: 'bottom',
                 direction: 'column',
                 justify: false,
-                translateX: 0,
-                translateY: 30,
+                translateX: -160,
+                translateY: -25,
                 itemsSpacing: 0,
                 itemWidth: 100,
-                itemHeight: 25,
+                itemHeight: 22,
                 itemTextColor: '#999',
                 itemDirection: 'left-to-right',
                 itemOpacity: 1,

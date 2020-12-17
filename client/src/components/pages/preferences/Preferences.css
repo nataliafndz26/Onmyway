@@ -20,15 +20,20 @@
     font-size: 17px;
 }
 
-.option::-moz-selection{
-    color: red
-}
-
-
 .sy {
     background-image: linear-gradient(rgba(255,255,255,1) 5%, rgba(0,0,0,0.2)), url("https://res.cloudinary.com/nataliafndz26/image/upload/v1607945716/Onmyway/PREFERENCES/photo-1469854523086-cc02fe5d8800_vjawvd.jpg");
    
 }
+
+select[multiple] option:checked{
+    border: 2px solid #009485;
+    color:red;
+} 
+
+/* .sy:checked, .sy:active, .sy:focus {
+    border: 2px solid #009485;
+    color:red;
+} */
 
 .pd{
     background-image: linear-gradient(rgba(255,255,255,1) 1%, rgba(0,0,0,0.2)), url("https://res.cloudinary.com/nataliafndz26/image/upload/v1607945819/Onmyway/PREFERENCES/photo-1526948531399-320e7e40f0ca_txg2rl.jpg");

@@ -67,27 +67,22 @@ class Statistics extends Component {
                 <Container>
                 
                     <Row>
-                        <Col lg={6}>
-                        <h3 style={{fontSize: '24px', paddingTop: '100px', color: 'black', marginLeft: '85px' }}>Number of jobs per continent</h3>
+               
+                       
+                        <Col className="stats statcard" lg={{ span: 5, offset: 1 }} style={{ marginTop: '80px', marginBottom: '30px' }}>
                             
-                        </Col>
-                        
-                        <Col lg={6}>
-                        <h3 style={{fontSize: '24px', marginLeft:'20px', paddingTop: '100px', color: 'black' }}>Number of jobs per continent</h3>
-                            
-                        </Col>
-                        
-                    <Col className="stats statcard" lg={{ span: 5, offset: 1}} style={{marginTop: '30px', marginBottom: '30px'}}>
+                        <p style={{fontSize: '13px', paddingTop: '10px', color: 'black', marginLeft: '10px', fontWeight:'bold' }}>Jobs per Continent</p>
                         
                             <ContinentPie {...this.state}/>
                             
 
                         </Col>
                         
-                    <Col className="stats statcard" lg={5} style={{marginTop: '30px', marginBottom: '10px'}}>
+                    <Col className="stats statcard" lg={5} style={{marginTop: '80px', marginBottom: '10px'}}>
+
+                        <p style={{fontSize: '13px', marginLeft:'10px', paddingTop: '10px', color: 'black', fontWeight:'bold' }}>Average job period of time</p>
                         
                         <TimePie {...this.state} />
-
                     </Col>
 
                 </Row>

@@ -49,7 +49,7 @@ const ContinentPie = ({ Europe, Asia, Africa, Oceania, NorthAmerica, SouthAmeric
             ]
             
         }
-        margin={{ top: 10, right: 80, bottom: 150, left: 120 }}
+        margin={{ top: -60, right: 80, bottom: 150, left: 120 }}
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
@@ -136,11 +136,11 @@ const ContinentPie = ({ Europe, Asia, Africa, Oceania, NorthAmerica, SouthAmeric
                 anchor: 'bottom',
                 direction: 'column',
                 justify: false,
-                translateX: -30,
-                translateY: 140,
+                translateX: -180,
+                translateY: 78,
                 itemsSpacing: 0,
                 itemWidth: 100,
-                itemHeight: 25,
+                itemHeight: 22,
                 itemTextColor: '#999',
                 itemDirection: 'left-to-right',
                 itemOpacity: 1,

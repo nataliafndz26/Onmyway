@@ -1,19 +1,28 @@
-.login{
-    position: absolute; 
-    margin-top: 350px;
-    margin-left: 850px;
-    color: #005950;
-}
-
 .login:hover{
     text-decoration: none;
     color:  #005950;
 }
 
+.logobw{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 130px;
+  transform: translate(-50%, -50%);
+
+}
 
 .signup{
-    margin-top: 480px;
-    align-items: center;
+  position: absolute;
+  top: 70%;
+  left:41.5%;
+}
+
+.login{
+  position: absolute;
+  top: 70%;
+  left:54%;
+  color: #005950;
 }
 
 
@@ -35,15 +44,3 @@
     border-bottom: 1px solid;
 }
 
-
-
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}

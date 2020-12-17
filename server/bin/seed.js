@@ -240,24 +240,7 @@ const jobs = [
         image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/003/570/main/H11_Beers_in_the__garden___copy.jpg',
         description: 'Hi There, We have some plain boring white walls in our hostle including our hallways, dining, and lounge area. We are looking for an experienced Graffiti, Stencil or Graphic artist to add some color and life to our walls, with some inspirational text and Images We are open to ideas on what goes up so feel free to pitch your ideas, the theme would be and adventure and shared culture. Cheers Matt'
     },
-    {
-        name: 'Graffiti / graphic Art',
-        location: 'Melbourne, Australia',
-        accommodation: 'Hostel',
-        timetable: '20h/week',
-        benefits: ['Breakfast', 'Lunch', 'Shared bedroom', 'Laundry'],
-        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/003/570/main/H11_Beers_in_the__garden___copy.jpg',
-        description: 'Hi There, We have some plain boring white walls in our hostle including our hallways, dining, and lounge area. We are looking for an experienced Graffiti, Stencil or Graphic artist to add some color and life to our walls, with some inspirational text and Images We are open to ideas on what goes up so feel free to pitch your ideas, the theme would be and adventure and shared culture. Cheers Matt'
-    },
-    {
-        name: 'Social Media and Content Support for Cospacecampus.com!',
-        location: 'Koh Pha-Ngan, Tailandia',
-        accommodation: 'Hotel',
-        timetable: 'Monday-Friday, 9:00-12:00',
-        benefits: ['Breakfast', 'Lunch', 'Dinner', 'Shared bedroom', 'Laundry', 'Some extra money'],
-        image: 'https://d34ad2g4hirisc.cloudfront.net/volunteer_positions/photos/000/031/485/main/72e9857d5dc3db9ed9cd08d9bdf76827.jpg',
-        description: 'We are looking for dynamic people that can help us with our SM management and content creation. We are confident the digital nomad and wellness traveler lifestyle is easy to promote but we need the right people to help us tell our story. This will be the most fun you will ever have in paradise participating in incredible activities and telling the world about it. We want everyone to live their best live so come live yours and share about it.'
-    },
+    
 ]
 
 const users = [
@@ -468,12 +451,6 @@ const preferences = [
         skills: [ 'Community work'],
         time: '0-6 months'
     },
-    {
-        interests: ['Professional Development', 'Learn Languages', 'Digital Nomadism'],
-        continent: 'Asia',
-        skills: ['IT'],
-        time: '0-6 months'
-    },
     {//nuestras
         interests: ['Professional Development', 'Self-knowledge', 'Try New Foods'],
         continent: 'Africa',
@@ -531,7 +508,6 @@ Promise.all([createUsers, createJobs, createPreferences])
     .then(() => Job.findByIdAndUpdate(theJobs[21], { preferences: thePreferences[21], user: theUsers[1] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[22], { preferences: thePreferences[22], user: theUsers[2] }, { new: true }))
     .then(() => Job.findByIdAndUpdate(theJobs[23], { preferences: thePreferences[23], user: theUsers[3] }, { new: true }))
-    .then(() => Job.findByIdAndUpdate(theJobs[24], { preferences: thePreferences[24], user: theUsers[0] }, { new: true }))
 
     .catch((err) => console.log(err))
     .finally(() => mongoose.connection.close())
