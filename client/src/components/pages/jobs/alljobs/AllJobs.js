@@ -8,6 +8,8 @@ import PreferenceService from '../../../../service/preferences.service'
 import JobCard from '../jobcard/JobCard'
 import SearchBar from './../../../shared/searchBar/SearchBar'
 
+import PopUp from './../../../shared/popUp/PopUp'
+
 import './AllJobs.css'
 
 class AllJobs extends Component {

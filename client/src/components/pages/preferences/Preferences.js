@@ -118,7 +118,7 @@ class PreferencesForm extends Component {
                                         <option className="option">More than 1 year</option>
                                     </Form.Control>
                                 </Form.Group>
-                                <Link className="magic" style={{textDecoration: 'none'}} type="submit">
+                                <Button bsPrefix="magic" style={{textDecoration: 'none', border:'none'}} type="submit">
                                 <svg width="277" height="62">
                                             <defs>
                                                 <linearGradient id="grad2">
@@ -129,7 +129,7 @@ class PreferencesForm extends Component {
                                             <rect x="5" y="7" rx="5" fill="none" stroke="url(#grad2)" width="183" height="40"></rect>
                                         </svg>
                                             <span>Show me the magic!</span>
-                            </Link>
+                            </Button>
                             </Col>
                         </Row>
                     </Form>

@@ -42,6 +42,7 @@ class JobDetails extends Component {
 
     componentDidMount = () => {
         const job_id = this.props.match.params.id
+        
 
         this.jobsService
             .getOneJob(job_id)
@@ -262,8 +263,13 @@ class JobDetails extends Component {
                                     null
                                  }
                                 
-                                <Col lg={6} style={{ marginTop: '100px' }}>
-                                    <h3 style={{ paddingLeft: '15px' }}>Reviews of our guests</h3>
+                                <Col lg={6} style={{ marginTop: '50px' }}>
+                                    {this.state.job.comments === undefined
+                                        ?
+                                        null
+                                        :
+                                        <h3 style={{ paddingLeft: '15px' }}>Reviews of our guests</h3>
+                                    }
                                 {this.state.job.comments.map(elm => {
 
                                    return ( <>

@@ -19,7 +19,7 @@ router.get('/preference/:id', checkId, (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.post('/newPreferences/:id', (req, res) => {
+router.post('/newPreferences/:id', checkId, (req, res) => {
 
     Preferences
         .create(req.body)
@@ -28,7 +28,7 @@ router.post('/newPreferences/:id', (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.put('/editPreferences/:id', (req, res) => {
+router.put('/editPreferences/:id', checkId, (req, res) => {
 
     Preferences
         .findByIdAndUpdate(req.params.id, req.body, {new: true})
