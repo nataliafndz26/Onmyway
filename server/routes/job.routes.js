@@ -12,7 +12,7 @@ const { checkId } = require('./../middlewares/middlewares')
 router.get('/allJobs', (req, res) => {
 
     Job
-        .find({}, { name: 1, image: 1, location: 1, accommodation: 1, _id: 1, user: 1 })
+        .find({}, { name: 1, image: 1, location: 1, accommodation: 1, _id: 1, user: 1, preferences: 1})
         .populate('preferences')
         .populate('user')
         .then(response => res.status(200).json(response))

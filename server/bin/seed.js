@@ -266,9 +266,8 @@ const users = [
         name: 'Jon Arechalde',
         email: 'garguelles2701@gmail.com',
         image: 'https://media-exp1.licdn.com/dms/image/C5603AQF9fnDDBfA6cQ/profile-displayphoto-shrink_800_800/0?e=1613001600&v=beta&t=uAw4DkIVjzeBkyPfdFXeLV9XbyoMn6h-HJjHiJEUa54',
-        description: 'Tech lover, and ',
+        description: 'Tech lover, and passionate about videogames. I also love playing football and meeting new people that likes practising sports. If you choose to stay in one of my hostels, we can organanise football matches or play videogames all together!',
         role: 'HOST',
-     
     },
     {
         username: "hector",
@@ -276,7 +275,7 @@ const users = [
         name: 'Hector Antón',
         email: 'garguelles2701@gmail.com',
         image: 'https://media-exp1.licdn.com/dms/image/C4D03AQHLId1sh1tzmA/profile-displayphoto-shrink_800_800/0?e=1613001600&v=beta&t=J9EWfnzmELZ4_rpDVEoLoV6_HT5R4v5_PtvfByf9SPo',
-        description: 'I consider myself responsible, empathetic and a good work partner, with contagious joy. I love bad jokes, good food and making people laugh. ',
+        description: 'I consider myself a responsible and nempathetic person, and a good work partner, with contagious joy. I love bad jokes, good food and making people laugh. ',
         role: 'HOST',
        
     },

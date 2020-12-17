@@ -16,6 +16,7 @@ import JobForm from './pages/jobs/jobform/JobForm'
 import JobFormEdit from './pages/jobs/jobformedit/JobFormEdit'
 import EditUser from './pages/profile/EditProfile'
 import Carousel from './pages/travel/Travel'
+import Statistics from './pages/statistics/Statistics'
 
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
             <Route path="/profile" exact render={props => this.state.loggedInUser ? <Profile {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
             <Route path="/profile/edit/:id" exact render={props => this.state.loggedInUser ? <EditUser {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
             <Route path="/profile/newjob" render={props => this.state.loggedInUser ? <JobForm {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} /> : <Redirect to='/' />} />
+            <Route path="/statistics" render={props => <Statistics {...props} setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />} />
     
           </Switch>
           </main>

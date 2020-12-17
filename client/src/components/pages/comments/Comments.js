@@ -41,7 +41,7 @@ class Comments extends Component{
         return (
             <Container>
 
-                    <Row>
+                    <Row style={{marginTop: '50px'}}>
                         <Col lg={8} style={{marginTop: '50px'}}>
                         <h3>Do you want to leave any comment to this user?</h3>
                         {/* {this.state.jobs.comments} */}
@@ -69,7 +69,7 @@ class Comments extends Component{
                                 </Form.Control>
                             </Form.Group>
                     
-                                <Button style={{marginBottom: '30px'}} variant="dark" type="submit">Comment</Button>
+                                <Button className="bt-comment" style={{marginBottom: '30px'}} type="submit">Publish</Button>
                                 
                             </Form>
                         

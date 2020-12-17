@@ -99,6 +99,7 @@ class JobDetails extends Component {
     render() {
         return (
             <Container>
+                
                 {
                     this.state.job
                         ?
@@ -261,14 +262,14 @@ class JobDetails extends Component {
                                     null
                                  }
                                 
-                                <Col lg={6} style={{ marginTop: '50px' }}>
+                                <Col lg={6} style={{ marginTop: '100px' }}>
                                     <h3 style={{ paddingLeft: '15px' }}>Reviews of our guests</h3>
                                 {this.state.job.comments.map(elm => {
 
                                    return ( <>
                                     <Col log={3}>
                                            <Card style={{marginTop: '20px'}}>
-                                               <Card.Header style={{ display: 'flex', justifyContent: 'space-between' }}><p>{elm.title}</p><p><img
+                                               <Card.Header style={{ display: 'flex', justifyContent: 'space-between' }}><p><strong>{elm.title}</strong></p><p><img
                                                    alt="Logotipo"
                                                    src={star}
                                                    width="20"

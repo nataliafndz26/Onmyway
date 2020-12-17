@@ -1,0 +1,25 @@
+.stats{
+height: 550px;
+}
+
+.stats-bg{
+position: fixed;
+z-index: -1000;
+width: 100%;
+object-fit: cover;
+}
+
+.statcard {
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(5px);
+    margin-right: 25px;
+    transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+}
+
+.statcard:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
