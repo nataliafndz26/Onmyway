@@ -12,7 +12,7 @@ const { checkId } = require('./../middlewares/middlewares')
 router.get('/allJobs', (req, res) => {
 
     Job
-        .find({}, { name: 1, image: 1, location: 1, accommodation: 1, _id: 1, user: 1 })
+        .find({}, { name: 1, image: 1, location: 1, accommodation: 1, _id: 1, user: 1, preferences: 1 })
         .populate('preferences')
         .populate('user')
         .then(response => res.status(200).json(response))
@@ -48,12 +48,15 @@ router.post('/newJob', (req, res) => {
 
     Preferences
         .create(preferences)
-        .then(response => Job.create({ name, location, accommodation, timetable, benefits, image, description, preferences: response._id, user }))
+        .then(response => {
+            console.log(response)
+            Job.create({ name, location, accommodation, timetable, benefits, image, description, preferences: response._id, user })
+        })
         .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json( err ))
 })
 
-router.put('/editJob/:id', (req, res) => {
+router.put('/editJob/:id', checkId, (req, res) => {
 
     console.log(req.body.preferences)
 
@@ -66,7 +69,7 @@ router.put('/editJob/:id', (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.delete('/deleteJob/:id', (req, res) => {
+router.delete('/deleteJob/:id', checkId, (req, res) => {
 
     Job
         .findByIdAndDelete(req.params.id)

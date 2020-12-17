@@ -28,7 +28,6 @@ class NavBar extends Component {
 
     componentDidMount = () => {
         document.addEventListener('scroll', () => {
-            console.log(this.state.navBackground)
             const backgroundcolor = window.scrollY < 20 ? 'transparent' : 'rgba(255, 255, 255, 0.6)';
             this.setState({navBackground: backgroundcolor})
         })
@@ -52,6 +51,9 @@ class NavBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
+                        <Link className="preferences" to="/statistics">
+                            <Nav.Link style={{ color: 'black' }} as="div">Statistics</Nav.Link>
+                        </Link>
                         <Link className="preferences" to="/preferences">
                             <Nav.Link style={{color:'black'}}  as="div">Preferences</Nav.Link>
                         </Link>
