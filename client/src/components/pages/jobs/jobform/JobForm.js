@@ -85,7 +85,7 @@ class JobForm extends Component {
                     <h3 style={{ textAlign: 'center' }}>Tell us more about it! ;)</h3>
                     <Row style={{ justifyContent: 'center' }}>
                         <Col className="col-form" lg={{ span: 5 }}>
-                            <Form onSubmit={this.handleSubmit}>
+                            <Form onSubmit={this.handleSubmit} style={{ paddingTop: '15px' }}>
 
                                 <Form.Group controlId="name">
                                     <Form.Label>Name</Form.Label>

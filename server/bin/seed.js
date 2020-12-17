@@ -15,15 +15,7 @@ const hashPass1 = bcrypt.hashSync(password1, salt)
 
 //DATA-BASE CONNECTION
 
-// const dbName = 'Onmyway'
-// mongoose.connect(`mongodb://localhost/${dbName}`)
-
 mongoose.connect(`mongodb+srv://nataliafndz26:nat@cluster0.02jwa.mongodb.net/Onmyway`)
-
-
-// Job.collection.drop()
-// User.collection.drop()
-// Preferences.collection.drop()
 
 
 //SEED JOBS
@@ -150,7 +142,7 @@ const jobs = [
         description: 'We are now looking for longer stay experienced volunteers to help us with our self-sufficiency energy projects, green roof repairing, general house maintenance, andgarden&orchard expansion. Please specify your working experience in your application. We are particularly interested in volunteers with skills in the following: farming, garden, orchard, forestry, milking, fencing, carpentry, masonry, electricity, plumbing, echo wise heating, etc.'
     },
     {
-        name: 'Help us creating fun experiences for our guest in Guadalajara, México the land of Mariachi and Tequila',
+        name: 'Help us creating fun experiences in the land of Mariachi and Tequila',
         location: 'Guadalajara, México',
         accommodation: 'Hostel',
         timetable: '24 h/week, Friday, Saturday and Sunday',
@@ -168,7 +160,7 @@ const jobs = [
         description: 'We are established on a 34 acres plot of woodland, one hour north of Montreal. We have small cabins on the land where guests can come sleep under the stars and see through bubbles, sleep in a tipi or a tree house. We need volunteers to help us with the reception and answering calls and emails and assisting with bookings.'
     },
     {
-        name: 'Live Like A Local In An 1848 Historic Mississippi River Town',
+        name: 'Live Like A Local In An Historic Mississippi River Town',
         location: 'Alma, USA',
         accommodation: 'Hotel',
         timetable: 'Monday to friday 8:00am-3:00pm',
@@ -204,7 +196,7 @@ const jobs = [
         description: 'We need help in creating the organization´s documentaries both in picture and video forms.We also need help in managing social media accounts and updating our website.The volunteer can also help in online fundraising to support any project within the organization.'
     },
     {
-        name: 'Teaching various lessons and taking care of children in Tanzania! :)',
+        name: 'Teaching and taking care of children in Tanzania! :)',
         location: 'Bugiri, Uganda',
         accommodation: 'House',
         timetable: 'Monday to Saturday, 9:00am-3:00pm',

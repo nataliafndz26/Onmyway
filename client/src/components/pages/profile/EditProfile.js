@@ -72,9 +72,9 @@ class EditUser extends Component {
                 <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944858/Onmyway/BACKGROUND%20IMAGES/photo-1499591934245-40b55745b905_jobz9i.jpg" />
 
                 <Container className="ed-pro-form">
-                    <Row style={{ justifyContent: 'center', paddingTop: '70px' }}>
+                    <h1 style={{ textAlign: 'center', paddingTop: '70px', paddingBottom: '10px' }}>Edit profile</h1>
+                    <Row style={{ justifyContent: 'center' }}>
                         <Col className= "col-edit" lg={5}>
-                            <h1>Edit profile</h1>
                             <br />
                             <Form onSubmit={this.handleSubmit}>
                                 <Form.Group controlId="username">

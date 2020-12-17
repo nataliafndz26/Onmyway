@@ -131,7 +131,7 @@ class Profile extends Component {
                             <Tabs defaultActiveKey={this.props.loggedInUser.role === "HOST" ? "posted" : "favourites"} id="noanim-tab-example" style={{ marginTop: '50px' }}>
                                 {this.props.loggedInUser.role === 'HOST'
                                     ?
-                                    <Tab eventKey="posted" title="Posted" tabClassName="tabs">
+                                    <Tab eventKey="posted" title="Posted" tabClassName="tabs" style={{ marginBottom: '40px' }} >
                                         <Row>
                                             {this.state.jobs.map(elm => {
                                                 return (
@@ -145,7 +145,7 @@ class Profile extends Component {
                                     </Tab>
                                     :
                                     null}
-                                <Tab eventKey="favourites" title="Favourites" tabClassName="tabs">
+                                <Tab eventKey="favourites" title="Favourites" tabClassName="tabs" style={{ marginBottom: '40px' }}>
                                     <Row>
                                         {this.state.favourites.map(elm => {
                                             return (
@@ -157,7 +157,7 @@ class Profile extends Component {
                                         }
                                     </Row>
                                 </Tab>
-                                <Tab eventKey="applied" title="Applied" tabClassName="tabs">
+                                <Tab eventKey="applied" title="Applied" tabClassName="tabs" style={{ marginBottom: '40px' }}>
                                     <Row>
                                         {this.state.applied.map(elm => {
                                             return (
