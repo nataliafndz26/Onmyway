@@ -1,20 +1,28 @@
-.login{
-    position: absolute; 
-    margin-top: 480px;
-    margin-left: 850px;
-    color: #005950;
-}
-
 .login:hover{
     text-decoration: none;
     color:  #005950;
 }
 
+.logobw{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 130px;
+  transform: translate(-50%, -50%);
+
+}
 
 .signup{
-    position: absolute; 
-    margin-top: 480px;
-    margin-left: 680px;
+  position: absolute;
+  top: 70%;
+  left:41.5%;
+}
+
+.login{
+  position: absolute;
+  top: 70%;
+  left:54%;
+  color: #005950;
 }
 
 
@@ -26,28 +34,13 @@
 .typewriter{
     position: absolute;
     width:700px;
-    top:100px;
-    left:100px
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 40px 100px ;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
 
-.typewriter p{
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  color: white;
-  white-space: wrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 5.5s steps(100, end),
-    blink-caret .75s step-end infinite;
-}
-
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}

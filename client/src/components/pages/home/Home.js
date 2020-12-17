@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Login from './../login/Login'
 import Signup from './../signup/Signup'
 import './Home.css'
+import logoBW from './logobw.png'
 // import Video from './video/video2.mov'
 import PopUp from './../../shared/popUp/PopUp'
 
@@ -32,9 +33,10 @@ class Home extends Component {
     render() {
         return (
             <>
+                <img src={logoBW} className="logobw"></img>
                 <video autoPlay='autoplay' playsInline loop style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover",  transform: "translate (-50%, -50%)", zIndex: "-1" }}>
                     <source src="https://res.cloudinary.com/demo/video/upload/q_auto/qolbsz7nnnnglw7mwprv.mp4" type="video/mp4" />
-                </video>   
+                </video> 
                 <div className="typewriter">
                     <p><strong>OnmyWay</strong> is a collaborative network for those looking for a unique travel experience. Develop skills, learn languages and meet others through cultural immersion with local hosts.</p>
                 </div>

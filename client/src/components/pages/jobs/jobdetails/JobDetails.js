@@ -264,7 +264,7 @@ class JobDetails extends Component {
                                  }
                                 
                                 <Col lg={6} style={{ marginTop: '110px' }}>
-                                    {this.state.job.comments === undefined
+                                    {this.state.job.comments.length == 0
                                         ?
                                         null
                                         :
