@@ -48,9 +48,11 @@ class Statistics extends Component {
                 const CAdata = response.data.filter(elm => elm.preferences.continent.includes('Central America')).length 
                 const SPdata = response.data.filter(elm => elm.preferences.time.includes('0-6 months')).length 
                 const MPdata = response.data.filter(elm => elm.preferences.time.includes('6 months-1 year')).length 
-                const LPdata = response.data.filter(elm => elm.preferences.time.includes('More than 1 year')).length 
+                const LPdata = response.data.filter(elm => elm.preferences.time.includes('More than 1 year')).length
+                const totalCountries = Eurdata + Asiadata + Africadata + Ocedata + NAdata + SAdata + CAdata 
+                const totalTime = SPdata + MPdata + LPdata 
 
-                this.setState({ Europe: Eurdata, Asia: Asiadata, Africa: Africadata, Oceania: Ocedata, NorthAmerica: NAdata, SouthAmerica: SAdata, CentralAmerica: CAdata, ShortPeriod: SPdata, MediumPeriod: MPdata, LongPeriod: LPdata })
+                this.setState({ Europe: (Eurdata/totalCountries), Asia: (Asiadata/totalCountries), Africa: (Africadata/totalCountries), Oceania: (Ocedata/totalCountries), NorthAmerica: (NAdata/totalCountries), SouthAmerica: (SAdata/totalCountries), CentralAmerica: (CAdata/totalCountries), ShortPeriod: (SPdata/totalTime), MediumPeriod: (MPdata/totalTime), LongPeriod: (LPdata/totalTime) })
         } )
             .catch(err => console.log(err))
     }
