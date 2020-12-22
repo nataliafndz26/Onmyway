@@ -4,8 +4,8 @@ export default class AuthService {
 
     constructor() {
         this.apiHandler = axios.create({
-            //baseURL: `${process.env.REACT_APP_API_URL}/auth`,
-            baseURL: 'http://localhost:5000/api/auth',
+            baseURL: `${process.env.REACT_APP_API_URL}/auth`,
+            // baseURL: 'http://localhost:5000/api/auth',
             withCredentials: true
         })
     }
