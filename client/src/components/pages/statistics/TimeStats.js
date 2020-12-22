@@ -28,6 +28,7 @@ const TimePie = ({ ShortPeriod, MediumPeriod, LongPeriod}) => (
             
         }
         margin={{ top: -140, right: 110, bottom: 80, left: 110 }}
+        valueFormat=">-.0%"
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}

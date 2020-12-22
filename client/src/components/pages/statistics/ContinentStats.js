@@ -50,6 +50,7 @@ const ContinentPie = ({ Europe, Asia, Africa, Oceania, NorthAmerica, SouthAmeric
             
         }
         margin={{ top: -60, right: 80, bottom: 150, left: 120 }}
+        valueFormat=">-.0%"
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
