@@ -10,7 +10,7 @@ function ControlledCarousel() {
 
     return (
         <>
-            <Carousel className="fixedCar" interval="2000" >
+            <Carousel className="fixedCar" interval={2000} >
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
@@ -100,8 +100,8 @@ function ControlledCarousel() {
                 <svg width="277" height="62">
                 <defs>
                     <linearGradient id="grad3">
-                        <stop offset="0%" stop-color="rgb(255, 255, 255)"/>
-                        <stop offset="100%" stop-color="rgb(255, 255, 255)"/>
+                        <stop offset="0%" stopColor="rgb(255, 255, 255)"/>
+                        <stop offset="100%" stopColor="rgb(255, 255, 255)"/>
                     </linearGradient>
                 </defs>
                     <rect x="10" y="5" rx="5" fill="none" stroke="url(#grad3)" width="150" height="45"></rect>

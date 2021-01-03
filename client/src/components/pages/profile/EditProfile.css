@@ -1,39 +1,43 @@
-.ed-pro-form{
-    /* background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)); */
-    /* backdrop-filter: blur(5px); */
-    border-radius: 5px;
-    margin-bottom: 30px;
-}
+/* Background image */
 
 .bg-img{
-    position:fixed;
+    position: fixed;
     width: 100%;
     z-index: -1000;
     object-fit: cover;
+}
+
+/* Edit profile form */
+
+.ed-pro-form{
+    border-radius: 5px;
+    margin-bottom: 30px;
 }
 
 .col-edit{
     background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6));
     backdrop-filter: blur(5px);
     border-radius: 5px;
-    margin:20px;
+    margin: 20px;
 }
+
+/* Button */
 
 .bt-edit{
     background-color:#009485;
     border: #009485;
     color: rgb(255, 255, 255);
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 25px;
     display: block;
-    text-align:center;
+    text-align: center;
     justify-content: center;
-    align-items:center
+    align-items: center
 }
 
 .bt-edit:hover{
-    text-decoration:none;
-    background-color:#00ac9a;
+    text-decoration: none;
+    background-color: #00ac9a;
     border: #00ac9a;
     color: white;
 }

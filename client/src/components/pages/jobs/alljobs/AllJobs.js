@@ -8,7 +8,6 @@ import PreferenceService from '../../../../service/preferences.service'
 import JobCard from '../jobcard/JobCard'
 import SearchBar from './../../../shared/searchBar/SearchBar'
 
-import PopUp from './../../../shared/popUp/PopUp'
 
 import './AllJobs.css'
 
@@ -65,7 +64,7 @@ class AllJobs extends Component {
     render() {
         return (
             <div style ={{paddingBottom: '60px'}}>
-                <img className="all" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607943555/Onmyway/BACKGROUND%20IMAGES/photo-1442570468985-f63ed5de9086_gd41tq.jpg"/>
+                <img className="all" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607943555/Onmyway/BACKGROUND%20IMAGES/photo-1442570468985-f63ed5de9086_gd41tq.jpg" alt="home background"/>
                 <Container >
                     <h1 style={{ textAlign: 'left', paddingTop: '100px', fontSize: '25px' }}>Exchanges and volunteering all over the World</h1>
 
@@ -78,8 +77,8 @@ class AllJobs extends Component {
                                     <Row>
                                         {this.state.filteredjobs.map(elm => {
                                             return (
-                                                <Col lg={4} >
-                                                    <JobCard key={elm.id} {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>
+                                                <Col lg={4} key={elm._id}>
+                                                    <JobCard {...elm} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser}/>
                                                 </Col>
                                             )
                                         })
@@ -96,15 +95,15 @@ class AllJobs extends Component {
                                             ?     
                                                 this.state.jobs.map(elm => {
                                                     return(
-                                                    <Col lg={4}>
-                                                    <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                    <Col lg={4} key={elm._id}>
+                                                    <JobCard  {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
                                                     </Col>               
                                                 )})
                                             :
                                                 this.state.searchjobs.map(elm => {
                                                     return (
-                                                    <Col lg={4}>
-                                                    <JobCard key={elm._id} {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
+                                                    <Col lg={4} key={elm._id}>
+                                                    <JobCard {...elm} deleteJob={() => this.deleteJob(elm._id)} setTheUser={this.setTheUser} loggedInUser={this.props.loggedInUser} />
                                                     </Col>
                                                 )})  
                                         }

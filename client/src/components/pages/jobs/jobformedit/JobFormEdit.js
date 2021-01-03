@@ -37,8 +37,6 @@ class JobFormEdit extends Component {
 
         const job_id = this.props.match.params.id
 
-        console.log(this.props)
-
         this.jobService
             .getOneJob(job_id)
             .then(res => this.setState({ job: res.data }))
@@ -96,17 +94,16 @@ class JobFormEdit extends Component {
 
             .editJob(job_id, this.state.job)
             .then(res => {
-                this.props.history.push('/jobs')
+                this.props.history.push('/profile')
             })
             .catch(err => console.log(err))
     }
 
 
     render() {
-        console.log(this.state.job.preferences)
         return (
             <div>
-                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944721/Onmyway/BACKGROUND%20IMAGES/photo-1543269865-cbf427effbad_qlnbg3.jpg" />
+                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944721/Onmyway/BACKGROUND%20IMAGES/photo-1543269865-cbf427effbad_qlnbg3.jpg" alt="background jobform edit"/>
                 <Container>
                     <h1 style={{ textAlign: 'center', paddingTop: '70px' }}>Edit this job</h1>
                     <Row style={{ justifyContent: 'center' }}>
@@ -167,14 +164,13 @@ class JobFormEdit extends Component {
                             <Form.Group controlId="continent">
                                 <Form.Label>Continent</Form.Label>
                                 <Form.Control type="text" name="continent" as="select" onChange={this.handlePrefInputChange} >
-                                    <option>Select one</option>
-                                    <option selected={this.state.job.preferences.interests.includes("Europe") ? true : false}>Europe</option>
-                                    <option selected={this.state.job.preferences.interests.includes("South America") ? true : false}>South America</option>
-                                    <option selected={this.state.job.preferences.interests.includes("Central America") ? true : false}>Central America</option>
-                                    <option selected={this.state.job.preferences.interests.includes("North America") ? true : false}>North America</option>
-                                    <option selected={this.state.job.preferences.interests.includes("Asia") ? true : false}>Asia</option>
-                                    <option selected={this.state.job.preferences.interests.includes("Africa") ? true : false}>Africa</option>
-                                    <option selected={this.state.job.preferences.interests.includes("Oceania") ? true : false}>Oceania</option>
+                                    <option selected={this.state.job.preferences.continent.includes("Europe") ? true : false}>Europe</option>
+                                    <option selected={this.state.job.preferences.continent.includes("South America") ? true : false}>South America</option>
+                                    <option selected={this.state.job.preferences.continent.includes("Central America") ? true : false}>Central America</option>
+                                    <option selected={this.state.job.preferences.continent.includes("North America") ? true : false}>North America</option>
+                                    <option selected={this.state.job.preferences.continent.includes("Asia") ? true : false}>Asia</option>
+                                    <option selected={this.state.job.preferences.continent.includes("Africa") ? true : false}>Africa</option>
+                                    <option selected={this.state.job.preferences.continent.includes("Oceania") ? true : false}>Oceania</option>
                                 </Form.Control>
                             </Form.Group>
                             <Form.Group controlId="skills">
@@ -193,7 +189,6 @@ class JobFormEdit extends Component {
                             <Form.Group controlId="time">
                                 <Form.Label>Time</Form.Label>
                                 <Form.Control type="text" name="time" as="select" onChange={this.handlePrefInputChange} >
-                                    <option>Select one</option>
                                     <option selected={this.state.job.preferences.time.includes("0-6 months") ? true : false}>0-6 months</option>
                                     <option selected={this.state.job.preferences.time.includes("6 months-1 year") ? true : false}>6 months-1 year</option>
                                     <option selected={this.state.job.preferences.time.includes("More than 1 year") ? true : false}>More than 1 year</option>

@@ -48,17 +48,12 @@ router.post('/newJob', (req, res) => {
 
     Preferences
         .create(preferences)
-        .then(response => {
-            console.log(response)
-            Job.create({ name, location, accommodation, timetable, benefits, image, description, preferences: response._id, user })
-        })
+        .then(response => Job.create({ name, location, accommodation, timetable, benefits, image, description, preferences: response._id, user }))
         .then(response => res.status(200).json(response))
         .catch(err => res.status(500).json( err ))
 })
 
 router.put('/editJob/:id', checkId, (req, res) => {
-
-    console.log(req.body.preferences)
 
     const { name, location, accommodation, timetable, benefits, image, description, preferences } = req.body
 

@@ -21,7 +21,7 @@ import star from './star.png'
 import './JobDetails.css'
 
 
-import { Container, Row, Col, Card, Spinner, Button, Form } from 'react-bootstrap'
+import { Container, Row, Col, Card, Spinner} from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
@@ -107,8 +107,8 @@ class JobDetails extends Component {
                     <>
                         <Row>
 
-                            <Col  lg={12}>
-                                <img variant="top" className='job-image' style={{ width: '100%', marginTop:'71px' }} src={this.state.job.image} />
+                                <Col key={this.state.job._id} lg={12}>
+                                <img variant="top" className='job-image' style={{ width: '100%', marginTop:'71px' }} src={this.state.job.image} alt="jobdetails"/>
                             </Col>
                             <Col className='job-title' lg={12}>
                                 <h3 className='title-info'>{this.state.job.name}</h3>
@@ -122,15 +122,12 @@ class JobDetails extends Component {
 
                             </Col>
                                 <div className="buttons">
-
-
-
                                    
                                         {this.props.loggedInUser.favourites.includes(this.state.job._id)
 
                                             ?
 
-                                    <Link className="remove-fav" onClick={() => this.removeFav(this.state.job._id)}><img
+                                    <Link to="#" className="remove-fav" onClick={() => this.removeFav(this.state.job._id)}><img
                                         alt="Logotipo"
                                         src={favourited}
                                         width="30"
@@ -140,7 +137,7 @@ class JobDetails extends Component {
 
                                             :
 
-                                    <Link className="fav" onClick={() => this.saveFav(this.state.job._id)}><img
+                                    <Link to="#" className="fav" onClick={() => this.saveFav(this.state.job._id)}><img
                                         alt="Logotipo"
                                         src={favourite}
                                         width="30"
@@ -154,7 +151,7 @@ class JobDetails extends Component {
 
                                             ?
 
-                                    <Link className="applied" disabled><img
+                                    <Link to="#" className="applied" disabled><img
                                         alt="Logotipo"
                                         src={mailSuccess}
                                         width="30"
@@ -164,7 +161,7 @@ class JobDetails extends Component {
 
                                             :
 
-                                            <Link className="apply" onClick={() => {
+                                            <Link to="#" className="apply" onClick={() => {
                                                 this.applyJob(this.state.job._id)
                                                 this.handleModal(true)
 
@@ -177,14 +174,13 @@ class JobDetails extends Component {
                                         /></Link>
 
                                         }
-            
 
                                 </div>
 
                             <Col lg={{ span: 9, offset: 2 }} style={{ justifyContent: 'center'}}>
                                 <Card className="job-card-info" >
                                     <Card.Body>
-                                        <Card.Text className='job-info'>
+                                        <Card.Text as="div" className='job-info'>
                                             <div className='host'>
                                                 <img
                                                     alt="Logotipo"
@@ -193,7 +189,7 @@ class JobDetails extends Component {
                                                     height="40"
                                                     className="user-pic"
                                                 />
-                                                <p style={{ paddingTop: '14px' }}><strong>{this.state.job.user.name}</strong> will be your host!</p>
+                                                <span style={{ paddingTop: '14px' }}><strong>{this.state.job.user.name}</strong> will be your host!</span>
                                             </div>
                                             <hr></hr>
                                             <Row>
@@ -264,7 +260,7 @@ class JobDetails extends Component {
                                  }
                                 
                                 <Col lg={6} style={{ marginTop: '110px' }}>
-                                    {this.state.job.comments.length == 0
+                                    {this.state.job.comments.length === 0
                                         ?
                                         null
                                         :
@@ -272,8 +268,9 @@ class JobDetails extends Component {
                                     }
                                 {this.state.job.comments.map(elm => {
 
-                                   return ( <>
-                                    <Col log={3}>
+                                    return (
+                                        <>
+                                    <Col log={3} key={elm._id}>
                                            <Card style={{marginTop: '20px'}}>
                                                <Card.Header style={{ display: 'flex', justifyContent: 'space-between' }}><p><strong>{elm.title}</strong></p><p><img
                                                    alt="Logotipo"

@@ -31,10 +31,7 @@ class Comments extends Component{
 
         this.commentsService
             .saveNewComment(this.state, this.props.job._id)
-            .then(res => {
-                console.log (res)
-                this.props.updateComment(res.data.comments)
-            })
+            .then(res => this.props.updateComment(res.data.comments))
             .catch(err => console.log(err))
     }
 

@@ -63,7 +63,7 @@ class Statistics extends Component {
 
             <div> 
                 
-                <img className="stats-bg" src="https://www.segurosredondo.es/wp-content/uploads/2020/01/656670.jpg" />
+                <img className="stats-bg" src="https://www.segurosredondo.es/wp-content/uploads/2020/01/656670.jpg" alt="background stats"/>
                     
         
                 <Container>

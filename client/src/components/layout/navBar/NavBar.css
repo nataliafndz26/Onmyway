@@ -1,12 +1,18 @@
+/* Font */
+
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* Logo */
 
 .omw{
     font-family:'Kaushan Script';
     font-size: 24px;
 }
 
+/* Nav Links */
+
 .hover:hover{
-    text-decoration:none;
+    text-decoration: none;
     color:black;
     font-weight: bold;
 }

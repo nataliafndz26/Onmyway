@@ -285,7 +285,7 @@ const users = [
         password: hashPass1,
         name: 'Belen Olias',
         email: 'garguelles2701@gmail.com',
-        image: 'https://res.cloudinary.com/nataliafndz26/image/upload/v1607772462/Onmyway/noxsgkajxn8f2tujh8f4.jpg',
+        image: 'https://res.cloudinary.com/nataliafndz26/image/upload/v1607772462/Onmyway/PROFILE/noxsgkajxn8f2tujh8f4.jpg',
         description: 'Always trying to think outside the box. Connecting the dots. Enthusiastic reader. Keep learning everyday! ',
         role: 'HOST',
        
@@ -295,7 +295,7 @@ const users = [
         password: hashPass1,
         name: 'Natalia Fernandez',
         email: 'gonar2795@gmail.com',
-        image: 'https://res.cloudinary.com/nataliafndz26/image/upload/v1607772753/Onmyway/gxd6fgicwyxzmpcswqnt.jpg',
+        image: 'https://res.cloudinary.com/nataliafndz26/image/upload/v1607772753/Onmyway/PROFILE/gxd6fgicwyxzmpcswqnt.jpg',
         description: 'I love to travel around the world, helping people, caring and giving a hand always that´s needed. My pasions are music, learning new languages, animals, and children :)',
         favourites: [],
         role: 'USER',
@@ -306,7 +306,7 @@ const users = [
         password: hashPass1,
         name: 'Gonzalo Argüelles',
         email: 'gonar2795@gmail.com',
-        image: 'https://res.cloudinary.com/nataliafndz26/image/upload/v1607771571/Onmyway/zjmbjxk5ijzbdhljo3r6.png',
+        image: 'https://res.cloudinary.com/nataliafndz26/image/upload/v1607771571/Onmyway/PROFILE/zjmbjxk5ijzbdhljo3r6.png',
         description: 'Pasionate traveller, food lover and nature enthusiast',
         favourites: [],
         role: 'USER',
@@ -490,7 +490,6 @@ let createPreferences = Preferences.create(preferences)
 
 Promise.all([createUsers, createJobs, createPreferences])
     .then((results) => {
-        console.log (results[2].length)
         results[0].forEach((user) => theUsers.push(user._id))
         results[1].forEach((job) => theJobs.push(job._id))
         results[2].forEach((preferences) => thePreferences.push(preferences._id))

@@ -33,7 +33,7 @@ class Home extends Component {
     render() {
         return (
             <>
-                <img src={logoBW} className="logobw"></img>
+                <img src={logoBW} className="logobw" alt="Onmyway logo"></img>
                 <video autoPlay='autoplay' playsInline loop style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover",  transform: "translate (-50%, -50%)", zIndex: "-1" }}>
                     <source src="https://res.cloudinary.com/demo/video/upload/q_auto/qolbsz7nnnnglw7mwprv.mp4" type="video/mp4" />
                 </video> 

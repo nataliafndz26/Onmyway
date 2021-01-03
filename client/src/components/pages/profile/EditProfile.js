@@ -69,7 +69,7 @@ class EditUser extends Component {
 
         return (
             <div>
-                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944858/Onmyway/BACKGROUND%20IMAGES/photo-1499591934245-40b55745b905_jobz9i.jpg" />
+                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944858/Onmyway/BACKGROUND%20IMAGES/photo-1499591934245-40b55745b905_jobz9i.jpg" alt="background edit ptofile"/>
 
                 <Container className="ed-pro-form">
                     <h1 style={{ textAlign: 'center', paddingTop: '70px', paddingBottom: '10px' }}>Edit profile</h1>

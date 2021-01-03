@@ -1,13 +1,13 @@
-.job-card img{
-    height: 150px;
-    object-fit: cover;
-}
+/* Background image */
+
 .all{
     position:fixed;
     width: 100%;
     z-index: -1000;
     object-fit: cover;
 }
+
+/* Tabs */
 
 .tabs{
     color: black;

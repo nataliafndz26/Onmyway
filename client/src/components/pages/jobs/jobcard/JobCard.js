@@ -16,13 +16,13 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                  <article className="card card--1" style={{height:'480px', marginTop:'40px'}}>
                      
                         <div className="card__img" style={{ backgroundImage: `url(${image})`}} ></div>
-                        <a href="#" className="card_link">
-                            <div className="card__img--hover" style={{ backgroundImage: `url(${image})` }} ></div>
-                        </a>
-                        <div className="card__info">
+                       
+                        <div className="card__img--hover" style={{ backgroundImage: `url(${image})` }} ></div>
+                     
+                       <div className="card__info">
                             <span className="card__category"><strong>{location}</strong></span>
                             <h3 className="card__title">{name}</h3>
-                    <span className="card__by">You will stay in a <strong class="card__author"> {accommodation}</strong></span>
+                    <span className="card__by">You will stay in a <strong className="card__author"> {accommodation}</strong></span>
                     
                     {
                         user._id === loggedInUser._id || user === loggedInUser._id
@@ -38,7 +38,7 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                                         height="24"
                                         className="d-inline-block align-top"
                                     /></Link>
-                                <Link className="deletejob-bt" style={{padding:'6px 7px'}} onClick={deleteJob}><img
+                                <Link to="#" className="deletejob-bt" style={{padding:'6px 7px'}} onClick={deleteJob}><img
                                         alt="bin"
                                         src={bin}
                                         width="24"

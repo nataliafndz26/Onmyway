@@ -36,7 +36,7 @@ class Email extends Component {
         return (
             <Form onSubmit={this.handleSubmit}>
                 <div className="email-div" style={{display:'flex', alignItems:'baseline'}}>
-                    <img className="email" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1200px-Gmail_icon_%282020%29.svg.png" style={{ width: '33px', height: '28px', marginLeft:'4px' }}></img><h2 style={{fontWeight:'bold'}}>Email</h2>
+                    <img className="email" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1200px-Gmail_icon_%282020%29.svg.png" style={{ width: '33px', height: '28px', marginLeft:'4px' }} alt="Gmail icon"></img><h2 style={{fontWeight:'bold'}}>Email</h2>
                     </div>
                 <h5 style={{marginTop:'18px', marginBottom:'25px'}}>If you are interested in this job offer, you can apply by sending an email to {this.state.hostName} ;) </h5>
                 <Form.Group controlId="from">

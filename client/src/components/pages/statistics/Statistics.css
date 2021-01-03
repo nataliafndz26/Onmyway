@@ -1,12 +1,16 @@
-.stats{
-height: 530px;
-}
+/* Statistics background */
 
 .stats-bg{
-position: fixed;
-z-index: -1000;
-width: 100%;
-object-fit: cover;
+    position: fixed;
+    z-index: -1000;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Statistics cards */
+
+.stats{
+    height: 530px;
 }
 
 .statcard {

@@ -1,3 +1,13 @@
+/* Preferences form */
+
+select[multiple] option:checked{
+    border: 2px solid #009485;
+} 
+
+.myselect{
+    border: none;
+}
+
 .option{
     height: 200px;
     width: 290px;
@@ -15,34 +25,28 @@
     padding-top: 20px
 }
 
+/* Continent and time */
 
-.cont {
+.cont{
     font-size: 17px;
 }
 
-.sy {
-    background-image: linear-gradient(rgba(255,255,255,1) 5%, rgba(0,0,0,0.2)), url("https://res.cloudinary.com/nataliafndz26/image/upload/v1607945716/Onmyway/PREFERENCES/photo-1469854523086-cc02fe5d8800_vjawvd.jpg");
-   
+/* Multiselect images */
+
+/* Interests */
+
+.sy{
+    background-image: linear-gradient(rgba(255,255,255,1) 5%, rgba(0,0,0,0.2)), url("https://res.cloudinary.com/nataliafndz26/image/upload/v1607945716/Onmyway/PREFERENCES/photo-1469854523086-cc02fe5d8800_vjawvd.jpg"); 
 }
-
-select[multiple] option:checked{
-    border: 2px solid #009485;
-    color:red;
-} 
-
-/* .sy:checked, .sy:active, .sy:focus {
-    border: 2px solid #009485;
-    color:red;
-} */
 
 .pd{
     background-image: linear-gradient(rgba(255,255,255,1) 1%, rgba(0,0,0,0.2)), url("https://res.cloudinary.com/nataliafndz26/image/upload/v1607945819/Onmyway/PREFERENCES/photo-1526948531399-320e7e40f0ca_txg2rl.jpg");
-   
+    
 }
 
 .sk{
     background-image: linear-gradient(rgba(255,255,255,1) 5%, rgba(0,0,0,0.2)), url("https://res.cloudinary.com/nataliafndz26/image/upload/v1607945972/Onmyway/PREFERENCES/photo-1483048135245-05d6017c6cef_oksgio.jpg");
-   
+    
 }
 
 .ta{
@@ -72,6 +76,8 @@ select[multiple] option:checked{
 .sd{ 
     background-image: linear-gradient(rgba(255,255,255,1) 1%, rgba(0,0,0,0.2)), url("https://res.cloudinary.com/nataliafndz26/image/upload/v1607948793/Onmyway/PREFERENCES/photo-1527357985325-dfb3f8762e16_q40nd8.jpg");
 }
+
+/* Skills */
 
 .wwg{ 
     background-image: linear-gradient(rgba(255,255,255,1) 1%, rgba(0,0,0,0.2)), url("https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
@@ -105,31 +111,28 @@ select[multiple] option:checked{
     background-image: linear-gradient(rgba(255,255,255,1) 1%, rgba(0,0,0,0.2)), url("https://res.cloudinary.com/nataliafndz26/image/upload/v1607949668/Onmyway/PREFERENCES/photo-1522071901873-411886a10004_y0b4hd.jpg");
 }
 
-.myselect{
-    border: none;
-}
 
-/* width */
+/* Scrollbar */
+
 ::-webkit-scrollbar {
     width: 5px;
 }
   
-  /* Track */
 ::-webkit-scrollbar-track {
     background: white;
     border-radius: 10px
 }
   
-  /* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgb(147, 212, 255);
     border-radius: 15px
 }
   
-  /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(0, 189, 189);
 }
+
+/* Button */
 
 .magic {
     position: relative;

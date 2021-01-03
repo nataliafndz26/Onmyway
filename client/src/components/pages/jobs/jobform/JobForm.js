@@ -65,7 +65,6 @@ class JobForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state)
         this.jobService
             .saveNewJob(this.state)
             .then(res => this.props.history.push('/profile'))
@@ -79,7 +78,7 @@ class JobForm extends Component {
         return (
 
             <div>
-                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944606/Onmyway/BACKGROUND%20IMAGES/photo-1498307833015-e7b400441eb8_vgwewv.jpg" />
+                <img className="bg-img" src="https://res.cloudinary.com/nataliafndz26/image/upload/v1607944606/Onmyway/BACKGROUND%20IMAGES/photo-1498307833015-e7b400441eb8_vgwewv.jpg" alt="background jobform"/>
                 <Container className="cr-form">
                     <h2 style={{ textAlign: 'center', paddingTop: '70px', paddingBottom: '10px' }}>Do you want to contribute to our community with a new job?</h2>
                     <h3 style={{ textAlign: 'center' }}>Tell us more about it! ;)</h3>
