@@ -1,4 +1,6 @@
 # Onmyway
+![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+
 Onmyway es una web que ofrece una alternativa a todas esas personas, que quieren viajar, pero por cuestiones economicas, ecologicas, sociales o de cualquier otro ambito; no se lo pueden permitir. La web presenta una alternativa basada en el intercambio de trabajo por alojamiento, mediante la cual, los usuarios podran disfrutar de una experiencia única, aprender nuevas habilidades e idiomas, y adentrarse en la cultura del lugar desde una perspectiva local y apasionante.
 
 ## Desarrolladores
@@ -14,3 +16,26 @@ El sistema de busqueda de trabajos se encuentra dividido en dos secciones:
 Es un filtro estático basado en unas preferencias elegidas al hacer Sign up y que posteriormente se pueden editar en cualquier momento, de manera que solo apareceran los trabajos relacionados con tus intereses a la hora de viajar.
 #### All jobs
 En esta sección aparecen todos los trabajos sin distinción y posteriormente mediante una barra de busqueda podras realizar una busqueda en funcion del nombre del trabajo, tipo de alojamiento y la ciudad o pais en la que se encuentra.
+
+##Tecnologias
+* HTML
+* CSS
+* Javascript (ES6)
+  * ReactJs
+  * React Bootstrap
+  * NodeJs
+  * Express
+  * Cloudinary
+  * Bcript
+  * Mongoose
+  * MondoDB
+  * Nivo.rocks
+  * Axios
+  * Nodemailer
+  * ...
+ 
+## Agradecimientos
+  * Product Owner: Hector Antón
+  * Lead Instructor: German Alvarez
+
+  
