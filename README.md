@@ -1,23 +1,26 @@
 # Onmyway
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-Onmyway es una web que ofrece una alternativa a todas esas personas, que quieren viajar, pero por cuestiones económicas, ecológicas, sociales o de cualquier otro ámbito; no se lo pueden permitir. La web presenta una alternativa basada en el intercambio de trabajo por alojamiento, mediante la cual, los usuarios podran disfrutar de una experiencia única, aprender nuevas habilidades e idiomas, y adentrarse en la cultura del lugar desde una perspectiva local y apasionante.
+OnmyWay is a collaborative network for those looking for a unique travel experience, but unable to afford it. Onmyway provides an alternative based on the exchange of work for accommodation, thanks to which users can develop skills, learn languages and meet others through cultural immersion with local hosts.
 
-## Desarrolladores
-* Natalia Fernandez Peña @nataliafndz26
+## Developers
+* Natalia Fernández Peña @nataliafndz26
 * Gonzalo Argüelles Navarro @Nargon271
 
-## Descripción
-Onmyway es una __Single Page Aplication__ de búsqueda de alojamiento a cambio de trabajo. Se trata de una web completamente privada, solo accesible mediante registro previo, a la cual podras acceder con dos roles diferentes (__HOST__ y __USER__), los cuales podran realizar distintas acciones.
-Por defecto el usuario se registrará como USER con posibilidad de cambiarlo posteriormente en su perfil y este usuario tendra acceso a todos los trabajos publicados en la página web, podra añadir a su lista de favoritos, aplicar y ponerse en contacto con el HOST de dicho trabajo. El usuario que decida cambiar su perfil a rol HOST se le abrirá un nuevo abanico de posibilidades entre las que se encuentran crear, editar y eliminar los trabajos que haya publicado.
+## Description
+Onmyway is a __Single Page Application__ based on job search in exchange for accommodation. It is a completely private website, only accessible through previous registration, to which you can access under two different roles (__HOST__ or __USER__), each of which can perform different tasks.
 
-El sistema de busqueda de trabajos se encuentra dividido en dos secciones: 
+The user will be registered as USER by default, with the possibility of switching to HOST by editing his/her profile afterwards. The USER will have access to all the jobs published on the website, and will be able to add them to his/her favourites list, or apply by contacting the corresponding HOST.
+
+The user who becomes a HOST, besides enjoying the benefits of the USER, will be able to create new jobs, and edit or delete the jobs he/she has previously published.
+
+The job search system is structured in two sections: 
 #### Jobs for you
-Es un filtro estático basado en unas preferencias elegidas al hacer Sign up y que posteriormente se pueden editar en cualquier momento, de manera que solo apareceran los trabajos relacionados con tus intereses a la hora de viajar.
+This section of jobs is displayed thanks to a static filter based on the preferences chosen by the user when signing up, which can be edited afterwards at any time. Therefore, the user will only see the jobs that correspond to his/her travelling preferences, which are divided in  interests, skills, continent and time.
 #### All jobs
-En esta sección aparecen todos los trabajos sin distinción y posteriormente mediante una barra de búsqueda se podrá realizar una busqueda en función del nombre del trabajo, tipo de alojamiento y la ciudad o pais en la que se encuentra.
+In this section the user can find all the jobs without any distinction. Thanks to a search bar that works with a dynamic filter, the user can also carry out a search by the name of the job, the type of accommodation, and the city or country where the job is located.
 
-## Tecnologías
+## Tecnologíes
 * HTML
 * CSS
 * Javascript (ES6)
@@ -34,8 +37,8 @@ En esta sección aparecen todos los trabajos sin distinción y posteriormente me
   * Nodemailer
   * ...
  
-## Agradecimientos
+## Acknowledgements
   * Product Owner: Hector Antón
-  * Lead Instructor: German Alvarez
+  * Lead Instructor: Germán Alvarez
 
   
