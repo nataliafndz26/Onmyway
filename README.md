@@ -20,7 +20,7 @@ This section of jobs is displayed thanks to a static filter based on the prefere
 #### All jobs
 In this section the user can find all the jobs without any distinction. Thanks to a search bar that works with a dynamic filter, the user can also carry out a search by the name of the job, the type of accommodation, and the city or country where the job is located.
 
-## Tecnologíes
+## Tecnologies
 * HTML
 * CSS
 * Javascript (ES6)
