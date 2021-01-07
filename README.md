@@ -10,7 +10,7 @@ OnmyWay is a collaborative network for those looking for a unique travel experie
 ## Description
 Onmyway is a __Single Page Application__ based on job search in exchange for accommodation. It is a completely private website, only accessible through previous registration, to which you can access under two different roles (__HOST__ or __USER__), each of which can perform different tasks.
 
-The user will be registered as USER by default, with the possibility of switching to HOST by editing his/her profile afterwards. The USER will have access to all the jobs published on the website, and will be able to add them to his/her favourites list, or apply by contacting the corresponding HOST.
+The user will be registered as USER by default, with the possibility of switching to HOST by editing his/her profile afterwards. The USER will have access to all the jobs published on the website, and will be able to add them to his/her favourites list, or apply by contacting the corresponding HOST. Once the USER has applied to the job, he/she will be able to write a review of the job for other users to see it.
 
 The user who becomes a HOST, besides enjoying the benefits of the USER, will be able to create new jobs, and edit or delete the jobs he/she has previously published.
 
