@@ -1,5 +1,4 @@
 # Onmyway
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
 OnmyWay is a collaborative network for those looking for a unique travel experience, but unable to afford it. Onmyway provides an alternative based on the exchange of work for accommodation, thanks to which users can develop skills, learn languages and meet others through cultural immersion with local hosts.
 
