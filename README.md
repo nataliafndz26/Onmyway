@@ -36,7 +36,7 @@ In this section the user can find all the jobs without any distinction. Thanks t
   * Nivo.rocks
   * Axios
   * Nodemailer
-  * ...
+  * Heroku
  
 ## Acknowledgements
   * Product Owner: Hector Antón
