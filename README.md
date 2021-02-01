@@ -32,7 +32,7 @@ In this section the user can find all the jobs without any distinction. Thanks t
   * Cloudinary
   * Bcript
   * Mongoose
-  * MondoDB
+  * MongoDB
   * Nivo.rocks
   * Axios
   * Nodemailer
