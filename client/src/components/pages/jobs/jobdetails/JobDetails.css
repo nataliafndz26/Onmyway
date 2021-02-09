@@ -109,3 +109,16 @@
 .job-info ul li{
     text-align: left;
 }
+
+/* Comments */
+
+.comments{
+    margin-top: 350px;
+    justify-content: center;
+}
+
+@media (max-width: 768px){
+    .comments{
+        margin-top: 930px;
+    }
+}

@@ -249,7 +249,7 @@ class JobDetails extends Component {
 
                             </Row>
                             
-                            <Row style={{marginTop:'350px', justifyContent:'center'}}>
+                            <Row className="comments">
                                 {this.props.loggedInUser.applied.includes(this.state.job._id)
                                     ?
                                 <Col lg={6}>
