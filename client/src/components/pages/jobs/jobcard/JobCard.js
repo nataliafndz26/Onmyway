@@ -47,7 +47,6 @@ const JobCard = ({ name, location, accommodation, _id, image, user, loggedInUser
                                     /></Link>
                                
                                 </div>
-                           
                             :
                             null
 
